@@ -26,6 +26,13 @@ class LandingViewController: BaseViewController {
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: LandingCell.classname, bundle: nil), forCellWithReuseIdentifier: LandingCell.classname)
         setupBottomView(0)
+        UserDefaults.setShowLandingPage()
+    }
+
+    @IBAction func skipAction(_: Any) {
+        DispatchQueue.main.async { [weak self] in
+            self?.performSegue(withIdentifier: "landingToMain", sender: nil)
+        }
     }
 
     @IBAction func prev(_: Any) {
