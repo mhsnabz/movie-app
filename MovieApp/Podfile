@@ -8,6 +8,7 @@ target 'MovieApp' do
   # Pods for MovieApp
 pod 'Moya/RxSwift'
 pod 'IQKeyboardManagerSwift'
+pod 'lottie-ios'
 end
 
 post_install do |installer|

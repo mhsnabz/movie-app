@@ -1,24 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Nw-sA-vuI">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Regular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+        <array key="Nunito-SemiBold.ttf">
+            <string>Nunito-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Initial View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="InitialViewController" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="228" y="-206"/>
+        </scene>
+        <!--Landing View Controller-->
+        <scene sceneID="Yzo-EM-dha">
+            <objects>
+                <viewController id="9Nw-sA-vuI" customClass="LandingViewController" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fiP-gU-a7v">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Cbf-83-3Vn">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="dxg-fA-Lj9">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="F19-qx-Z3H">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JmN-GQ-3d9">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6cA-XL-hTF">
+                                <rect key="frame" x="0.0" y="694" width="393" height="158"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="hAw-aU-4be">
+                                        <rect key="frame" x="24" y="56" width="345" height="44"/>
+                                        <subviews>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3l-i4-re4">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
+                                                <color key="backgroundColor" name="main_gray"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="beM-2D-GW6"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="17"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="PREV">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="prev:" destination="9Nw-sA-vuI" eventType="touchUpInside" id="ssq-3v-UuC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Yt-Ao-lVC">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="44"/>
+                                                <color key="backgroundColor" name="dark_red"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="hsh-aW-dny"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="17"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="NEXT">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onNext:" destination="9Nw-sA-vuI" eventType="touchUpInside" id="Ber-u1-fhb"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnS-38-azX">
+                                        <rect key="frame" x="40" y="8" width="313" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZ3-cT-rlI">
+                                        <rect key="frame" x="40" y="32" width="313" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="xZ3-cT-rlI" firstAttribute="top" secondItem="TnS-38-azX" secondAttribute="bottom" constant="24" id="4SG-y0-IeY"/>
+                                    <constraint firstItem="xZ3-cT-rlI" firstAttribute="leading" secondItem="6cA-XL-hTF" secondAttribute="leading" constant="40" id="4zX-8c-VKp"/>
+                                    <constraint firstItem="hAw-aU-4be" firstAttribute="top" secondItem="xZ3-cT-rlI" secondAttribute="bottom" constant="24" id="MNB-uh-OiW"/>
+                                    <constraint firstItem="hAw-aU-4be" firstAttribute="leading" secondItem="6cA-XL-hTF" secondAttribute="leading" constant="24" id="Qhp-Ew-EPo"/>
+                                    <constraint firstItem="TnS-38-azX" firstAttribute="leading" secondItem="6cA-XL-hTF" secondAttribute="leading" constant="40" id="WV5-nt-xFG"/>
+                                    <constraint firstAttribute="trailing" secondItem="TnS-38-azX" secondAttribute="trailing" constant="40" id="XFN-Cn-Ayi"/>
+                                    <constraint firstAttribute="trailing" secondItem="xZ3-cT-rlI" secondAttribute="trailing" constant="40" id="nrx-MK-7oH"/>
+                                    <constraint firstItem="TnS-38-azX" firstAttribute="top" secondItem="6cA-XL-hTF" secondAttribute="top" constant="8" id="o5G-IT-kj0"/>
+                                    <constraint firstAttribute="trailing" secondItem="hAw-aU-4be" secondAttribute="trailing" constant="24" id="uHj-br-x6H"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4L9-Ja-uoc"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4L9-Ja-uoc" firstAttribute="trailing" secondItem="Cbf-83-3Vn" secondAttribute="trailing" id="8WJ-az-54g"/>
+                            <constraint firstItem="4L9-Ja-uoc" firstAttribute="bottom" secondItem="hAw-aU-4be" secondAttribute="bottom" constant="23.999999999999886" id="BcH-F1-VSX"/>
+                            <constraint firstAttribute="bottom" secondItem="6cA-XL-hTF" secondAttribute="bottom" id="Biv-ir-NKS"/>
+                            <constraint firstItem="6cA-XL-hTF" firstAttribute="leading" secondItem="4L9-Ja-uoc" secondAttribute="leading" id="NMC-Mv-kDz"/>
+                            <constraint firstItem="Cbf-83-3Vn" firstAttribute="top" secondItem="fiP-gU-a7v" secondAttribute="top" id="Pig-s1-pz2"/>
+                            <constraint firstItem="Cbf-83-3Vn" firstAttribute="leading" secondItem="4L9-Ja-uoc" secondAttribute="leading" id="PqH-No-E69"/>
+                            <constraint firstAttribute="bottom" secondItem="Cbf-83-3Vn" secondAttribute="bottom" id="g68-MH-38T"/>
+                            <constraint firstItem="6cA-XL-hTF" firstAttribute="trailing" secondItem="4L9-Ja-uoc" secondAttribute="trailing" id="u8Z-0T-6cb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomView" destination="6cA-XL-hTF" id="MJk-wk-x03"/>
+                        <outlet property="collectionView" destination="Cbf-83-3Vn" id="cyU-p9-URF"/>
+                        <outlet property="descriptionLbl" destination="xZ3-cT-rlI" id="NA4-bm-R0D"/>
+                        <outlet property="prevButton" destination="z3l-i4-re4" id="UmU-kL-Pdz"/>
+                        <outlet property="titleLbl" destination="TnS-38-azX" id="uc5-oN-bCn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X8a-Tq-ADc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1043.5114503816794" y="-202.11267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="dark_red">
+            <color red="0.85882352941176465" green="0.13333333333333333" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="main_gray">
+            <color red="0.72941176470588232" green="0.72941176470588232" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

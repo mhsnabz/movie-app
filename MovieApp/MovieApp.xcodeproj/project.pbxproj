@@ -9,9 +9,25 @@
 /* Begin PBXBuildFile section */
 		8D07825E2B750BEC00AC2B4F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D07825D2B750BEC00AC2B4F /* UIColor+Extension.swift */; };
 		8D0782602B750D3300AC2B4F /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D07825F2B750D3200AC2B4F /* Color.xcassets */; };
+		8D0782642B751B3E00AC2B4F /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0782632B751B3E00AC2B4F /* InitialViewController.swift */; };
+		8D0782692B751C0D00AC2B4F /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0782682B751C0D00AC2B4F /* LandingViewController.swift */; };
+		8D07826C2B751D5200AC2B4F /* UIView+Extenison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D07826B2B751D5200AC2B4F /* UIView+Extenison.swift */; };
+		8D6B4B0E2B7520B000A8CA85 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B4AFE2B7520AF00A8CA85 /* Nunito-Bold.ttf */; };
+		8D6B4B102B7520B000A8CA85 /* Nunito-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B4B002B7520AF00A8CA85 /* Nunito-ExtraLight.ttf */; };
+		8D6B4B142B7520B000A8CA85 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B4B042B7520AF00A8CA85 /* Nunito-Regular.ttf */; };
+		8D6B4B172B7520B000A8CA85 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B4B072B7520AF00A8CA85 /* Nunito-Light.ttf */; };
+		8D6B4B1A2B7520B000A8CA85 /* Nunito-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B4B0A2B7520B000A8CA85 /* Nunito-Medium.ttf */; };
+		8D6B4B1C2B7520B000A8CA85 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B4B0C2B7520B000A8CA85 /* Nunito-SemiBold.ttf */; };
+		8D6B4B1F2B75227800A8CA85 /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B4B1E2B75227800A8CA85 /* HeaderLabel.swift */; };
+		8D6B4B212B7522B600A8CA85 /* RegularLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B4B202B7522B600A8CA85 /* RegularLabel.swift */; };
+		8D6B4B232B7522D800A8CA85 /* MediumLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B4B222B7522D800A8CA85 /* MediumLabel.swift */; };
+		8D6B4B272B7524A900A8CA85 /* LandingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B4B252B7524A900A8CA85 /* LandingCell.swift */; };
+		8D6B4B282B7524A900A8CA85 /* LandingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B4B262B7524A900A8CA85 /* LandingCell.xib */; };
+		8D6B4B2D2B7525FA00A8CA85 /* ClassNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B4B2C2B7525FA00A8CA85 /* ClassNameProtocol.swift */; };
+		8D6B4B302B75292600A8CA85 /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B4B2F2B75292600A8CA85 /* LandingViewModel.swift */; };
+		8D6B4B332B75294E00A8CA85 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B4B322B75294E00A8CA85 /* File.swift */; };
 		8D8A28292B750407009FD7A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A28282B750407009FD7A2 /* AppDelegate.swift */; };
 		8D8A282B2B750407009FD7A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A282A2B750407009FD7A2 /* SceneDelegate.swift */; };
-		8D8A282D2B750407009FD7A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A282C2B750407009FD7A2 /* ViewController.swift */; };
 		8D8A28302B750407009FD7A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D8A282E2B750407009FD7A2 /* Main.storyboard */; };
 		8D8A28322B750409009FD7A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D8A28312B750409009FD7A2 /* Assets.xcassets */; };
 		8D8A28352B750409009FD7A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D8A28332B750409009FD7A2 /* LaunchScreen.storyboard */; };
@@ -22,10 +38,26 @@
 		328CEADAB895A01B43E490B3 /* Pods-MovieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieApp.debug.xcconfig"; path = "Target Support Files/Pods-MovieApp/Pods-MovieApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8D07825D2B750BEC00AC2B4F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		8D07825F2B750D3200AC2B4F /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		8D0782632B751B3E00AC2B4F /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		8D0782682B751C0D00AC2B4F /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		8D07826B2B751D5200AC2B4F /* UIView+Extenison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extenison.swift"; sourceTree = "<group>"; };
+		8D6B4AFE2B7520AF00A8CA85 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		8D6B4B002B7520AF00A8CA85 /* Nunito-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraLight.ttf"; sourceTree = "<group>"; };
+		8D6B4B042B7520AF00A8CA85 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		8D6B4B072B7520AF00A8CA85 /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
+		8D6B4B0A2B7520B000A8CA85 /* Nunito-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Medium.ttf"; sourceTree = "<group>"; };
+		8D6B4B0C2B7520B000A8CA85 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
+		8D6B4B1E2B75227800A8CA85 /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
+		8D6B4B202B7522B600A8CA85 /* RegularLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularLabel.swift; sourceTree = "<group>"; };
+		8D6B4B222B7522D800A8CA85 /* MediumLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumLabel.swift; sourceTree = "<group>"; };
+		8D6B4B252B7524A900A8CA85 /* LandingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingCell.swift; sourceTree = "<group>"; };
+		8D6B4B262B7524A900A8CA85 /* LandingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LandingCell.xib; sourceTree = "<group>"; };
+		8D6B4B2C2B7525FA00A8CA85 /* ClassNameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameProtocol.swift; sourceTree = "<group>"; };
+		8D6B4B2F2B75292600A8CA85 /* LandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
+		8D6B4B322B75294E00A8CA85 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		8D8A28252B750407009FD7A2 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8A28282B750407009FD7A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D8A282A2B750407009FD7A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8D8A282C2B750407009FD7A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8D8A282F2B750407009FD7A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D8A28312B750409009FD7A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D8A28342B750409009FD7A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +95,103 @@
 			path = "UIColor+Extension";
 			sourceTree = "<group>";
 		};
+		8D0782612B751ABB00AC2B4F /* LandingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8D6B4B2E2B75291800A8CA85 /* VM */,
+				8D6B4B242B75248600A8CA85 /* cell */,
+				8D0782682B751C0D00AC2B4F /* LandingViewController.swift */,
+			);
+			path = LandingViewController;
+			sourceTree = "<group>";
+		};
+		8D0782622B751B2700AC2B4F /* InitialViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8D0782632B751B3E00AC2B4F /* InitialViewController.swift */,
+			);
+			path = InitialViewController;
+			sourceTree = "<group>";
+		};
+		8D07826A2B751D4000AC2B4F /* UIView+Extenison */ = {
+			isa = PBXGroup;
+			children = (
+				8D07826B2B751D5200AC2B4F /* UIView+Extenison.swift */,
+			);
+			path = "UIView+Extenison";
+			sourceTree = "<group>";
+		};
+		8D6B4AFC2B75209B00A8CA85 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8D6B4AFE2B7520AF00A8CA85 /* Nunito-Bold.ttf */,
+				8D6B4B002B7520AF00A8CA85 /* Nunito-ExtraLight.ttf */,
+				8D6B4B072B7520AF00A8CA85 /* Nunito-Light.ttf */,
+				8D6B4B0A2B7520B000A8CA85 /* Nunito-Medium.ttf */,
+				8D6B4B042B7520AF00A8CA85 /* Nunito-Regular.ttf */,
+				8D6B4B0C2B7520B000A8CA85 /* Nunito-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8D6B4B1D2B75226800A8CA85 /* CustomLabels */ = {
+			isa = PBXGroup;
+			children = (
+				8D6B4B1E2B75227800A8CA85 /* HeaderLabel.swift */,
+				8D6B4B202B7522B600A8CA85 /* RegularLabel.swift */,
+				8D6B4B222B7522D800A8CA85 /* MediumLabel.swift */,
+			);
+			path = CustomLabels;
+			sourceTree = "<group>";
+		};
+		8D6B4B242B75248600A8CA85 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				8D6B4B252B7524A900A8CA85 /* LandingCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		8D6B4B292B7524AE00A8CA85 /* LandingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8D6B4B2A2B7524B800A8CA85 /* cell */,
+			);
+			path = LandingViewController;
+			sourceTree = "<group>";
+		};
+		8D6B4B2A2B7524B800A8CA85 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				8D6B4B262B7524A900A8CA85 /* LandingCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		8D6B4B2B2B7525E900A8CA85 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8D6B4B2C2B7525FA00A8CA85 /* ClassNameProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8D6B4B2E2B75291800A8CA85 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				8D6B4B2F2B75292600A8CA85 /* LandingViewModel.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		8D6B4B312B75294400A8CA85 /* LandingModel */ = {
+			isa = PBXGroup;
+			children = (
+				8D6B4B322B75294E00A8CA85 /* File.swift */,
+			);
+			path = LandingModel;
+			sourceTree = "<group>";
+		};
 		8D8A281C2B750407009FD7A2 = {
 			isa = PBXGroup;
 			children = (
@@ -91,7 +220,6 @@
 				8D9E07B12B75061700E0ADCD /* Base */,
 				8D8A28282B750407009FD7A2 /* AppDelegate.swift */,
 				8D8A282A2B750407009FD7A2 /* SceneDelegate.swift */,
-				8D8A282C2B750407009FD7A2 /* ViewController.swift */,
 				8D8A282E2B750407009FD7A2 /* Main.storyboard */,
 				8D8A28312B750409009FD7A2 /* Assets.xcassets */,
 				8D07825F2B750D3200AC2B4F /* Color.xcassets */,
@@ -104,6 +232,10 @@
 		8D9E07AC2B7505D900E0ADCD /* Helper+Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8D6B4B2B2B7525E900A8CA85 /* Protocols */,
+				8D6B4B1D2B75226800A8CA85 /* CustomLabels */,
+				8D6B4AFC2B75209B00A8CA85 /* Fonts */,
+				8D07826A2B751D4000AC2B4F /* UIView+Extenison */,
 				8D07825C2B750BD800AC2B4F /* UIColor+Extension */,
 			);
 			path = "Helper+Extensions";
@@ -112,6 +244,7 @@
 		8D9E07AE2B75060600E0ADCD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8D6B4B292B7524AE00A8CA85 /* LandingViewController */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -119,6 +252,8 @@
 		8D9E07AF2B75060D00E0ADCD /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				8D0782622B751B2700AC2B4F /* InitialViewController */,
+				8D0782612B751ABB00AC2B4F /* LandingViewController */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -126,6 +261,7 @@
 		8D9E07B02B75061100E0ADCD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8D6B4B312B75294400A8CA85 /* LandingModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,8 +343,15 @@
 			files = (
 				8D8A28352B750409009FD7A2 /* LaunchScreen.storyboard in Resources */,
 				8D0782602B750D3300AC2B4F /* Color.xcassets in Resources */,
+				8D6B4B1C2B7520B000A8CA85 /* Nunito-SemiBold.ttf in Resources */,
 				8D8A28322B750409009FD7A2 /* Assets.xcassets in Resources */,
+				8D6B4B1A2B7520B000A8CA85 /* Nunito-Medium.ttf in Resources */,
+				8D6B4B282B7524A900A8CA85 /* LandingCell.xib in Resources */,
+				8D6B4B0E2B7520B000A8CA85 /* Nunito-Bold.ttf in Resources */,
+				8D6B4B142B7520B000A8CA85 /* Nunito-Regular.ttf in Resources */,
 				8D8A28302B750407009FD7A2 /* Main.storyboard in Resources */,
+				8D6B4B172B7520B000A8CA85 /* Nunito-Light.ttf in Resources */,
+				8D6B4B102B7520B000A8CA85 /* Nunito-ExtraLight.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +404,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D8A282D2B750407009FD7A2 /* ViewController.swift in Sources */,
+				8D6B4B1F2B75227800A8CA85 /* HeaderLabel.swift in Sources */,
+				8D07826C2B751D5200AC2B4F /* UIView+Extenison.swift in Sources */,
+				8D0782642B751B3E00AC2B4F /* InitialViewController.swift in Sources */,
+				8D6B4B272B7524A900A8CA85 /* LandingCell.swift in Sources */,
+				8D6B4B232B7522D800A8CA85 /* MediumLabel.swift in Sources */,
 				8D8A28292B750407009FD7A2 /* AppDelegate.swift in Sources */,
 				8D8A282B2B750407009FD7A2 /* SceneDelegate.swift in Sources */,
+				8D0782692B751C0D00AC2B4F /* LandingViewController.swift in Sources */,
+				8D6B4B2D2B7525FA00A8CA85 /* ClassNameProtocol.swift in Sources */,
 				8D07825E2B750BEC00AC2B4F /* UIColor+Extension.swift in Sources */,
+				8D6B4B332B75294E00A8CA85 /* File.swift in Sources */,
+				8D6B4B302B75292600A8CA85 /* LandingViewModel.swift in Sources */,
+				8D6B4B212B7522B600A8CA85 /* RegularLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
