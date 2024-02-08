@@ -1,9 +1,3 @@
-//
-//  ViewController.swift
-//  MovieApp
-//
-//  Created by srbrt on 8.02.2024.
-//
 
 import UIKit
 
