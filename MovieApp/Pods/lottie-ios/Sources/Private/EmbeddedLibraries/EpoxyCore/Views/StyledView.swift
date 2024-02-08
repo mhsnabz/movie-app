@@ -22,21 +22,21 @@
 /// - SeeAlso: `BehaviorsConfigurableView`
 /// - SeeAlso: `EpoxyableView`
 protocol StyledView: ViewType {
-  /// The style type of this view, passed into its initializer to configure the resulting instance.
-  ///
-  /// Defaults to `Never` for views that do not have a `Style`.
-  associatedtype Style: Hashable = Never
+    /// The style type of this view, passed into its initializer to configure the resulting instance.
+    ///
+    /// Defaults to `Never` for views that do not have a `Style`.
+    associatedtype Style: Hashable = Never
 
-  /// Creates an instance of this view configured with the given `Style` instance.
-  init(style: Style)
+    /// Creates an instance of this view configured with the given `Style` instance.
+    init(style: Style)
 }
 
 // MARK: Defaults
 
 extension StyledView where Style == Never {
-  init(style: Never) {
-    // An empty switch is required to silence the "'self.init' isn't called on all paths before
-    // returning from initializer" error.
-    switch style { }
-  }
+    init(style: Never) {
+        // An empty switch is required to silence the "'self.init' isn't called on all paths before
+        // returning from initializer" error.
+        switch style {}
+    }
 }

@@ -10,38 +10,37 @@ import Foundation
 
 /// A container for a node value that is Typed to T.
 class ValueContainer<T>: AnyValueContainer {
+    // MARK: Lifecycle
 
-  // MARK: Lifecycle
-
-  init(_ value: T) {
-    outputValue = value
-  }
-
-  // MARK: Internal
-
-  private(set) var lastUpdateFrame = CGFloat.infinity
-
-  fileprivate(set) var needsUpdate = true
-
-  var value: Any {
-    outputValue as Any
-  }
-
-  var outputValue: T {
-    didSet {
-      needsUpdate = false
+    init(_ value: T) {
+        outputValue = value
     }
-  }
 
-  func setValue(_ value: Any, forFrame: CGFloat) {
-    if let typedValue = value as? T {
-      needsUpdate = false
-      lastUpdateFrame = forFrame
-      outputValue = typedValue
+    // MARK: Internal
+
+    private(set) var lastUpdateFrame = CGFloat.infinity
+
+    fileprivate(set) var needsUpdate = true
+
+    var value: Any {
+        outputValue as Any
     }
-  }
 
-  func setNeedsUpdate() {
-    needsUpdate = true
-  }
+    var outputValue: T {
+        didSet {
+            needsUpdate = false
+        }
+    }
+
+    func setValue(_ value: Any, forFrame: CGFloat) {
+        if let typedValue = value as? T {
+            needsUpdate = false
+            lastUpdateFrame = forFrame
+            outputValue = typedValue
+        }
+    }
+
+    func setNeedsUpdate() {
+        needsUpdate = true
+    }
 }

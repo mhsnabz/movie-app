@@ -9,35 +9,35 @@ import SwiftUI
 /// `configuration` closures.
 @available(iOS 13.0, tvOS 13.0, macOS 10.15, *)
 protocol UIViewConfiguringSwiftUIView: View {
-  /// The context available to this configuration, which provides the `UIView` instance at a minimum
-  /// but can include additional context as needed.
-  associatedtype ConfigurationContext: ViewProviding
+    /// The context available to this configuration, which provides the `UIView` instance at a minimum
+    /// but can include additional context as needed.
+    associatedtype ConfigurationContext: ViewProviding
 
-  /// A closure that is invoked to configure the represented content view.
-  typealias Configuration = (ConfigurationContext) -> Void
+    /// A closure that is invoked to configure the represented content view.
+    typealias Configuration = (ConfigurationContext) -> Void
 
-  /// A mutable array of configuration closures that should each be invoked with the
-  /// `ConfigurationContext` whenever `updateUIView` is called in a `UIViewRepresentable`.
-  var configurations: [Configuration] { get set }
+    /// A mutable array of configuration closures that should each be invoked with the
+    /// `ConfigurationContext` whenever `updateUIView` is called in a `UIViewRepresentable`.
+    var configurations: [Configuration] { get set }
 }
 
 // MARK: Extensions
 
 @available(iOS 13.0, tvOS 13.0, macOS 10.15, *)
 extension UIViewConfiguringSwiftUIView {
-  /// Returns a copy of this view updated to have the given closure applied to its represented view
-  /// whenever it is updated via the `updateUIView(…)` method.
-  func configure(_ configure: @escaping Configuration) -> Self {
-    var copy = self
-    copy.configurations.append(configure)
-    return copy
-  }
+    /// Returns a copy of this view updated to have the given closure applied to its represented view
+    /// whenever it is updated via the `updateUIView(…)` method.
+    func configure(_ configure: @escaping Configuration) -> Self {
+        var copy = self
+        copy.configurations.append(configure)
+        return copy
+    }
 
-  /// Returns a copy of this view updated to have the given closures applied to its represented view
-  /// whenever it is updated via the `updateUIView(…)` method.
-  func configurations(_ configurations: [Configuration]) -> Self {
-    var copy = self
-    copy.configurations.append(contentsOf: configurations)
-    return copy
-  }
+    /// Returns a copy of this view updated to have the given closures applied to its represented view
+    /// whenever it is updated via the `updateUIView(…)` method.
+    func configurations(_ configurations: [Configuration]) -> Self {
+        var copy = self
+        copy.configurations.append(contentsOf: configurations)
+        return copy
+    }
 }

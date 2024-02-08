@@ -18,19 +18,19 @@
 /// - SeeAlso: `StyledView`
 /// - SeeAlso: `EpoxyableView`
 protocol ContentConfigurableView: ViewType {
-  /// The `Equatable` properties that can be updated on instances of this view, e.g. text `String`s
-  /// or image `URL`s.
-  ///
-  /// Defaults to `Never` for views that do not have `Content`.
-  associatedtype Content: Equatable = Never
+    /// The `Equatable` properties that can be updated on instances of this view, e.g. text `String`s
+    /// or image `URL`s.
+    ///
+    /// Defaults to `Never` for views that do not have `Content`.
+    associatedtype Content: Equatable = Never
 
-  /// Updates the content of this view to the properties of the given `content`, optionally
-  /// animating the updates.
-  func setContent(_ content: Self.Content, animated: Bool)
+    /// Updates the content of this view to the properties of the given `content`, optionally
+    /// animating the updates.
+    func setContent(_ content: Self.Content, animated: Bool)
 }
 
 // MARK: Defaults
 
 extension ContentConfigurableView where Content == Never {
-  func setContent(_: Never, animated _: Bool) { }
+    func setContent(_: Never, animated _: Bool) {}
 }

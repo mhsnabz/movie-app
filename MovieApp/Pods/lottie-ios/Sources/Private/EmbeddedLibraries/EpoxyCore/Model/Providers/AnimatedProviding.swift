@@ -5,6 +5,6 @@
 ///
 /// Typically conformed to by the `CallbackContext` of a `CallbackContextEpoxyModeled`.
 protocol AnimatedProviding {
-  /// Whether this operation should be animated.
-  var animated: Bool { get }
+    /// Whether this operation should be animated.
+    var animated: Bool { get }
 }

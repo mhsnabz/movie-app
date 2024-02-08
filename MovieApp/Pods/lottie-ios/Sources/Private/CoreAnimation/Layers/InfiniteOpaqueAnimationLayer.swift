@@ -9,48 +9,48 @@ import QuartzCore
 /// as if the layer is infinitely large, without affecting its bounds
 /// or the bounds of its sublayers
 final class InfiniteOpaqueAnimationLayer: BaseAnimationLayer {
+    // MARK: Lifecycle
 
-  // MARK: Lifecycle
+    override init() {
+        super.init()
+        addSublayer(additionalPaddingLayer)
+    }
 
-  override init() {
-    super.init()
-    addSublayer(additionalPaddingLayer)
-  }
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
-  required init?(coder _: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
+    /// Called by CoreAnimation to create a shadow copy of this layer
+    /// More details: https://developer.apple.com/documentation/quartzcore/calayer/1410842-init
+    override init(layer: Any) {
+        super.init(layer: layer)
+    }
 
-  /// Called by CoreAnimation to create a shadow copy of this layer
-  /// More details: https://developer.apple.com/documentation/quartzcore/calayer/1410842-init
-  override init(layer: Any) {
-    super.init(layer: layer)
-  }
+    // MARK: Internal
 
-  // MARK: Internal
+    override func layoutSublayers() {
+        super.layoutSublayers()
 
-  override func layoutSublayers() {
-    super.layoutSublayers()
+        masksToBounds = false
+        additionalPaddingLayer.backgroundColor = backgroundColor
 
-    masksToBounds = false
-    additionalPaddingLayer.backgroundColor = backgroundColor
+        // Scale `additionalPaddingLayer` to be larger than this layer
+        // by `additionalPadding` at each size, and centered at the center
+        // of this layer. Since `additionalPadding` is very large, this has
+        // the affect of making `additionalPaddingLayer` appear infinite.
+        let scaleRatioX = (bounds.width + (CALayer.veryLargeLayerPadding * 2)) / bounds.width
+        let scaleRatioY = (bounds.height + (CALayer.veryLargeLayerPadding * 2)) / bounds.height
 
-    // Scale `additionalPaddingLayer` to be larger than this layer
-    // by `additionalPadding` at each size, and centered at the center
-    // of this layer. Since `additionalPadding` is very large, this has
-    // the affect of making `additionalPaddingLayer` appear infinite.
-    let scaleRatioX = (bounds.width + (CALayer.veryLargeLayerPadding * 2)) / bounds.width
-    let scaleRatioY = (bounds.height + (CALayer.veryLargeLayerPadding * 2)) / bounds.height
+        additionalPaddingLayer.transform = CATransform3DScale(
+            CATransform3DMakeTranslation(-CALayer.veryLargeLayerPadding, -CALayer.veryLargeLayerPadding, 0),
+            scaleRatioX,
+            scaleRatioY,
+            1
+        )
+    }
 
-    additionalPaddingLayer.transform = CATransform3DScale(
-      CATransform3DMakeTranslation(-CALayer.veryLargeLayerPadding, -CALayer.veryLargeLayerPadding, 0),
-      scaleRatioX,
-      scaleRatioY,
-      1)
-  }
+    // MARK: Private
 
-  // MARK: Private
-
-  private let additionalPaddingLayer = CALayer()
-
+    private let additionalPaddingLayer = CALayer()
 }

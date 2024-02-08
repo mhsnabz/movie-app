@@ -20,78 +20,80 @@ import QuartzCore
 ///    the gradient can be drawn outside of the `gradientReferenceBounds`.
 ///
 final class GradientRenderLayer: CAGradientLayer {
+    // MARK: Internal
 
-  // MARK: Internal
-
-  /// The reference bounds within this layer that the gradient's
-  /// `startPoint` and `endPoint` should be calculated relative to
-  var gradientReferenceBounds: CGRect = .zero {
-    didSet {
-      if oldValue != gradientReferenceBounds {
-        updateLayout()
-      }
-    }
-  }
-
-  /// Converts the given `CGPoint` within `gradientReferenceBounds`
-  /// to a percentage value relative to the full `bounds` of this layer
-  ///  - This converts absolute `startPoint` and `endPoint` values into
-  ///    the percent-based values expected by Core Animation,
-  ///    with respect to the custom bounds geometry used by this layer type.
-  func percentBasedPointInBounds(from referencePoint: CGPoint) -> CGPoint {
-    guard bounds.width > 0, bounds.height > 0 else {
-      LottieLogger.shared.assertionFailure("Size must be non-zero before an animation can be played")
-      return .zero
+    /// The reference bounds within this layer that the gradient's
+    /// `startPoint` and `endPoint` should be calculated relative to
+    var gradientReferenceBounds: CGRect = .zero {
+        didSet {
+            if oldValue != gradientReferenceBounds {
+                updateLayout()
+            }
+        }
     }
 
-    let pointInBounds = CGPoint(
-      x: referencePoint.x + CALayer.veryLargeLayerPadding,
-      y: referencePoint.y + CALayer.veryLargeLayerPadding)
+    /// Converts the given `CGPoint` within `gradientReferenceBounds`
+    /// to a percentage value relative to the full `bounds` of this layer
+    ///  - This converts absolute `startPoint` and `endPoint` values into
+    ///    the percent-based values expected by Core Animation,
+    ///    with respect to the custom bounds geometry used by this layer type.
+    func percentBasedPointInBounds(from referencePoint: CGPoint) -> CGPoint {
+        guard bounds.width > 0, bounds.height > 0 else {
+            LottieLogger.shared.assertionFailure("Size must be non-zero before an animation can be played")
+            return .zero
+        }
 
-    return CGPoint(
-      x: CGFloat(pointInBounds.x) / bounds.width,
-      y: CGFloat(pointInBounds.y) / bounds.height)
-  }
+        let pointInBounds = CGPoint(
+            x: referencePoint.x + CALayer.veryLargeLayerPadding,
+            y: referencePoint.y + CALayer.veryLargeLayerPadding
+        )
 
-  // MARK: Private
+        return CGPoint(
+            x: CGFloat(pointInBounds.x) / bounds.width,
+            y: CGFloat(pointInBounds.y) / bounds.height
+        )
+    }
 
-  private func updateLayout() {
-    anchorPoint = .zero
+    // MARK: Private
 
-    bounds = CGRect(
-      x: gradientReferenceBounds.origin.x,
-      y: gradientReferenceBounds.origin.y,
-      width: CALayer.veryLargeLayerPadding + gradientReferenceBounds.width + CALayer.veryLargeLayerPadding,
-      height: CALayer.veryLargeLayerPadding + gradientReferenceBounds.height + CALayer.veryLargeLayerPadding)
+    private func updateLayout() {
+        anchorPoint = .zero
 
-    // Align the center of this layer to be at the center point of its parent layer
-    let superlayerSize = superlayer?.frame.size ?? gradientReferenceBounds.size
+        bounds = CGRect(
+            x: gradientReferenceBounds.origin.x,
+            y: gradientReferenceBounds.origin.y,
+            width: CALayer.veryLargeLayerPadding + gradientReferenceBounds.width + CALayer.veryLargeLayerPadding,
+            height: CALayer.veryLargeLayerPadding + gradientReferenceBounds.height + CALayer.veryLargeLayerPadding
+        )
 
-    transform = CATransform3DMakeTranslation(
-      (superlayerSize.width - bounds.width) / 2,
-      (superlayerSize.height - bounds.height) / 2,
-      0)
-  }
+        // Align the center of this layer to be at the center point of its parent layer
+        let superlayerSize = superlayer?.frame.size ?? gradientReferenceBounds.size
 
+        transform = CATransform3DMakeTranslation(
+            (superlayerSize.width - bounds.width) / 2,
+            (superlayerSize.height - bounds.height) / 2,
+            0
+        )
+    }
 }
 
 // MARK: CustomLayoutLayer
 
 extension GradientRenderLayer: CustomLayoutLayer {
-  func layout(superlayerBounds: CGRect) {
-    gradientReferenceBounds = superlayerBounds
+    func layout(superlayerBounds: CGRect) {
+        gradientReferenceBounds = superlayerBounds
 
-    if let gradientMask = mask as? GradientRenderLayer {
-      gradientMask.layout(superlayerBounds: superlayerBounds)
+        if let gradientMask = mask as? GradientRenderLayer {
+            gradientMask.layout(superlayerBounds: superlayerBounds)
+        }
     }
-  }
 }
 
 extension CALayer {
-  /// Extra padding to add around layers that should be very large or "infinite" in size.
-  /// Examples include `GradientRenderLayer` and `InfiniteOpaqueAnimationLayer`.
-  ///  - This specific value is arbitrary and can be increased if necessary.
-  ///  - Theoretically this should be "infinite", to match the behavior of
-  ///    `CGContext.drawLinearGradient` with `[.drawsAfterEndLocation, .drawsBeforeStartLocation]` etc.
-  static let veryLargeLayerPadding: CGFloat = 10_000
+    /// Extra padding to add around layers that should be very large or "infinite" in size.
+    /// Examples include `GradientRenderLayer` and `InfiniteOpaqueAnimationLayer`.
+    ///  - This specific value is arbitrary and can be increased if necessary.
+    ///  - Theoretically this should be "infinite", to match the behavior of
+    ///    `CGContext.drawLinearGradient` with `[.drawsAfterEndLocation, .drawsBeforeStartLocation]` etc.
+    static let veryLargeLayerPadding: CGFloat = 10000
 }

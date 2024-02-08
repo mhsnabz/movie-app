@@ -10,46 +10,45 @@ import Foundation
 
 /// A node property that holds a reference to a T ValueProvider and a T ValueContainer.
 class NodeProperty<T>: AnyNodeProperty {
+    // MARK: Lifecycle
 
-  // MARK: Lifecycle
+    init(provider: AnyValueProvider) {
+        valueProvider = provider
+        originalValueProvider = valueProvider
+        typedContainer = ValueContainer<T>(provider.value(frame: 0) as! T)
+        typedContainer.setNeedsUpdate()
+    }
 
-  init(provider: AnyValueProvider) {
-    valueProvider = provider
-    originalValueProvider = valueProvider
-    typedContainer = ValueContainer<T>(provider.value(frame: 0) as! T)
-    typedContainer.setNeedsUpdate()
-  }
+    // MARK: Internal
 
-  // MARK: Internal
+    var valueProvider: AnyValueProvider
+    var originalValueProvider: AnyValueProvider
 
-  var valueProvider: AnyValueProvider
-  var originalValueProvider: AnyValueProvider
+    var valueType: Any.Type { T.self }
 
-  var valueType: Any.Type { T.self }
+    var value: T {
+        typedContainer.outputValue
+    }
 
-  var value: T {
-    typedContainer.outputValue
-  }
+    var valueContainer: AnyValueContainer {
+        typedContainer
+    }
 
-  var valueContainer: AnyValueContainer {
-    typedContainer
-  }
+    func needsUpdate(frame: CGFloat) -> Bool {
+        valueContainer.needsUpdate || valueProvider.hasUpdate(frame: frame)
+    }
 
-  func needsUpdate(frame: CGFloat) -> Bool {
-    valueContainer.needsUpdate || valueProvider.hasUpdate(frame: frame)
-  }
+    func setProvider(provider: AnyValueProvider) {
+        guard provider.valueType == valueType else { return }
+        valueProvider = provider
+        valueContainer.setNeedsUpdate()
+    }
 
-  func setProvider(provider: AnyValueProvider) {
-    guard provider.valueType == valueType else { return }
-    valueProvider = provider
-    valueContainer.setNeedsUpdate()
-  }
+    func update(frame: CGFloat) {
+        typedContainer.setValue(valueProvider.value(frame: frame), forFrame: frame)
+    }
 
-  func update(frame: CGFloat) {
-    typedContainer.setValue(valueProvider.value(frame: frame), forFrame: frame)
-  }
+    // MARK: Fileprivate
 
-  // MARK: Fileprivate
-
-  fileprivate var typedContainer: ValueContainer<T>
+    fileprivate var typedContainer: ValueContainer<T>
 }

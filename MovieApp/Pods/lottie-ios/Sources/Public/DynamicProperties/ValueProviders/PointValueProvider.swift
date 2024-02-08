@@ -12,72 +12,71 @@ import Foundation
 
 /// A `ValueProvider` that returns a CGPoint Value
 public final class PointValueProvider: ValueProvider {
+    // MARK: Lifecycle
 
-  // MARK: Lifecycle
-
-  /// Initializes with a block provider
-  public init(block: @escaping PointValueBlock) {
-    self.block = block
-    point = .zero
-    identity = UUID()
-  }
-
-  /// Initializes with a single point.
-  public init(_ point: CGPoint) {
-    self.point = point
-    block = nil
-    hasUpdate = true
-    identity = [point.x, point.y]
-  }
-
-  // MARK: Public
-
-  /// Returns a CGPoint for a CGFloat(Frame Time)
-  public typealias PointValueBlock = (CGFloat) -> CGPoint
-
-  public var point: CGPoint {
-    didSet {
-      hasUpdate = true
+    /// Initializes with a block provider
+    public init(block: @escaping PointValueBlock) {
+        self.block = block
+        point = .zero
+        identity = UUID()
     }
-  }
 
-  // MARK: ValueProvider Protocol
-
-  public var valueType: Any.Type {
-    LottieVector3D.self
-  }
-
-  public var storage: ValueProviderStorage<LottieVector3D> {
-    if let block = block {
-      return .closure { frame in
-        self.hasUpdate = false
-        return block(frame).vector3dValue
-      }
-    } else {
-      hasUpdate = false
-      return .singleValue(point.vector3dValue)
+    /// Initializes with a single point.
+    public init(_ point: CGPoint) {
+        self.point = point
+        block = nil
+        hasUpdate = true
+        identity = [point.x, point.y]
     }
-  }
 
-  public func hasUpdate(frame _: CGFloat) -> Bool {
-    if block != nil {
-      return true
+    // MARK: Public
+
+    /// Returns a CGPoint for a CGFloat(Frame Time)
+    public typealias PointValueBlock = (CGFloat) -> CGPoint
+
+    public var point: CGPoint {
+        didSet {
+            hasUpdate = true
+        }
     }
-    return hasUpdate
-  }
 
-  // MARK: Private
+    // MARK: ValueProvider Protocol
 
-  private var hasUpdate = true
+    public var valueType: Any.Type {
+        LottieVector3D.self
+    }
 
-  private var block: PointValueBlock?
-  private let identity: AnyHashable
+    public var storage: ValueProviderStorage<LottieVector3D> {
+        if let block = block {
+            return .closure { frame in
+                self.hasUpdate = false
+                return block(frame).vector3dValue
+            }
+        } else {
+            hasUpdate = false
+            return .singleValue(point.vector3dValue)
+        }
+    }
+
+    public func hasUpdate(frame _: CGFloat) -> Bool {
+        if block != nil {
+            return true
+        }
+        return hasUpdate
+    }
+
+    // MARK: Private
+
+    private var hasUpdate = true
+
+    private var block: PointValueBlock?
+    private let identity: AnyHashable
 }
 
 // MARK: Equatable
 
 extension PointValueProvider: Equatable {
-  public static func ==(_ lhs: PointValueProvider, _ rhs: PointValueProvider) -> Bool {
-    lhs.identity == rhs.identity
-  }
+    public static func == (_ lhs: PointValueProvider, _ rhs: PointValueProvider) -> Bool {
+        lhs.identity == rhs.identity
+    }
 }

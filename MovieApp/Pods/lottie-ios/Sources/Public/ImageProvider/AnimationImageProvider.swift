@@ -1,5 +1,5 @@
 //
-//  LottieImageProvider.swift
+//  AnimationImageProvider.swift
 //  lottie-swift
 //
 //  Created by Brandon Withrow on 1/25/19.
@@ -20,26 +20,25 @@ import QuartzCore
 /// Additionally custom Image Providers can be made to load images from a URL,
 /// or to Cache images.
 public protocol AnimationImageProvider {
+    /// Whether or not the resulting image of this image provider can be cached by Lottie. Defaults to true.
+    /// If true, Lottie may internally cache the result of `imageForAsset`
+    var cacheEligible: Bool { get }
 
-  /// Whether or not the resulting image of this image provider can be cached by Lottie. Defaults to true.
-  /// If true, Lottie may internally cache the result of `imageForAsset`
-  var cacheEligible: Bool { get }
+    /// The image to display for the given `ImageAsset` defined in the `LottieAnimation` JSON file.
+    func imageForAsset(asset: ImageAsset) -> CGImage?
 
-  /// The image to display for the given `ImageAsset` defined in the `LottieAnimation` JSON file.
-  func imageForAsset(asset: ImageAsset) -> CGImage?
-
-  /// Specifies how the layer's contents are positioned or scaled within its bounds for a given asset.
-  /// Defaults to `.resize`, which stretches the image to fill the layer.
-  func contentsGravity(for asset: ImageAsset) -> CALayerContentsGravity
+    /// Specifies how the layer's contents are positioned or scaled within its bounds for a given asset.
+    /// Defaults to `.resize`, which stretches the image to fill the layer.
+    func contentsGravity(for asset: ImageAsset) -> CALayerContentsGravity
 }
 
-extension AnimationImageProvider {
-  public var cacheEligible: Bool {
-    true
-  }
+public extension AnimationImageProvider {
+    var cacheEligible: Bool {
+        true
+    }
 
-  /// The default value is `.resize`, similar to that of `CALayer`.
-  public func contentsGravity(for _: ImageAsset) -> CALayerContentsGravity {
-    .resize
-  }
+    /// The default value is `.resize`, similar to that of `CALayer`.
+    func contentsGravity(for _: ImageAsset) -> CALayerContentsGravity {
+        .resize
+    }
 }

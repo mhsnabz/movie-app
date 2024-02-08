@@ -1,5 +1,5 @@
 //
-//  LRUDotLottieCache.swift
+//  DotLottieCache.swift
 //  Lottie
 //
 //  Created by Evandro Hoffmann on 20/10/22.
@@ -12,42 +12,40 @@ import Foundation
 /// Once `cacheSize` is reached, the least recently used lottie will be ejected.
 /// The default size of the cache is 100.
 public class DotLottieCache: DotLottieCacheProvider {
+    // MARK: Lifecycle
 
-  // MARK: Lifecycle
-
-  public init() {
-    cache.countLimit = Self.defaultCacheCountLimit
-  }
-
-  // MARK: Public
-
-  /// The global shared Cache.
-  public static let sharedCache = DotLottieCache()
-
-  /// The size of the cache.
-  public var cacheSize = defaultCacheCountLimit {
-    didSet {
-      cache.countLimit = cacheSize
+    public init() {
+        cache.countLimit = Self.defaultCacheCountLimit
     }
-  }
 
-  /// Clears the Cache.
-  public func clearCache() {
-    cache.removeAllObjects()
-  }
+    // MARK: Public
 
-  public func file(forKey key: String) -> DotLottieFile? {
-    cache.object(forKey: key as NSString)
-  }
+    /// The global shared Cache.
+    public static let sharedCache = DotLottieCache()
 
-  public func setFile(_ lottie: DotLottieFile, forKey key: String) {
-    cache.setObject(lottie, forKey: key as NSString)
-  }
+    /// The size of the cache.
+    public var cacheSize = defaultCacheCountLimit {
+        didSet {
+            cache.countLimit = cacheSize
+        }
+    }
 
-  // MARK: Private
+    /// Clears the Cache.
+    public func clearCache() {
+        cache.removeAllObjects()
+    }
 
-  private static let defaultCacheCountLimit = 100
+    public func file(forKey key: String) -> DotLottieFile? {
+        cache.object(forKey: key as NSString)
+    }
 
-  private var cache = NSCache<NSString, DotLottieFile>()
+    public func setFile(_ lottie: DotLottieFile, forKey key: String) {
+        cache.setObject(lottie, forKey: key as NSString)
+    }
 
+    // MARK: Private
+
+    private static let defaultCacheCountLimit = 100
+
+    private var cache = NSCache<NSString, DotLottieFile>()
 }

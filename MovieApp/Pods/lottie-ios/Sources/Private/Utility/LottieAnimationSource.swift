@@ -7,35 +7,35 @@
 /// Either a `LottieAnimation` loaded from a `.json` file,
 /// or a `DotLottieFile` loaded from a `.lottie` file.
 public enum LottieAnimationSource: Sendable {
-  /// A `LottieAnimation` loaded from a `.json` file
-  case lottieAnimation(LottieAnimation)
+    /// A `LottieAnimation` loaded from a `.json` file
+    case lottieAnimation(LottieAnimation)
 
-  /// A `DotLottieFile` loaded from a `.lottie` file
-  case dotLottieFile(DotLottieFile)
+    /// A `DotLottieFile` loaded from a `.lottie` file
+    case dotLottieFile(DotLottieFile)
 }
 
 extension LottieAnimationSource {
-  /// The default animation displayed by this data source
-  var animation: LottieAnimation? {
-    switch self {
-    case .lottieAnimation(let animation):
-      return animation
-    case .dotLottieFile(let dotLottieFile):
-      return dotLottieFile.animation()?.animation
+    /// The default animation displayed by this data source
+    var animation: LottieAnimation? {
+        switch self {
+        case let .lottieAnimation(animation):
+            return animation
+        case let .dotLottieFile(dotLottieFile):
+            return dotLottieFile.animation()?.animation
+        }
     }
-  }
 }
 
-extension LottieAnimation {
-  /// This animation represented as a `LottieAnimationSource`
-  public var animationSource: LottieAnimationSource {
-    .lottieAnimation(self)
-  }
+public extension LottieAnimation {
+    /// This animation represented as a `LottieAnimationSource`
+    var animationSource: LottieAnimationSource {
+        .lottieAnimation(self)
+    }
 }
 
-extension DotLottieFile {
-  /// This animation represented as a `LottieAnimationSource`
-  public var animationSource: LottieAnimationSource {
-    .dotLottieFile(self)
-  }
+public extension DotLottieFile {
+    /// This animation represented as a `LottieAnimationSource`
+    var animationSource: LottieAnimationSource {
+        .dotLottieFile(self)
+    }
 }

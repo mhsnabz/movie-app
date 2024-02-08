@@ -6,8 +6,8 @@
 //
 
 import Foundation
-struct LandingModel{
-    let imageName : String
-    let title : String
-    let description : String
+struct LandingModel {
+    let imageName: String
+    let title: String
+    let description: String
 }

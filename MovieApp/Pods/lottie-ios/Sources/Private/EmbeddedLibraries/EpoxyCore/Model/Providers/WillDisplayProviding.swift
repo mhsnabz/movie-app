@@ -8,34 +8,33 @@
 ///
 /// - SeeAlso: `DidDisplayProviding`
 /// - SeeAlso: `DidEndDisplayingProviding`
-protocol WillDisplayProviding { }
+protocol WillDisplayProviding {}
 
 // MARK: - CallbackContextEpoxyModeled
 
 extension CallbackContextEpoxyModeled where Self: WillDisplayProviding {
+    // MARK: Internal
 
-  // MARK: Internal
+    /// A closure that's called when a view is about to be displayed, before it has been added to the
+    /// view hierarcy.
+    typealias WillDisplay = (_ context: CallbackContext) -> Void
 
-  /// A closure that's called when a view is about to be displayed, before it has been added to the
-  /// view hierarcy.
-  typealias WillDisplay = (_ context: CallbackContext) -> Void
+    /// A closure that's called when the view is about to be displayed, before it has been added to
+    /// the view hierarcy.
+    var willDisplay: WillDisplay? {
+        get { self[willDisplayProperty] }
+        set { self[willDisplayProperty] = newValue }
+    }
 
-  /// A closure that's called when the view is about to be displayed, before it has been added to
-  /// the view hierarcy.
-  var willDisplay: WillDisplay? {
-    get { self[willDisplayProperty] }
-    set { self[willDisplayProperty] = newValue }
-  }
+    /// Returns a copy of this model with the given will display closure called after the current will
+    /// display closure of this model, if there is one.
+    func willDisplay(_ value: WillDisplay?) -> Self {
+        copy(updating: willDisplayProperty, to: value)
+    }
 
-  /// Returns a copy of this model with the given will display closure called after the current will
-  /// display closure of this model, if there is one.
-  func willDisplay(_ value: WillDisplay?) -> Self {
-    copy(updating: willDisplayProperty, to: value)
-  }
+    // MARK: Private
 
-  // MARK: Private
-
-  private var willDisplayProperty: EpoxyModelProperty<WillDisplay?> {
-    .init(keyPath: \Self.willDisplay, defaultValue: nil, updateStrategy: .chain())
-  }
+    private var willDisplayProperty: EpoxyModelProperty<WillDisplay?> {
+        .init(keyPath: \Self.willDisplay, defaultValue: nil, updateStrategy: .chain())
+    }
 }

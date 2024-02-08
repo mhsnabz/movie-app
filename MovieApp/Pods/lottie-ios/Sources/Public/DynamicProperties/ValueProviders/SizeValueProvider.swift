@@ -12,72 +12,71 @@ import Foundation
 
 /// A `ValueProvider` that returns a CGSize Value
 public final class SizeValueProvider: ValueProvider {
+    // MARK: Lifecycle
 
-  // MARK: Lifecycle
-
-  /// Initializes with a block provider
-  public init(block: @escaping SizeValueBlock) {
-    self.block = block
-    size = .zero
-    identity = UUID()
-  }
-
-  /// Initializes with a single size.
-  public init(_ size: CGSize) {
-    self.size = size
-    block = nil
-    hasUpdate = true
-    identity = [size.width, size.height]
-  }
-
-  // MARK: Public
-
-  /// Returns a CGSize for a CGFloat(Frame Time)
-  public typealias SizeValueBlock = (CGFloat) -> CGSize
-
-  public var size: CGSize {
-    didSet {
-      hasUpdate = true
+    /// Initializes with a block provider
+    public init(block: @escaping SizeValueBlock) {
+        self.block = block
+        size = .zero
+        identity = UUID()
     }
-  }
 
-  // MARK: ValueProvider Protocol
-
-  public var valueType: Any.Type {
-    LottieVector3D.self
-  }
-
-  public var storage: ValueProviderStorage<LottieVector3D> {
-    if let block = block {
-      return .closure { frame in
-        self.hasUpdate = false
-        return block(frame).vector3dValue
-      }
-    } else {
-      hasUpdate = false
-      return .singleValue(size.vector3dValue)
+    /// Initializes with a single size.
+    public init(_ size: CGSize) {
+        self.size = size
+        block = nil
+        hasUpdate = true
+        identity = [size.width, size.height]
     }
-  }
 
-  public func hasUpdate(frame _: CGFloat) -> Bool {
-    if block != nil {
-      return true
+    // MARK: Public
+
+    /// Returns a CGSize for a CGFloat(Frame Time)
+    public typealias SizeValueBlock = (CGFloat) -> CGSize
+
+    public var size: CGSize {
+        didSet {
+            hasUpdate = true
+        }
     }
-    return hasUpdate
-  }
 
-  // MARK: Private
+    // MARK: ValueProvider Protocol
 
-  private var hasUpdate = true
+    public var valueType: Any.Type {
+        LottieVector3D.self
+    }
 
-  private var block: SizeValueBlock?
-  private let identity: AnyHashable
+    public var storage: ValueProviderStorage<LottieVector3D> {
+        if let block = block {
+            return .closure { frame in
+                self.hasUpdate = false
+                return block(frame).vector3dValue
+            }
+        } else {
+            hasUpdate = false
+            return .singleValue(size.vector3dValue)
+        }
+    }
+
+    public func hasUpdate(frame _: CGFloat) -> Bool {
+        if block != nil {
+            return true
+        }
+        return hasUpdate
+    }
+
+    // MARK: Private
+
+    private var hasUpdate = true
+
+    private var block: SizeValueBlock?
+    private let identity: AnyHashable
 }
 
 // MARK: Equatable
 
 extension SizeValueProvider: Equatable {
-  public static func ==(_ lhs: SizeValueProvider, _ rhs: SizeValueProvider) -> Bool {
-    lhs.identity == rhs.identity
-  }
+    public static func == (_ lhs: SizeValueProvider, _ rhs: SizeValueProvider) -> Bool {
+        lhs.identity == rhs.identity
+    }
 }

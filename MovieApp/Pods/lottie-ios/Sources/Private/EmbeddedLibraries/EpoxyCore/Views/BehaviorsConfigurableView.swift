@@ -19,27 +19,27 @@
 /// - SeeAlso: `StyledView`
 /// - SeeAlso: `EpoxyableView`
 protocol BehaviorsConfigurableView: ViewType {
-  /// The non-`Equatable` properties that can be changed over of the lifecycle this View's
-  /// instances, e.g. callback closures or delegates.
-  ///
-  /// Defaults to `Never` for views that do not have `Behaviors`.
-  associatedtype Behaviors = Never
+    /// The non-`Equatable` properties that can be changed over of the lifecycle this View's
+    /// instances, e.g. callback closures or delegates.
+    ///
+    /// Defaults to `Never` for views that do not have `Behaviors`.
+    associatedtype Behaviors = Never
 
-  /// Updates the behaviors of this view to those in the given `behaviors`, else resets the
-  /// behaviors if `nil`.
-  ///
-  /// Behaviors are optional as they must be "resettable" in order for Epoxy to reset the behaviors
-  /// on your view when no behaviors are provided.
-  func setBehaviors(_ behaviors: Self.Behaviors?)
+    /// Updates the behaviors of this view to those in the given `behaviors`, else resets the
+    /// behaviors if `nil`.
+    ///
+    /// Behaviors are optional as they must be "resettable" in order for Epoxy to reset the behaviors
+    /// on your view when no behaviors are provided.
+    func setBehaviors(_ behaviors: Self.Behaviors?)
 }
 
 // MARK: Defaults
 
 extension BehaviorsConfigurableView where Behaviors == Never {
-  func setBehaviors(_ behaviors: Never?) {
-    switch behaviors {
-    case nil:
-      break
+    func setBehaviors(_ behaviors: Never?) {
+        switch behaviors {
+        case nil:
+            break
+        }
     }
-  }
 }

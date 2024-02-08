@@ -7,33 +7,33 @@
 ///  - Unlike `ObjectIdentifier(class)`, `ClassReference(class)`
 ///    preserves the `AnyClass` value and is more human-readable.
 struct ClassReference {
-  init(_ class: AnyClass) {
-    self.class = `class`
-  }
+    init(_ class: AnyClass) {
+        self.class = `class`
+    }
 
-  let `class`: AnyClass
+    let `class`: AnyClass
 }
 
 // MARK: Equatable
 
 extension ClassReference: Equatable {
-  static func ==(_ lhs: Self, _ rhs: Self) -> Bool {
-    ObjectIdentifier(lhs.class) == ObjectIdentifier(rhs.class)
-  }
+    static func == (_ lhs: Self, _ rhs: Self) -> Bool {
+        ObjectIdentifier(lhs.class) == ObjectIdentifier(rhs.class)
+    }
 }
 
 // MARK: Hashable
 
 extension ClassReference: Hashable {
-  func hash(into hasher: inout Hasher) {
-    hasher.combine(ObjectIdentifier(`class`))
-  }
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(ObjectIdentifier(`class`))
+    }
 }
 
 // MARK: CustomStringConvertible
 
 extension ClassReference: CustomStringConvertible {
-  var description: String {
-    String(describing: `class`)
-  }
+    var description: String {
+        String(describing: `class`)
+    }
 }

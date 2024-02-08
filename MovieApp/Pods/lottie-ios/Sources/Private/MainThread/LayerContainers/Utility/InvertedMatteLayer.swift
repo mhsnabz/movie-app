@@ -12,46 +12,45 @@ import QuartzCore
 ///
 /// WARNING: This is experimental and probably not very performant.
 final class InvertedMatteLayer: CALayer, CompositionLayerDelegate {
+    // MARK: Lifecycle
 
-  // MARK: Lifecycle
-
-  init(inputMatte: CompositionLayer) {
-    self.inputMatte = inputMatte
-    super.init()
-    inputMatte.layerDelegate = self
-    anchorPoint = .zero
-    bounds = inputMatte.bounds
-    setNeedsDisplay()
-  }
-
-  override init(layer: Any) {
-    guard let layer = layer as? InvertedMatteLayer else {
-      fatalError("init(layer:) wrong class.")
+    init(inputMatte: CompositionLayer) {
+        self.inputMatte = inputMatte
+        super.init()
+        inputMatte.layerDelegate = self
+        anchorPoint = .zero
+        bounds = inputMatte.bounds
+        setNeedsDisplay()
     }
-    inputMatte = nil
-    super.init(layer: layer)
-  }
 
-  required init?(coder _: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
+    override init(layer: Any) {
+        guard let layer = layer as? InvertedMatteLayer else {
+            fatalError("init(layer:) wrong class.")
+        }
+        inputMatte = nil
+        super.init(layer: layer)
+    }
 
-  // MARK: Internal
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
-  let inputMatte: CompositionLayer?
-  let wrapperLayer = CALayer()
+    // MARK: Internal
 
-  func frameUpdated(frame _: CGFloat) {
-    setNeedsDisplay()
-    displayIfNeeded()
-  }
+    let inputMatte: CompositionLayer?
+    let wrapperLayer = CALayer()
 
-  override func draw(in ctx: CGContext) {
-    guard let inputMatte = inputMatte else { return }
-    ctx.setFillColor(.rgb(0, 0, 0))
-    ctx.fill(bounds)
-    ctx.setBlendMode(.destinationOut)
-    inputMatte.render(in: ctx)
-  }
+    func frameUpdated(frame _: CGFloat) {
+        setNeedsDisplay()
+        displayIfNeeded()
+    }
 
+    override func draw(in ctx: CGContext) {
+        guard let inputMatte = inputMatte else { return }
+        ctx.setFillColor(.rgb(0, 0, 0))
+        ctx.fill(bounds)
+        ctx.setBlendMode(.destinationOut)
+        inputMatte.render(in: ctx)
+    }
 }

@@ -3,9 +3,7 @@
 
 /// The CALayer type responsible for only rendering the `transform` of a `LayerModel`
 final class TransformLayer: BaseCompositionLayer {
-
-  /// `TransformLayer`s don't render any visible content,
-  /// they just `transform` their sublayers
-  override var renderLayerContents: Bool { false }
-
+    /// `TransformLayer`s don't render any visible content,
+    /// they just `transform` their sublayers
+    override var renderLayerContents: Bool { false }
 }

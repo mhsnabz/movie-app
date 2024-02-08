@@ -12,46 +12,46 @@
 ///
 /// - SeeAlso: `Identifiable`.
 protocol DataIDProviding {
-  /// A stable identifier that uniquely identifies this instance, with its typed erased.
-  ///
-  /// Defaults to `DefaultDataID.noneProvided` if no data ID is provided.
-  var dataID: AnyHashable { get }
+    /// A stable identifier that uniquely identifies this instance, with its typed erased.
+    ///
+    /// Defaults to `DefaultDataID.noneProvided` if no data ID is provided.
+    var dataID: AnyHashable { get }
 }
 
 // MARK: - EpoxyModeled
 
 extension EpoxyModeled where Self: DataIDProviding {
+    // MARK: Internal
 
-  // MARK: Internal
+    /// A stable identifier that uniquely identifies this model, with its typed erased.
+    var dataID: AnyHashable {
+        get { self[dataIDProperty] }
+        set { self[dataIDProperty] = newValue }
+    }
 
-  /// A stable identifier that uniquely identifies this model, with its typed erased.
-  var dataID: AnyHashable {
-    get { self[dataIDProperty] }
-    set { self[dataIDProperty] = newValue }
-  }
+    /// Returns a copy of this model with the ID replaced with the provided ID.
+    func dataID(_ value: AnyHashable) -> Self {
+        copy(updating: dataIDProperty, to: value)
+    }
 
-  /// Returns a copy of this model with the ID replaced with the provided ID.
-  func dataID(_ value: AnyHashable) -> Self {
-    copy(updating: dataIDProperty, to: value)
-  }
+    // MARK: Private
 
-  // MARK: Private
-
-  private var dataIDProperty: EpoxyModelProperty<AnyHashable> {
-    EpoxyModelProperty(
-      keyPath: \DataIDProviding.dataID,
-      defaultValue: DefaultDataID.noneProvided,
-      updateStrategy: .replace)
-  }
+    private var dataIDProperty: EpoxyModelProperty<AnyHashable> {
+        EpoxyModelProperty(
+            keyPath: \DataIDProviding.dataID,
+            defaultValue: DefaultDataID.noneProvided,
+            updateStrategy: .replace
+        )
+    }
 }
 
 // MARK: - DefaultDataID
 
 /// The default data ID when none is provided.
 enum DefaultDataID: Hashable, CustomDebugStringConvertible {
-  case noneProvided
+    case noneProvided
 
-  var debugDescription: String {
-    "DefaultDataID.noneProvided"
-  }
+    var debugDescription: String {
+        "DefaultDataID.noneProvided"
+    }
 }

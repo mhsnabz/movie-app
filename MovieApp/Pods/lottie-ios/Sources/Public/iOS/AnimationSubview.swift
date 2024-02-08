@@ -7,14 +7,12 @@
 
 import Foundation
 #if canImport(UIKit)
-import UIKit
+    import UIKit
 
-/// A view that can be added to a keypath of an AnimationView
-public final class AnimationSubview: UIView {
-
-  var viewLayer: CALayer? {
-    layer
-  }
-
-}
+    /// A view that can be added to a keypath of an AnimationView
+    public final class AnimationSubview: UIView {
+        var viewLayer: CALayer? {
+            layer
+        }
+    }
 #endif

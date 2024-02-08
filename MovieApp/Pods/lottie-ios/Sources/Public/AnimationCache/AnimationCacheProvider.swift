@@ -13,11 +13,9 @@ import Foundation
 ///
 /// Lottie comes with a prebuilt LRU Animation Cache.
 public protocol AnimationCacheProvider: AnyObject, Sendable {
+    func animation(forKey: String) -> LottieAnimation?
 
-  func animation(forKey: String) -> LottieAnimation?
+    func setAnimation(_ animation: LottieAnimation, forKey: String)
 
-  func setAnimation(_ animation: LottieAnimation, forKey: String)
-
-  func clearCache()
-
+    func clearCache()
 }

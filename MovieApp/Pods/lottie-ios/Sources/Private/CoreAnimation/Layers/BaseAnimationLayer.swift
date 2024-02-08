@@ -6,28 +6,26 @@ import QuartzCore
 /// A base `CALayer` that manages the frame and animations
 /// of its `sublayers` and `mask`
 class BaseAnimationLayer: CALayer, AnimationLayer {
+    // MARK: Internal
 
-  // MARK: Internal
+    override func layoutSublayers() {
+        super.layoutSublayers()
 
-  override func layoutSublayers() {
-    super.layoutSublayers()
-
-    for sublayer in managedSublayers {
-      sublayer.fillBoundsOfSuperlayer()
+        for sublayer in managedSublayers {
+            sublayer.fillBoundsOfSuperlayer()
+        }
     }
-  }
 
-  func setupAnimations(context: LayerAnimationContext) throws {
-    for childAnimationLayer in managedSublayers {
-      try (childAnimationLayer as? AnimationLayer)?.setupAnimations(context: context)
+    func setupAnimations(context: LayerAnimationContext) throws {
+        for childAnimationLayer in managedSublayers {
+            try (childAnimationLayer as? AnimationLayer)?.setupAnimations(context: context)
+        }
     }
-  }
 
-  // MARK: Private
+    // MARK: Private
 
-  /// All of the sublayers managed by this container
-  private var managedSublayers: [CALayer] {
-    (sublayers ?? []) + [mask].compactMap { $0 }
-  }
-
+    /// All of the sublayers managed by this container
+    private var managedSublayers: [CALayer] {
+        (sublayers ?? []) + [mask].compactMap { $0 }
+    }
 }

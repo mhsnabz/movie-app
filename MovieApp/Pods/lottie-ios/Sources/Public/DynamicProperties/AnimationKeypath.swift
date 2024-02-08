@@ -28,32 +28,30 @@ import Foundation
 /// @"**.Stroke 1.Color"
 /// Represents the color node for every Stroke named "Stroke 1" in the animation.
 public struct AnimationKeypath: Hashable, ExpressibleByStringLiteral {
+    // MARK: Lifecycle
 
-  // MARK: Lifecycle
+    /// Creates a keypath from a dot-separated string. The string is separated by "."
+    public init(keypath: String) {
+        keys = keypath.components(separatedBy: ".")
+    }
 
-  /// Creates a keypath from a dot-separated string. The string is separated by "."
-  public init(keypath: String) {
-    keys = keypath.components(separatedBy: ".")
-  }
+    /// Creates a keypath from a dot-separated string
+    public init(stringLiteral: String) {
+        self.init(keypath: stringLiteral)
+    }
 
-  /// Creates a keypath from a dot-separated string
-  public init(stringLiteral: String) {
-    self.init(keypath: stringLiteral)
-  }
+    /// Creates a keypath from a list of strings.
+    public init(keys: [String]) {
+        self.keys = keys
+    }
 
-  /// Creates a keypath from a list of strings.
-  public init(keys: [String]) {
-    self.keys = keys
-  }
+    // MARK: Public
 
-  // MARK: Public
+    /// The dot-separated key values that represent this keypath.
+    public internal(set) var keys: [String]
 
-  /// The dot-separated key values that represent this keypath.
-  public internal(set) var keys: [String]
-
-  /// The `String` representation of this keypath
-  public var string: String {
-    keys.joined(separator: ".")
-  }
-
+    /// The `String` representation of this keypath
+    public var string: String {
+        keys.joined(separator: ".")
+    }
 }

@@ -7,31 +7,30 @@
 
 import Foundation
 #if canImport(UIKit)
-import UIKit
+    import UIKit
 #elseif canImport(AppKit)
-import AppKit
+    import AppKit
 #endif
 
 extension Data {
-
-  init(assetName: String, in bundle: Bundle) throws {
-    #if canImport(UIKit)
-    if let asset = NSDataAsset(name: assetName, bundle: bundle) {
-      self = asset.data
-      return
-    } else {
-      throw DotLottieError.assetNotFound(name: assetName, bundle: bundle)
+    init(assetName: String, in bundle: Bundle) throws {
+        #if canImport(UIKit)
+            if let asset = NSDataAsset(name: assetName, bundle: bundle) {
+                self = asset.data
+                return
+            } else {
+                throw DotLottieError.assetNotFound(name: assetName, bundle: bundle)
+            }
+        #else
+            if #available(macOS 10.11, *) {
+                if let asset = NSDataAsset(name: assetName, bundle: bundle) {
+                    self = asset.data
+                    return
+                } else {
+                    throw DotLottieError.assetNotFound(name: assetName, bundle: bundle)
+                }
+            }
+            throw DotLottieError.loadingFromAssetNotSupported
+        #endif
     }
-    #else
-    if #available(macOS 10.11, *) {
-      if let asset = NSDataAsset(name: assetName, bundle: bundle) {
-        self = asset.data
-        return
-      } else {
-        throw DotLottieError.assetNotFound(name: assetName, bundle: bundle)
-      }
-    }
-    throw DotLottieError.loadingFromAssetNotSupported
-    #endif
-  }
 }

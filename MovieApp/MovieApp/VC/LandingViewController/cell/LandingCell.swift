@@ -8,15 +8,13 @@
 import UIKit
 
 class LandingCell: UICollectionViewCell {
-
-    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet var imgView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    
-    func setupCell(landindModel : LandingModel){
+    func setupCell(landindModel: LandingModel) {
         imgView.image = UIImage(named: landindModel.imageName) ?? UIImage()
     }
 }

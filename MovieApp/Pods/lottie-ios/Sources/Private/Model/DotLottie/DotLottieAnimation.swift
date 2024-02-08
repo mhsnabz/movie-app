@@ -10,48 +10,48 @@ import Foundation
 // MARK: - DotLottieAnimation
 
 struct DotLottieAnimation: Codable {
-  /// Id of Animation
-  var id: String
+    /// Id of Animation
+    var id: String
 
-  /// Loop enabled
-  var loop: Bool? = false
+    /// Loop enabled
+    var loop: Bool? = false
 
-  /// Animation Playback Speed
-  var speed: Double? = 1
+    /// Animation Playback Speed
+    var speed: Double? = 1
 
-  /// 1 or -1
-  var direction: Int? = 1
+    /// 1 or -1
+    var direction: Int? = 1
 
-  /// mode - "bounce" | "normal"
-  var mode: DotLottieAnimationMode? = .normal
+    /// mode - "bounce" | "normal"
+    var mode: DotLottieAnimationMode? = .normal
 
-  /// Loop mode for animation
-  var loopMode: LottieLoopMode {
-    switch mode {
-    case .bounce:
-      return .autoReverse
-    case .normal, nil:
-      return (loop ?? false) ? .loop : .playOnce
+    /// Loop mode for animation
+    var loopMode: LottieLoopMode {
+        switch mode {
+        case .bounce:
+            return .autoReverse
+        case .normal, nil:
+            return (loop ?? false) ? .loop : .playOnce
+        }
     }
-  }
 
-  /// Animation speed
-  var animationSpeed: Double {
-    (speed ?? 1) * Double(direction ?? 1)
-  }
+    /// Animation speed
+    var animationSpeed: Double {
+        (speed ?? 1) * Double(direction ?? 1)
+    }
 
-  /// Loads `LottieAnimation` from `animationUrl`
-  /// - Returns: Deserialized `LottieAnimation`. Optional.
-  func animation(url: URL) throws -> LottieAnimation {
-    let animationUrl = url.appendingPathComponent("\(id).json")
-    let data = try Data(contentsOf: animationUrl)
-    return try LottieAnimation.from(data: data)
-  }
+    /// Loads `LottieAnimation` from `animationUrl`
+    /// - Returns: Deserialized `LottieAnimation`. Optional.
+    func animation(url: URL) throws -> LottieAnimation {
+        let animationUrl = url.appendingPathComponent("\(id).json")
+        let data = try Data(contentsOf: animationUrl)
+        return try LottieAnimation.from(data: data)
+    }
 }
 
 // MARK: - DotLottieAnimationMode
 
 enum DotLottieAnimationMode: String, Codable {
-  case normal
-  case bounce
+    case normal
+    case bounce
 }

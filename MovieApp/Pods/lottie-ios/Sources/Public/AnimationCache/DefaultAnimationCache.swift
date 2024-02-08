@@ -14,40 +14,39 @@ import Foundation
 ///
 /// This cache implementation also responds to memory pressure, as it's backed by `NSCache`.
 public class DefaultAnimationCache: AnimationCacheProvider, @unchecked Sendable {
+    // MARK: Lifecycle
 
-  // MARK: Lifecycle
+    public init() {
+        cache.countLimit = Self.defaultCacheCountLimit
+    }
 
-  public init() {
-    cache.countLimit = Self.defaultCacheCountLimit
-  }
+    // MARK: Public
 
-  // MARK: Public
+    /// The global shared Cache.
+    public static let sharedCache = DefaultAnimationCache()
 
-  /// The global shared Cache.
-  public static let sharedCache = DefaultAnimationCache()
+    /// The size of the cache.
+    public var cacheSize: Int {
+        get { cache.countLimit }
+        set { cache.countLimit = newValue }
+    }
 
-  /// The size of the cache.
-  public var cacheSize: Int {
-    get { cache.countLimit }
-    set { cache.countLimit = newValue }
-  }
+    /// Clears the Cache.
+    public func clearCache() {
+        cache.removeAllObjects()
+    }
 
-  /// Clears the Cache.
-  public func clearCache() {
-    cache.removeAllObjects()
-  }
+    public func animation(forKey key: String) -> LottieAnimation? {
+        cache.object(forKey: key as NSString)
+    }
 
-  public func animation(forKey key: String) -> LottieAnimation? {
-    cache.object(forKey: key as NSString)
-  }
+    public func setAnimation(_ animation: LottieAnimation, forKey key: String) {
+        cache.setObject(animation, forKey: key as NSString)
+    }
 
-  public func setAnimation(_ animation: LottieAnimation, forKey key: String) {
-    cache.setObject(animation, forKey: key as NSString)
-  }
+    // MARK: Private
 
-  // MARK: Private
+    private static let defaultCacheCountLimit = 100
 
-  private static let defaultCacheCountLimit = 100
-
-  private let cache = NSCache<NSString, LottieAnimation>()
+    private let cache = NSCache<NSString, LottieAnimation>()
 }

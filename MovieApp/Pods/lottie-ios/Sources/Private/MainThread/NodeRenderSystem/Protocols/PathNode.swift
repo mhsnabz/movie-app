@@ -10,13 +10,11 @@ import Foundation
 // MARK: - PathNode
 
 protocol PathNode {
-  var pathOutput: PathOutputNode { get }
+    var pathOutput: PathOutputNode { get }
 }
 
 extension PathNode where Self: AnimatorNode {
-
-  var outputNode: NodeOutput {
-    pathOutput
-  }
-
+    var outputNode: NodeOutput {
+        pathOutput
+    }
 }
