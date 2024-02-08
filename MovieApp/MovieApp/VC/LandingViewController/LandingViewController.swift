@@ -19,7 +19,6 @@ class LandingViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        startLoading()
     }
 
     private func setupUI() {

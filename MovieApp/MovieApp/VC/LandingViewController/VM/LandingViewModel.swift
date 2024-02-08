@@ -6,10 +6,13 @@
 //
 
 import Foundation
-final class LandingViewModel {
+final class LandingViewModel : BaseViewModel {
     private var dataSource: [LandingModel] = []
 
-    init() { setupDataSource() }
+    override init() {
+        super.init()
+        setupDataSource()
+    }
 
     private func setupDataSource() {
         dataSource.append(LandingModel(imageName: "landing1", title: "Explore", description: "Discover newly released and most acclaimed movies."))
