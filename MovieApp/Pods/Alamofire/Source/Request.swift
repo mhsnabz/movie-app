@@ -263,7 +263,8 @@ public class Request {
          serializationQueue: DispatchQueue,
          eventMonitor: EventMonitor?,
          interceptor: RequestInterceptor?,
-         delegate: RequestDelegate) {
+         delegate: RequestDelegate)
+    {
         self.id = id
         self.underlyingQueue = underlyingQueue
         self.serializationQueue = serializationQueue
@@ -654,7 +655,7 @@ public class Request {
     ///   - session: `URLSession` which creates the `URLSessionTask`.
     ///
     /// - Returns:   The `URLSessionTask` created.
-    func task(for request: URLRequest, using session: URLSession) -> URLSessionTask {
+    func task(for _: URLRequest, using _: URLSession) -> URLSessionTask {
         fatalError("Subclasses must override.")
     }
 
@@ -941,9 +942,9 @@ public class Request {
     }
 }
 
-extension Request {
+public extension Request {
     /// Type indicating how a `DataRequest` or `DataStreamRequest` should proceed after receiving an `HTTPURLResponse`.
-    public enum ResponseDisposition {
+    enum ResponseDisposition {
         /// Allow the request to continue normally.
         case allow
         /// Cancel the request, similar to calling `cancel()`.
@@ -961,7 +962,7 @@ extension Request {
 // MARK: - Protocol Conformances
 
 extension Request: Equatable {
-    public static func ==(lhs: Request, rhs: Request) -> Bool {
+    public static func == (lhs: Request, rhs: Request) -> Bool {
         lhs.id == rhs.id
     }
 }
@@ -986,11 +987,11 @@ extension Request: CustomStringConvertible {
     }
 }
 
-extension Request {
+public extension Request {
     /// cURL representation of the instance.
     ///
     /// - Returns: The cURL equivalent of the instance.
-    public func cURLDescription() -> String {
+    func cURLDescription() -> String {
         guard
             let request = lastRequest,
             let url = request.url,
@@ -1023,7 +1024,8 @@ extension Request {
         if let configuration = delegate?.sessionConfiguration, configuration.httpShouldSetCookies {
             if
                 let cookieStorage = configuration.httpCookieStorage,
-                let cookies = cookieStorage.cookies(for: url), !cookies.isEmpty {
+                let cookies = cookieStorage.cookies(for: url), !cookies.isEmpty
+            {
                 let allCookies = cookies.map { "\($0.name)=\($0.value)" }.joined(separator: ";")
 
                 components.append("-b \"\(allCookies)\"")
@@ -1128,7 +1130,8 @@ public class DataRequest: Request {
          serializationQueue: DispatchQueue,
          eventMonitor: EventMonitor?,
          interceptor: RequestInterceptor?,
-         delegate: RequestDelegate) {
+         delegate: RequestDelegate)
+    {
         self.convertible = convertible
 
         super.init(id: id,
@@ -1264,7 +1267,8 @@ public class DataRequest: Request {
     /// - Returns:   The instance.
     @discardableResult
     public func onHTTPResponse(on queue: DispatchQueue = .main,
-                               perform handler: @escaping (HTTPURLResponse) -> Void) -> Self {
+                               perform handler: @escaping (HTTPURLResponse) -> Void) -> Self
+    {
         onHTTPResponse(on: queue) { response, completionHandler in
             handler(response)
             completionHandler(.allow)
@@ -1381,7 +1385,8 @@ public final class DataStreamRequest: Request {
          serializationQueue: DispatchQueue,
          eventMonitor: EventMonitor?,
          interceptor: RequestInterceptor?,
-         delegate: RequestDelegate) {
+         delegate: RequestDelegate)
+    {
         self.convertible = convertible
         self.automaticallyCancelOnStreamError = automaticallyCancelOnStreamError
 
@@ -1409,12 +1414,12 @@ public final class DataStreamRequest: Request {
     func didReceive(data: Data) {
         $streamMutableState.write { state in
             #if !canImport(FoundationNetworking) // If we not using swift-corelibs-foundation.
-            if let stream = state.outputStream {
-                underlyingQueue.async {
-                    var bytes = Array(data)
-                    stream.write(&bytes, maxLength: bytes.count)
+                if let stream = state.outputStream {
+                    underlyingQueue.async {
+                        var bytes = Array(data)
+                        stream.write(&bytes, maxLength: bytes.count)
+                    }
                 }
-            }
             #endif
             state.numberOfExecutingStreams += state.streams.count
             let localState = state
@@ -1474,28 +1479,28 @@ public final class DataStreamRequest: Request {
     }
 
     #if !canImport(FoundationNetworking) // If we not using swift-corelibs-foundation.
-    /// Produces an `InputStream` that receives the `Data` received by the instance.
-    ///
-    /// - Note: The `InputStream` produced by this method must have `open()` called before being able to read `Data`.
-    ///         Additionally, this method will automatically call `resume()` on the instance, regardless of whether or
-    ///         not the creating session has `startRequestsImmediately` set to `true`.
-    ///
-    /// - Parameter bufferSize: Size, in bytes, of the buffer between the `OutputStream` and `InputStream`.
-    ///
-    /// - Returns:              The `InputStream` bound to the internal `OutboundStream`.
-    public func asInputStream(bufferSize: Int = 1024) -> InputStream? {
-        defer { resume() }
+        /// Produces an `InputStream` that receives the `Data` received by the instance.
+        ///
+        /// - Note: The `InputStream` produced by this method must have `open()` called before being able to read `Data`.
+        ///         Additionally, this method will automatically call `resume()` on the instance, regardless of whether or
+        ///         not the creating session has `startRequestsImmediately` set to `true`.
+        ///
+        /// - Parameter bufferSize: Size, in bytes, of the buffer between the `OutputStream` and `InputStream`.
+        ///
+        /// - Returns:              The `InputStream` bound to the internal `OutboundStream`.
+        public func asInputStream(bufferSize: Int = 1024) -> InputStream? {
+            defer { resume() }
 
-        var inputStream: InputStream?
-        $streamMutableState.write { state in
-            Foundation.Stream.getBoundStreams(withBufferSize: bufferSize,
-                                              inputStream: &inputStream,
-                                              outputStream: &state.outputStream)
-            state.outputStream?.open()
+            var inputStream: InputStream?
+            $streamMutableState.write { state in
+                Foundation.Stream.getBoundStreams(withBufferSize: bufferSize,
+                                                  inputStream: &inputStream,
+                                                  outputStream: &state.outputStream)
+                state.outputStream?.open()
+            }
+
+            return inputStream
         }
-
-        return inputStream
-    }
     #endif
 
     /// Sets a closure called whenever the `DataRequest` produces an `HTTPURLResponse` and providing a completion
@@ -1530,7 +1535,8 @@ public final class DataStreamRequest: Request {
     /// - Returns:   The instance.
     @discardableResult
     public func onHTTPResponse(on queue: DispatchQueue = .main,
-                               perform handler: @escaping (HTTPURLResponse) -> Void) -> Self {
+                               perform handler: @escaping (HTTPURLResponse) -> Void) -> Self
+    {
         onHTTPResponse(on: queue) { response, completionHandler in
             handler(response)
             completionHandler(.allow)
@@ -1549,7 +1555,8 @@ public final class DataStreamRequest: Request {
     }
 
     func appendStreamCompletion<Success, Failure>(on queue: DispatchQueue,
-                                                  stream: @escaping Handler<Success, Failure>) {
+                                                  stream: @escaping Handler<Success, Failure>)
+    {
         appendResponseSerializer {
             self.underlyingQueue.async {
                 self.responseSerializerDidComplete {
@@ -1570,7 +1577,8 @@ public final class DataStreamRequest: Request {
     }
 
     func enqueueCompletion<Success, Failure>(on queue: DispatchQueue,
-                                             stream: @escaping Handler<Success, Failure>) {
+                                             stream: @escaping Handler<Success, Failure>)
+    {
         queue.async {
             do {
                 let completion = Completion(request: self.request,
@@ -1585,30 +1593,30 @@ public final class DataStreamRequest: Request {
     }
 }
 
-extension DataStreamRequest.Stream {
+public extension DataStreamRequest.Stream {
     /// Incoming `Result` values from `Event.stream`.
-    public var result: Result<Success, Failure>? {
+    var result: Result<Success, Failure>? {
         guard case let .stream(result) = event else { return nil }
 
         return result
     }
 
     /// `Success` value of the instance, if any.
-    public var value: Success? {
+    var value: Success? {
         guard case let .success(value) = result else { return nil }
 
         return value
     }
 
     /// `Failure` value of the instance, if any.
-    public var error: Failure? {
+    var error: Failure? {
         guard case let .failure(error) = result else { return nil }
 
         return error
     }
 
     /// `Completion` value of the instance, if any.
-    public var completion: DataStreamRequest.Completion? {
+    var completion: DataStreamRequest.Completion? {
         guard case let .complete(completion) = event else { return nil }
 
         return completion
@@ -1657,7 +1665,8 @@ public class DownloadRequest: Request {
     /// - Returns: The `Destination` closure.
     public class func suggestedDownloadDestination(for directory: FileManager.SearchPathDirectory = .documentDirectory,
                                                    in domain: FileManager.SearchPathDomainMask = .userDomainMask,
-                                                   options: Options = []) -> Destination {
+                                                   options: Options = []) -> Destination
+    {
         { temporaryURL, response in
             let directoryURLs = FileManager.default.urls(for: directory, in: domain)
             let url = directoryURLs.first?.appendingPathComponent(response.suggestedFilename!) ?? temporaryURL
@@ -1713,9 +1722,9 @@ public class DownloadRequest: Request {
     /// - Note: For more information about `resumeData`, see [Apple's documentation](https://developer.apple.com/documentation/foundation/urlsessiondownloadtask/1411634-cancel).
     public var resumeData: Data? {
         #if !canImport(FoundationNetworking) // If we not using swift-corelibs-foundation.
-        return $mutableDownloadState.resumeData ?? error?.downloadResumeData
+            return $mutableDownloadState.resumeData ?? error?.downloadResumeData
         #else
-        return $mutableDownloadState.resumeData
+            return $mutableDownloadState.resumeData
         #endif
     }
 
@@ -1748,7 +1757,8 @@ public class DownloadRequest: Request {
          eventMonitor: EventMonitor?,
          interceptor: RequestInterceptor?,
          delegate: RequestDelegate,
-         destination: @escaping Destination) {
+         destination: @escaping Destination)
+    {
         self.downloadable = downloadable
         self.destination = destination
 
@@ -1967,7 +1977,8 @@ public class UploadRequest: DataRequest {
          eventMonitor: EventMonitor?,
          interceptor: RequestInterceptor?,
          fileManager: FileManager,
-         delegate: RequestDelegate) {
+         delegate: RequestDelegate)
+    {
         upload = convertible
         self.fileManager = fileManager
 

@@ -26,8 +26,7 @@ import UIKit
 
 @available(iOSApplicationExtension, unavailable)
 @objc open class IQBarButtonItem: UIBarButtonItem {
-
-    @objc public override init() {
+    @objc override public init() {
         super.init()
         initialize()
     }
@@ -38,11 +37,9 @@ import UIKit
     }
 
     private func initialize() {
-
         let states: [UIControl.State] = [.normal, .highlighted, .disabled, .focused]
 
         for state in states {
-
             setBackgroundImage(UIImage(), for: state, barMetrics: .default)
             setBackgroundImage(UIImage(), for: state, style: .plain, barMetrics: .default)
             setBackButtonBackgroundImage(UIImage(), for: state, barMetrics: .default)
@@ -55,7 +52,6 @@ import UIKit
 
     @objc override open var tintColor: UIColor? {
         didSet {
-
             var textAttributes = [NSAttributedString.Key: Any]()
             textAttributes[.foregroundColor] = tintColor
 
@@ -72,11 +68,11 @@ import UIKit
     /**
      Boolean to know if it's a system item or custom item, we are having a limitation that we cannot override a designated initializer, so we are manually setting this property once in initialization
      */
-    @objc internal var isSystemItem = false
+    @objc var isSystemItem = false
 
     /**
      Additional target & action to do get callback action. Note that setting custom target & selector doesn't affect native functionality, this is just an additional target to get a callback.
-     
+
      @param target Target object.
      @param action Target Selector.
      */
@@ -96,7 +92,6 @@ import UIKit
             // We have to put this condition here because if we override this function then
             // We were getting "Cannot override '_' which has been marked unavailable" in Xcode 15
             if let titleBarButton = self as? IQTitleBarButtonItem {
-
                 if let target = invocation?.target, let action = invocation?.action {
                     titleBarButton.isEnabled = true
                     titleBarButton.titleButton?.isEnabled = true

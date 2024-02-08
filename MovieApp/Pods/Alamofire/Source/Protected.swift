@@ -51,33 +51,33 @@ extension Lock {
 
 #if os(Linux) || os(Windows) || os(Android)
 
-extension NSLock: Lock {}
+    extension NSLock: Lock {}
 
 #endif
 
 #if canImport(Darwin)
-/// An `os_unfair_lock` wrapper.
-final class UnfairLock: Lock {
-    private let unfairLock: os_unfair_lock_t
+    /// An `os_unfair_lock` wrapper.
+    final class UnfairLock: Lock {
+        private let unfairLock: os_unfair_lock_t
 
-    init() {
-        unfairLock = .allocate(capacity: 1)
-        unfairLock.initialize(to: os_unfair_lock())
-    }
+        init() {
+            unfairLock = .allocate(capacity: 1)
+            unfairLock.initialize(to: os_unfair_lock())
+        }
 
-    deinit {
-        unfairLock.deinitialize(count: 1)
-        unfairLock.deallocate()
-    }
+        deinit {
+            unfairLock.deinitialize(count: 1)
+            unfairLock.deallocate()
+        }
 
-    fileprivate func lock() {
-        os_unfair_lock_lock(unfairLock)
-    }
+        fileprivate func lock() {
+            os_unfair_lock_lock(unfairLock)
+        }
 
-    fileprivate func unlock() {
-        os_unfair_lock_unlock(unfairLock)
+        fileprivate func unlock() {
+            os_unfair_lock_unlock(unfairLock)
+        }
     }
-}
 #endif
 
 /// A thread-safe wrapper around a value.
@@ -85,9 +85,9 @@ final class UnfairLock: Lock {
 @dynamicMemberLookup
 final class Protected<T> {
     #if canImport(Darwin)
-    private let lock = UnfairLock()
+        private let lock = UnfairLock()
     #elseif os(Linux) || os(Windows) || os(Android)
-    private let lock = NSLock()
+        private let lock = NSLock()
     #endif
     private var value: T
 

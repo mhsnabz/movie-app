@@ -25,27 +25,24 @@
 import UIKit
 
 /**
-UIView.subviews sorting category.
-*/
+ UIView.subviews sorting category.
+ */
 @available(iOSApplicationExtension, unavailable)
-internal extension Array where Element: UIView {
-
+extension Array where Element: UIView {
     /**
-    Returns the array by sorting the UIView's by their tag property.
-    */
+     Returns the array by sorting the UIView's by their tag property.
+     */
     func sortedArrayByTag() -> [Element] {
-
         return sorted(by: { (obj1: Element, obj2: Element) -> Bool in
 
-            return (obj1.tag < obj2.tag)
+            obj1.tag < obj2.tag
         })
     }
 
     /**
-    Returns the array by sorting the UIView's by their tag property.
-    */
+     Returns the array by sorting the UIView's by their tag property.
+     */
     func sortedArrayByPosition() -> [Element] {
-
         return sorted(by: { (obj1: Element, obj2: Element) -> Bool in
             if obj1.frame.minY != obj2.frame.minY {
                 return obj1.frame.minY < obj2.frame.minY

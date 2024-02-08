@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D07825E2B750BEC00AC2B4F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D07825D2B750BEC00AC2B4F /* UIColor+Extension.swift */; };
+		8D0782602B750D3300AC2B4F /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D07825F2B750D3200AC2B4F /* Color.xcassets */; };
 		8D8A28292B750407009FD7A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A28282B750407009FD7A2 /* AppDelegate.swift */; };
 		8D8A282B2B750407009FD7A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A282A2B750407009FD7A2 /* SceneDelegate.swift */; };
 		8D8A282D2B750407009FD7A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A282C2B750407009FD7A2 /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		328CEADAB895A01B43E490B3 /* Pods-MovieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieApp.debug.xcconfig"; path = "Target Support Files/Pods-MovieApp/Pods-MovieApp.debug.xcconfig"; sourceTree = "<group>"; };
+		8D07825D2B750BEC00AC2B4F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		8D07825F2B750D3200AC2B4F /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		8D8A28252B750407009FD7A2 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8A28282B750407009FD7A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D8A282A2B750407009FD7A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +55,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8D07825C2B750BD800AC2B4F /* UIColor+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8D07825D2B750BEC00AC2B4F /* UIColor+Extension.swift */,
+			);
+			path = "UIColor+Extension";
+			sourceTree = "<group>";
+		};
 		8D8A281C2B750407009FD7A2 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +94,7 @@
 				8D8A282C2B750407009FD7A2 /* ViewController.swift */,
 				8D8A282E2B750407009FD7A2 /* Main.storyboard */,
 				8D8A28312B750409009FD7A2 /* Assets.xcassets */,
+				8D07825F2B750D3200AC2B4F /* Color.xcassets */,
 				8D8A28332B750409009FD7A2 /* LaunchScreen.storyboard */,
 				8D8A28362B750409009FD7A2 /* Info.plist */,
 			);
@@ -91,6 +104,7 @@
 		8D9E07AC2B7505D900E0ADCD /* Helper+Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8D07825C2B750BD800AC2B4F /* UIColor+Extension */,
 			);
 			path = "Helper+Extensions";
 			sourceTree = "<group>";
@@ -192,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D8A28352B750409009FD7A2 /* LaunchScreen.storyboard in Resources */,
+				8D0782602B750D3300AC2B4F /* Color.xcassets in Resources */,
 				8D8A28322B750409009FD7A2 /* Assets.xcassets in Resources */,
 				8D8A28302B750407009FD7A2 /* Main.storyboard in Resources */,
 			);
@@ -249,6 +264,7 @@
 				8D8A282D2B750407009FD7A2 /* ViewController.swift in Sources */,
 				8D8A28292B750407009FD7A2 /* AppDelegate.swift in Sources */,
 				8D8A282B2B750407009FD7A2 /* SceneDelegate.swift in Sources */,
+				8D07825E2B750BEC00AC2B4F /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

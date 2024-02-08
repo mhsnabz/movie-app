@@ -26,15 +26,15 @@ import Foundation
 // MARK: IQAutoToolbarManageBehaviour
 
 /**
-`IQAutoToolbarBySubviews`
-Creates Toolbar according to subview's hirarchy of Textfield's in view.
+ `IQAutoToolbarBySubviews`
+ Creates Toolbar according to subview's hirarchy of Textfield's in view.
 
-`IQAutoToolbarByTag`
-Creates Toolbar according to tag property of TextField's.
+ `IQAutoToolbarByTag`
+ Creates Toolbar according to tag property of TextField's.
 
-`IQAutoToolbarByPosition`
-Creates Toolbar according to the y,x position of textField in it's superview coordinate.
-*/
+ `IQAutoToolbarByPosition`
+ Creates Toolbar according to the y,x position of textField in it's superview coordinate.
+ */
 @available(iOSApplicationExtension, unavailable)
 @objc public enum IQAutoToolbarManageBehaviour: Int {
     case bySubviews
@@ -45,10 +45,10 @@ Creates Toolbar according to the y,x position of textField in it's superview coo
 /**
  `IQPreviousNextDisplayModeDefault`
  Show NextPrevious when there are more than 1 textField otherwise hide.
- 
+
  `IQPreviousNextDisplayModeAlwaysHide`
  Do not show NextPrevious buttons in any case.
- 
+
  `IQPreviousNextDisplayModeAlwaysShow`
  Always show nextPrevious buttons, if there are more than 1 textField then both buttons will be visible but will be shown as disabled.
  */
@@ -62,10 +62,10 @@ Creates Toolbar according to the y,x position of textField in it's superview coo
 /**
  `IQEnableModeDefault`
  Pick default settings.
- 
+
  `IQEnableModeEnabled`
  setting is enabled.
- 
+
  `IQEnableModeDisabled`
  setting is disabled.
  */
@@ -82,21 +82,21 @@ Creates Toolbar according to the y,x position of textField in it's superview coo
  |                                   iOS Notification Mechanism                                    |
  /---------------------------------------------------------------------------------------------------\
  \---------------------------------------------------------------------------------------------------/
- 
+
  ------------------------------------------------------------
  When UITextField become first responder
  ------------------------------------------------------------
  - UITextFieldTextDidBeginEditingNotification (UITextField)
  - UIKeyboardWillShowNotification
  - UIKeyboardDidShowNotification
- 
+
  ------------------------------------------------------------
  When UITextView become first responder
  ------------------------------------------------------------
  - UIKeyboardWillShowNotification
  - UITextViewTextDidBeginEditingNotification (UITextView)
  - UIKeyboardDidShowNotification
- 
+
  ------------------------------------------------------------
  When switching focus from UITextField to another UITextField
  ------------------------------------------------------------
@@ -104,7 +104,7 @@ Creates Toolbar according to the y,x position of textField in it's superview coo
  - UITextFieldTextDidBeginEditingNotification (UITextField2)
  - UIKeyboardWillShowNotification
  - UIKeyboardDidShowNotification
- 
+
  ------------------------------------------------------------
  When switching focus from UITextView to another UITextView
  ------------------------------------------------------------
@@ -112,7 +112,7 @@ Creates Toolbar according to the y,x position of textField in it's superview coo
  - UIKeyboardWillShowNotification
  - UITextViewTextDidBeginEditingNotification: (UITextView2)
  - UIKeyboardDidShowNotification
- 
+
  ------------------------------------------------------------
  When switching focus from UITextField to UITextView
  ------------------------------------------------------------
@@ -120,7 +120,7 @@ Creates Toolbar according to the y,x position of textField in it's superview coo
  - UIKeyboardWillShowNotification
  - UITextViewTextDidBeginEditingNotification (UITextView)
  - UIKeyboardDidShowNotification
- 
+
  ------------------------------------------------------------
  When switching focus from UITextView to UITextField
  ------------------------------------------------------------
@@ -128,13 +128,13 @@ Creates Toolbar according to the y,x position of textField in it's superview coo
  - UITextFieldTextDidBeginEditingNotification (UITextField)
  - UIKeyboardWillShowNotification
  - UIKeyboardDidShowNotification
- 
+
  ------------------------------------------------------------
  When opening/closing UIKeyboard Predictive bar
  ------------------------------------------------------------
  - UIKeyboardWillShowNotification
  - UIKeyboardDidShowNotification
- 
+
  ------------------------------------------------------------
  On orientation change
  ------------------------------------------------------------
@@ -146,5 +146,5 @@ Creates Toolbar according to the y,x position of textField in it's superview coo
  - UIKeyboardDidShowNotification
  - UIKeyboardWillShowNotification
  - UIKeyboardDidShowNotification
- 
+
  */

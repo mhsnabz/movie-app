@@ -26,13 +26,12 @@ import UIKit
 
 @available(iOSApplicationExtension, unavailable)
 public protocol IQPlaceholderable: AnyObject {
-
     var placeholder: String? { get set }
     var attributedPlaceholder: NSAttributedString? { get set }
 }
 
 @available(iOSApplicationExtension, unavailable)
-extension UITextField: IQPlaceholderable { }
+extension UITextField: IQPlaceholderable {}
 
 @available(iOSApplicationExtension, unavailable)
-extension IQTextView: IQPlaceholderable { }
+extension IQTextView: IQPlaceholderable {}

@@ -24,6 +24,4 @@
 import UIKit
 
 @available(iOSApplicationExtension, unavailable)
-@objc open class IQPreviousNextView: UIView {
-
-}
+@objc open class IQPreviousNextView: UIView {}

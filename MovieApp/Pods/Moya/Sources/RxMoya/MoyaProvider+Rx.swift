@@ -1,13 +1,12 @@
 import Foundation
 import RxSwift
 #if !COCOAPODS
-import Moya
+    import Moya
 #endif
 
 extension MoyaProvider: ReactiveCompatible {}
 
 public extension Reactive where Base: MoyaProviderType {
-
     /// Designated request-making method.
     ///
     /// - Parameters:
@@ -33,7 +32,6 @@ public extension Reactive where Base: MoyaProviderType {
 
     /// Designated request-making method with progress.
     func requestWithProgress(_ token: Base.Target, callbackQueue: DispatchQueue? = nil) -> Observable<ProgressResponse> {
-
         let progressBlock = AnyObserver<ProgressResponse>.onNext
         let response: Observable<ProgressResponse> = Observable.create { [weak base] observer in
             let cancellableToken = base?.request(token, callbackQueue: callbackQueue, progress: progressBlock(observer)) { result in

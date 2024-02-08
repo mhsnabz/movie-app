@@ -26,37 +26,34 @@ import UIKit
 /** @abstract   IQToolbar for IQKeyboardManager.    */
 @available(iOSApplicationExtension, unavailable)
 @objc open class IQToolbar: UIToolbar, UIInputViewAudioFeedback {
-
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         initialize()
     }
 
-    @objc required public init?(coder aDecoder: NSCoder) {
+    @objc public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
         initialize()
     }
 
     private func initialize() {
-
         sizeToFit()
 
         autoresizingMask = .flexibleWidth
-        self.isTranslucent = true
-        self.barTintColor = nil
+        isTranslucent = true
+        barTintColor = nil
 
         let positions: [UIBarPosition] = [.any, .bottom, .top, .topAttached]
 
         for position in positions {
-
-            self.setBackgroundImage(nil, forToolbarPosition: position, barMetrics: .default)
-            self.setShadowImage(nil, forToolbarPosition: .any)
+            setBackgroundImage(nil, forToolbarPosition: position, barMetrics: .default)
+            setShadowImage(nil, forToolbarPosition: .any)
         }
 
         // Background color
-        self.backgroundColor = nil
+        backgroundColor = nil
     }
 
     /**
@@ -71,7 +68,7 @@ import UIKit
             return privatePreviousBarButton!
         }
 
-        set (newValue) {
+        set(newValue) {
             privatePreviousBarButton = newValue
         }
     }
@@ -88,7 +85,7 @@ import UIKit
             return privateNextBarButton!
         }
 
-        set (newValue) {
+        set(newValue) {
             privateNextBarButton = newValue
         }
     }
@@ -107,7 +104,7 @@ import UIKit
             return privateTitleBarButton!
         }
 
-        set (newValue) {
+        set(newValue) {
             privateTitleBarButton = newValue
         }
     }
@@ -124,7 +121,7 @@ import UIKit
             return privateDoneBarButton!
         }
 
-        set (newValue) {
+        set(newValue) {
             privateDoneBarButton = newValue
         }
     }
@@ -144,7 +141,7 @@ import UIKit
             return privateFixedSpaceBarButton!
         }
 
-        set (newValue) {
+        set(newValue) {
             privateFixedSpaceBarButton = newValue
         }
     }
@@ -156,7 +153,6 @@ import UIKit
     }
 
     @objc override open var tintColor: UIColor! {
-
         didSet {
             if let unwrappedItems = items {
                 for item in unwrappedItems {
