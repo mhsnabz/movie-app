@@ -6,7 +6,7 @@
 //
 
 import Foundation
-final class LandingViewModel : BaseViewModel {
+final class LandingViewModel: BaseViewModel {
     private var dataSource: [LandingModel] = []
 
     override init() {

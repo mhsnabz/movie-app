@@ -5,8 +5,8 @@
 //  Created by srbrt on 8.02.2024.
 //
 
-import UIKit
 import RxSwift
+import UIKit
 class BaseViewController: UIViewController, LoadingView {
     lazy var animator = CustomProgress()
     let disposeBag = DisposeBag()
@@ -16,15 +16,15 @@ class BaseViewController: UIViewController, LoadingView {
             animator = CustomProgress(frame: topWindow.frame)
         }
     }
-    
-    func observeLoading(viewModel : BaseViewModel){
-        viewModel.isLoading.observe(on: MainScheduler.instance).subscribe {[weak self] event in
+
+    func observeLoading(viewModel: BaseViewModel) {
+        viewModel.isLoading.observe(on: MainScheduler.instance).subscribe { [weak self] event in
             guard let self else { return }
-            if event.element ?? false{
+            if event.element ?? false {
                 self.startLoading()
-            }else{
+            } else {
                 self.stopLoading()
             }
-        }.disposed(by: self.disposeBag)
+        }.disposed(by: disposeBag)
     }
 }

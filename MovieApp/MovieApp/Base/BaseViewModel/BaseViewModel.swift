@@ -7,7 +7,7 @@
 
 import RxSwift
 class BaseViewModel {
-    var isLoading : PublishSubject<Bool> = PublishSubject()
-    
-    init() { }
+    var isLoading: PublishSubject<Bool> = PublishSubject()
+
+    init() {}
 }
