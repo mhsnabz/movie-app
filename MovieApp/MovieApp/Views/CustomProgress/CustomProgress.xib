@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomProgress" customModule="MovieApp" customModuleProvider="target">
+            <connections>
+                <outlet property="animator" destination="02p-sg-GW7" id="8yl-Al-DFz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="02p-sg-GW7" customClass="LottieAnimationView" customModule="Lottie">
+                    <rect key="frame" x="121.66666666666669" y="388.66666666666669" width="150" height="75"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="Hj3-Qe-eik"/>
+                        <constraint firstAttribute="height" constant="75" id="emb-3u-TtS"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="infinity"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.29809736394557823" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="02p-sg-GW7" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9ca-NB-RKJ"/>
+                <constraint firstItem="02p-sg-GW7" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="lJC-NX-T5b"/>
+            </constraints>
+            <point key="canvasLocation" x="-216" y="21"/>
+        </view>
+    </objects>
+</document>

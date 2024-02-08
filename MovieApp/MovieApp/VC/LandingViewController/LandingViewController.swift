@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LandingViewController: UIViewController {
+class LandingViewController: BaseViewController {
     @IBOutlet var descriptionLbl: UILabel!
     @IBOutlet var titleLbl: UILabel!
     @IBOutlet var collectionView: UICollectionView!
@@ -19,6 +19,7 @@ class LandingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        startLoading()
     }
 
     private func setupUI() {

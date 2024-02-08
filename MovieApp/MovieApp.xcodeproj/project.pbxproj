@@ -26,6 +26,11 @@
 		8D6B4B2D2B7525FA00A8CA85 /* ClassNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B4B2C2B7525FA00A8CA85 /* ClassNameProtocol.swift */; };
 		8D6B4B302B75292600A8CA85 /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B4B2F2B75292600A8CA85 /* LandingViewModel.swift */; };
 		8D6B4B332B75294E00A8CA85 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B4B322B75294E00A8CA85 /* File.swift */; };
+		8D6B4B382B753C5800A8CA85 /* CustomProgress.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B4B372B753C5800A8CA85 /* CustomProgress.xib */; };
+		8D6B4B3A2B753C6000A8CA85 /* CustomProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B4B392B753C6000A8CA85 /* CustomProgress.swift */; };
+		8D6B4B3D2B753D7C00A8CA85 /* infinity.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B4B3C2B753D7C00A8CA85 /* infinity.json */; };
+		8D6B4B3F2B753EFF00A8CA85 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B4B3E2B753EFF00A8CA85 /* LoadingView.swift */; };
+		8D6B4B432B75400300A8CA85 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B4B422B75400300A8CA85 /* BaseViewController.swift */; };
 		8D8A28292B750407009FD7A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A28282B750407009FD7A2 /* AppDelegate.swift */; };
 		8D8A282B2B750407009FD7A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A282A2B750407009FD7A2 /* SceneDelegate.swift */; };
 		8D8A28302B750407009FD7A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D8A282E2B750407009FD7A2 /* Main.storyboard */; };
@@ -55,6 +60,11 @@
 		8D6B4B2C2B7525FA00A8CA85 /* ClassNameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameProtocol.swift; sourceTree = "<group>"; };
 		8D6B4B2F2B75292600A8CA85 /* LandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
 		8D6B4B322B75294E00A8CA85 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		8D6B4B372B753C5800A8CA85 /* CustomProgress.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomProgress.xib; sourceTree = "<group>"; };
+		8D6B4B392B753C6000A8CA85 /* CustomProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgress.swift; sourceTree = "<group>"; };
+		8D6B4B3C2B753D7C00A8CA85 /* infinity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = infinity.json; sourceTree = "<group>"; };
+		8D6B4B3E2B753EFF00A8CA85 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		8D6B4B422B75400300A8CA85 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8D8A28252B750407009FD7A2 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8A28282B750407009FD7A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D8A282A2B750407009FD7A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				8D6B4B2C2B7525FA00A8CA85 /* ClassNameProtocol.swift */,
+				8D6B4B3E2B753EFF00A8CA85 /* LoadingView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -190,6 +201,38 @@
 				8D6B4B322B75294E00A8CA85 /* File.swift */,
 			);
 			path = LandingModel;
+			sourceTree = "<group>";
+		};
+		8D6B4B342B753C3600A8CA85 /* CustomProgress */ = {
+			isa = PBXGroup;
+			children = (
+				8D6B4B372B753C5800A8CA85 /* CustomProgress.xib */,
+				8D6B4B392B753C6000A8CA85 /* CustomProgress.swift */,
+			);
+			path = CustomProgress;
+			sourceTree = "<group>";
+		};
+		8D6B4B3B2B753D6E00A8CA85 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				8D6B4B3C2B753D7C00A8CA85 /* infinity.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		8D6B4B402B753FEB00A8CA85 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8D6B4B422B75400300A8CA85 /* BaseViewController.swift */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		8D6B4B412B753FF200A8CA85 /* BaseViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BaseViewModel;
 			sourceTree = "<group>";
 		};
 		8D8A281C2B750407009FD7A2 = {
@@ -232,6 +275,7 @@
 		8D9E07AC2B7505D900E0ADCD /* Helper+Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8D6B4B3B2B753D6E00A8CA85 /* Lottie */,
 				8D6B4B2B2B7525E900A8CA85 /* Protocols */,
 				8D6B4B1D2B75226800A8CA85 /* CustomLabels */,
 				8D6B4AFC2B75209B00A8CA85 /* Fonts */,
@@ -244,6 +288,7 @@
 		8D9E07AE2B75060600E0ADCD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8D6B4B342B753C3600A8CA85 /* CustomProgress */,
 				8D6B4B292B7524AE00A8CA85 /* LandingViewController */,
 			);
 			path = Views;
@@ -269,6 +314,8 @@
 		8D9E07B12B75061700E0ADCD /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				8D6B4B412B753FF200A8CA85 /* BaseViewModel */,
+				8D6B4B402B753FEB00A8CA85 /* BaseViewController */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -345,9 +392,11 @@
 				8D0782602B750D3300AC2B4F /* Color.xcassets in Resources */,
 				8D6B4B1C2B7520B000A8CA85 /* Nunito-SemiBold.ttf in Resources */,
 				8D8A28322B750409009FD7A2 /* Assets.xcassets in Resources */,
+				8D6B4B3D2B753D7C00A8CA85 /* infinity.json in Resources */,
 				8D6B4B1A2B7520B000A8CA85 /* Nunito-Medium.ttf in Resources */,
 				8D6B4B282B7524A900A8CA85 /* LandingCell.xib in Resources */,
 				8D6B4B0E2B7520B000A8CA85 /* Nunito-Bold.ttf in Resources */,
+				8D6B4B382B753C5800A8CA85 /* CustomProgress.xib in Resources */,
 				8D6B4B142B7520B000A8CA85 /* Nunito-Regular.ttf in Resources */,
 				8D8A28302B750407009FD7A2 /* Main.storyboard in Resources */,
 				8D6B4B172B7520B000A8CA85 /* Nunito-Light.ttf in Resources */,
@@ -412,11 +461,14 @@
 				8D8A28292B750407009FD7A2 /* AppDelegate.swift in Sources */,
 				8D8A282B2B750407009FD7A2 /* SceneDelegate.swift in Sources */,
 				8D0782692B751C0D00AC2B4F /* LandingViewController.swift in Sources */,
+				8D6B4B3F2B753EFF00A8CA85 /* LoadingView.swift in Sources */,
 				8D6B4B2D2B7525FA00A8CA85 /* ClassNameProtocol.swift in Sources */,
 				8D07825E2B750BEC00AC2B4F /* UIColor+Extension.swift in Sources */,
 				8D6B4B332B75294E00A8CA85 /* File.swift in Sources */,
 				8D6B4B302B75292600A8CA85 /* LandingViewModel.swift in Sources */,
+				8D6B4B432B75400300A8CA85 /* BaseViewController.swift in Sources */,
 				8D6B4B212B7522B600A8CA85 /* RegularLabel.swift in Sources */,
+				8D6B4B3A2B753C6000A8CA85 /* CustomProgress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
