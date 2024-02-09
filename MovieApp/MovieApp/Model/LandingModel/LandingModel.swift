@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  LandingModel.swift
 //  MovieApp
 //
 //  Created by srbrt on 8.02.2024.

@@ -12,16 +12,17 @@ extension Double {
         return String((self * multiplier).rounded() / multiplier)
     }
 }
+
 extension Int {
     func formatAbbreviated() -> String {
         let num = abs(self)
         let sign = (self < 0) ? "-" : ""
-        
+
         if num >= 1_000_000 {
             let roundedNum = num / 1_000_000
             return sign + "\(roundedNum)m"
-        } else if num >= 1_000 {
-            let roundedNum = num / 1_000
+        } else if num >= 1000 {
+            let roundedNum = num / 1000
             return sign + "\(roundedNum)k"
         } else {
             return sign + "\(self)"

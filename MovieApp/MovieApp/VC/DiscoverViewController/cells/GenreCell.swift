@@ -8,23 +8,22 @@
 import UIKit
 
 class GenreCell: UICollectionViewCell {
+    @IBOutlet var backView: UIView!
+    @IBOutlet var titlelbl: UILabel!
 
-    @IBOutlet weak var backView: UIView!
-    @IBOutlet weak var titlelbl: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override var isSelected: Bool{
-        didSet{
+    override var isSelected: Bool {
+        didSet {
             titlelbl.textColor = isSelected ? .darkRed : .white
             backView.borderColor = isSelected ? .darkRed : .white
         }
     }
-    
-    func setupCell(genreTitle : GenreTitle){
+
+    func setupCell(genreTitle: GenreTitle) {
         titlelbl.text = genreTitle.name
     }
 }

@@ -8,29 +8,32 @@
 import Foundation
 
 // MARK: - MovieListModel
+
 struct MovieListModel: Codable {
     let dates: Dates?
     let page: Int?
     let results: [Result]?
     let totalPages, totalResults: Int?
-    var type : String?
+    var type: String?
     enum CodingKeys: String, CodingKey {
-        case page, results,type,dates
+        case page, results, type, dates
         case totalPages = "total_pages"
         case totalResults = "total_results"
     }
-    
-    mutating func setType(type : String){
+
+    mutating func setType(type: String) {
         self.type = type
     }
 }
 
 // MARK: - Dates
+
 struct Dates: Codable {
     let maximum, minimum: String?
 }
 
 // MARK: - Result
+
 struct Result: Codable {
     let adult: Bool?
     let backdropPath: String?

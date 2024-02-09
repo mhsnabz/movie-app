@@ -11,33 +11,33 @@ class BaseViewModel {
 
     init() {}
 }
-extension BaseViewModel{
+
+extension BaseViewModel {
     func getLocalJson(resource: String) -> Genres? {
         if let url = Bundle.main.url(forResource: resource, withExtension: "json") {
-              do {
-                  let data = try Data(contentsOf: url)
-                  let decoder = JSONDecoder()
-                  let jsonData = try decoder.decode(Genres.self, from: data)
-                  return jsonData
-              } catch {
-                 return nil
-              }
-          }
-          return nil
+            do {
+                let data = try Data(contentsOf: url)
+                let decoder = JSONDecoder()
+                let jsonData = try decoder.decode(Genres.self, from: data)
+                return jsonData
+            } catch {
+                return nil
+            }
+        }
+        return nil
     }
-    
-    func getGenreTitle(id : Int) -> String{
+
+    func getGenreTitle(id: Int) -> String {
         return GenreTitle(rawValue: id)?.name ?? ""
     }
-    
-    func getGenresDataSource () -> [GenreTitle]{
+
+    func getGenresDataSource() -> [GenreTitle] {
         var genres = [GenreTitle]()
         GenreTitle.allCases.forEach { title in
             genres.append(title)
         }
         return genres
     }
-    
 }
 
 enum GenreTitle: Int, CaseIterable, Codable {
@@ -55,8 +55,7 @@ enum GenreTitle: Int, CaseIterable, Codable {
     case scienceFiction = 878
     case thriller = 53
     case war = 10752
-   
-    
+
     var id: Int {
         switch self {
         case .all: return 0
@@ -76,10 +75,9 @@ enum GenreTitle: Int, CaseIterable, Codable {
         }
     }
 
-    
     var name: String {
         switch self {
-        case .all : return "All"
+        case .all: return "All"
         case .action: return "Action"
         case .adventure: return "Adventure"
         case .animation: return "Animation"
