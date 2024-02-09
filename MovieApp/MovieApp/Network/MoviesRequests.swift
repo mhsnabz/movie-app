@@ -42,7 +42,7 @@ let movieListProvider = BaseMoyaProvider<MovieList>(
 
 /// Enum representing different types of movie list requests.
 enum MovieList {
-    case nowPlayin(page : Int)
+    case nowPlaying(page : Int)
     case getPopular(page: Int)
     case getTopRated(page: Int)
     case upcoming(page: Int)
@@ -59,7 +59,7 @@ extension MovieList: TargetType {
     /// The path component of the request URL.
     var path: String {
         switch self {
-        case .nowPlayin:
+        case .nowPlaying:
             return ApiConstant.MovieListPath.popular
         case .getPopular:
             return ApiConstant.MovieListPath.popular
@@ -73,7 +73,7 @@ extension MovieList: TargetType {
     /// The task to be performed.
     var task: Moya.Task {
         switch self {
-        case .getPopular(let page), .getTopRated(let page), .upcoming(let page) , .nowPlayin(let page):
+        case .getPopular(let page), .getTopRated(let page), .upcoming(let page) , .nowPlaying(let page):
             var params = [String: Any]()
             params[""] = "en-US"
             params["page"] = page
