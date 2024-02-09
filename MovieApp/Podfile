@@ -9,6 +9,7 @@ target 'MovieApp' do
 pod 'Moya/RxSwift'
 pod 'IQKeyboardManagerSwift'
 pod 'lottie-ios'
+pod 'SDWebImage', '~> 5.0'
 end
 
 post_install do |installer|
