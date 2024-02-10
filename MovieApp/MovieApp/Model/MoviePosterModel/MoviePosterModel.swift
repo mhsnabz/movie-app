@@ -8,14 +8,15 @@
 import Foundation
 
 // MARK: - MoviePosters
+
 struct MoviePosterModel: Codable {
     let backdrops: [Backdrop]?
     let id: Int?
     let logos, posters: [Backdrop]?
-    
 }
 
 // MARK: - Backdrop
+
 struct Backdrop: Codable {
     let aspectRatio: Double?
     let height: Int?

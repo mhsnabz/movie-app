@@ -18,12 +18,11 @@ class DiscoverViewController: BaseViewController {
         observeLoading(viewModel: viewModel)
         setupUI()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
-
 
     private func setupUI() {
         tableView.delegate = self
@@ -95,12 +94,11 @@ func calculateLabelWidth(text: String, font: UIFont) -> CGFloat {
     return size.width
 }
 
-
-extension DiscoverViewController : DidSelectMovie{
+extension DiscoverViewController: DidSelectMovie {
     func didSelectMovie(movieId: Int) {
         if movieId != 0 {
             let vc = DetailViewController(movieId: movieId)
-            self.navigationController?.pushViewController(vc, animated: true)
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

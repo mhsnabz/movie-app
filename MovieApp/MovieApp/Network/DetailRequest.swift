@@ -19,29 +19,29 @@ let detailProvider = BaseMoyaProvider<DetailRequest>(
     ]
 )
 
-enum DetailRequest{
-    case getDetail(id : Int)
-    case getImages(id : Int)
+enum DetailRequest {
+    case getDetail(id: Int)
+    case getImages(id: Int)
 }
 
-extension DetailRequest : TargetType{
+extension DetailRequest: TargetType {
     var baseURL: URL { URL(string: ApiConstant.Base.BaseUrl)! }
-    
+
     var method: Moya.Method { .get }
 
-    var path: String{
+    var path: String {
         switch self {
-        case .getDetail(let id):
-            return ApiConstant.DetailPath.detail+"/\(id)"
-        case .getImages(let id):
-            return ApiConstant.DetailPath.detail+"/\(id)/"+ApiConstant.DetailPath.images
+        case let .getDetail(id):
+            return ApiConstant.DetailPath.detail + "/\(id)"
+        case let .getImages(id):
+            return ApiConstant.DetailPath.detail + "/\(id)/" + ApiConstant.DetailPath.images
         }
     }
-    
-    var task: Moya.Task{
+
+    var task: Moya.Task {
         switch self {
-        case .getDetail(let id):
-            var params = [String : Any]()
+        case let .getDetail(id):
+            var params = [String: Any]()
             params["movie_id"] = id
             params["append_to_response"] = "similar,videos,credits"
             params["language"] = "en-US"
@@ -50,7 +50,7 @@ extension DetailRequest : TargetType{
             return .requestPlain
         }
     }
-    
+
     var headers: [String: String]? {
         return Auth.auth
     }

@@ -8,15 +8,14 @@
 import UIKit
 
 class ArtistCell: UICollectionViewCell {
-
-    @IBOutlet weak var nameLbl: UILabel!
-    @IBOutlet weak var profile: UIImageView!
+    @IBOutlet var nameLbl: UILabel!
+    @IBOutlet var profile: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    func setupCell(cast : Cast){
+    func setupCell(cast: Cast) {
         profile.loadImage(url: cast.profilePath ?? "")
         nameLbl.text = cast.originalName ?? ""
     }

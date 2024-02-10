@@ -8,10 +8,8 @@
 import UIKit
 
 class DetailVideoCell: UICollectionViewCell {
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
 }

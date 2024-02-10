@@ -39,9 +39,8 @@ class MoviesListCell: UICollectionViewCell {
             titleLbl.text = title
         }
     }
-    
-    func setupSimilarCell(result : SimilarResult ){
-        
+
+    func setupSimilarCell(result: SimilarResult) {
         if let stringUrl = result.posterPath {
             poster.loadImage(url: stringUrl)
         }

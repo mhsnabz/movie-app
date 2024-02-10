@@ -5,10 +5,10 @@
 //  Created by srbrt on 9.02.2024.
 //
 
-
 import Foundation
 
 // MARK: - DetailModel
+
 struct DetailModel: Codable {
     let adult: Bool?
     let backdropPath: String?
@@ -48,11 +48,13 @@ struct DetailModel: Codable {
 }
 
 // MARK: - Credits
+
 struct Credits: Codable {
     let cast, crew: [Cast]?
 }
 
 // MARK: - Cast
+
 struct Cast: Codable {
     let adult: Bool?
     let gender, id: Int?
@@ -95,10 +97,8 @@ enum Department: String, Codable {
     case writing = "Writing"
 }
 
-
-
-
 // MARK: - Similar
+
 struct Similar: Codable {
     let page: Int?
     let results: [SimilarResult]?
@@ -112,6 +112,7 @@ struct Similar: Codable {
 }
 
 // MARK: - SimilarResult
+
 struct SimilarResult: Codable {
     let adult: Bool?
     let backdropPath: String?
@@ -140,13 +141,14 @@ struct SimilarResult: Codable {
     }
 }
 
-
 // MARK: - Videos
+
 struct Videos: Codable {
     let results: [VideosResult]?
 }
 
 // MARK: - VideosResult
+
 struct VideosResult: Codable {
     let name, key: String?
     let site: Site?
@@ -162,9 +164,6 @@ struct VideosResult: Codable {
     }
 }
 
-
-
 enum Site: String, Codable {
     case youTube = "YouTube"
 }
-

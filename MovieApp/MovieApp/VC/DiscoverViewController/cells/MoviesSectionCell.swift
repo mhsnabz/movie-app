@@ -7,8 +7,8 @@
 
 import UIKit
 
-@objc protocol DidSelectMovie: AnyObject{
-    @objc optional func didSelectMovie(movieId : Int)
+@objc protocol DidSelectMovie: AnyObject {
+    @objc optional func didSelectMovie(movieId: Int)
     @objc optional func didSelecetSimilar(movieId: Int)
 }
 
@@ -16,9 +16,9 @@ class MoviesSectionCell: UITableViewCell {
     @IBOutlet var collecitonView: UICollectionView!
     @IBOutlet var titlLbl: UILabel!
 
-    weak var delegate : DidSelectMovie?
+    weak var delegate: DidSelectMovie?
     private var dataSource: MovieListModel?
-    private var similarDataSource : [SimilarResult]?
+    private var similarDataSource: [SimilarResult]?
     private var sectionIndex: Int = 0
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,12 +45,12 @@ class MoviesSectionCell: UITableViewCell {
         collecitonView.contentInset = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 0)
         collecitonView.reloadData()
     }
-    
-    func setupSimilarCell(data : [SimilarResult] , reloadData : Bool){
-        if reloadData{
-            self.similarDataSource = data
-            self.collecitonView.reloadData()
-        }else{
+
+    func setupSimilarCell(data: [SimilarResult], reloadData: Bool) {
+        if reloadData {
+            similarDataSource = data
+            collecitonView.reloadData()
+        } else {
             titlLbl.text = "More Like This"
             collecitonView.delegate = self
             collecitonView.dataSource = self
@@ -58,13 +58,12 @@ class MoviesSectionCell: UITableViewCell {
             collecitonView.contentInset = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 0)
             collecitonView.reloadData()
         }
-        
     }
 }
 
 extension MoviesSectionCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
-        return  similarDataSource != nil ? similarDataSource?.count ?? 0 : dataSource?.results?.count ?? 0
+        return similarDataSource != nil ? similarDataSource?.count ?? 0 : dataSource?.results?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -78,7 +77,7 @@ extension MoviesSectionCell: UICollectionViewDelegate, UICollectionViewDelegateF
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MoviesListCell.classname, for: indexPath) as! MoviesListCell
             if let result = dataSource?.results {
                 cell.setupCell(result: result[indexPath.row], section: sectionIndex)
-            }else if let result = similarDataSource{
+            } else if let result = similarDataSource {
                 cell.setupSimilarCell(result: result[indexPath.row])
             }
             return cell
@@ -97,13 +96,12 @@ extension MoviesSectionCell: UICollectionViewDelegate, UICollectionViewDelegateF
             return CGSize(width: w, height: h)
         }
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if similarDataSource != nil{
+
+    func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if similarDataSource != nil {
             delegate?.didSelecetSimilar?(movieId: similarDataSource?[indexPath.row].id ?? 0)
-        }else{
-            delegate?.didSelectMovie!( movieId: dataSource?.results?[indexPath.row].id ?? 0)
+        } else {
+            delegate?.didSelectMovie!(movieId: dataSource?.results?[indexPath.row].id ?? 0)
         }
-        
     }
 }

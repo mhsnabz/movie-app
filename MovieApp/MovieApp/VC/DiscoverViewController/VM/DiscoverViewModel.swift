@@ -108,7 +108,6 @@ final class DiscoverViewModel: BaseViewModel {
 
                 default:
                     self?.isLoading.onNext(false)
-                    break
                 }
             }
             .disposed(by: disposeBag) // Dispose subscriptions when the view model is deallocated

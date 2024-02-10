@@ -8,14 +8,13 @@
 import UIKit
 
 class DetailImageCell: UICollectionViewCell {
-
-    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet var imgView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    func setupUI(data : DetailHeaderModel){
+    func setupUI(data: DetailHeaderModel) {
         imgView.loadImage(url: data.sourcePath ?? "")
     }
 }

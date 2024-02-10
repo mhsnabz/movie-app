@@ -6,11 +6,12 @@
 //
 
 import Foundation
-struct DetailHeaderModel{
-    let sourcePath : String?
-    let type : ContentType?
+struct DetailHeaderModel {
+    let sourcePath: String?
+    let type: ContentType?
 }
-enum ContentType{
+
+enum ContentType {
     case image
     case video
 }

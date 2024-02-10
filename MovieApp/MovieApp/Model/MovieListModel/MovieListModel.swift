@@ -62,4 +62,4 @@ struct Result: Codable {
     }
 }
 
-//similar//videos//images//credits
+// similar//videos//images//credits
