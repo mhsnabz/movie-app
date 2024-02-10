@@ -12,7 +12,7 @@ class DiscoverViewController: BaseViewController {
     @IBOutlet var genresCollectionView: UICollectionView!
 
     private let viewModel = DiscoverViewModel()
-    private var selectedGenre : GenreTitle = .all
+    private var selectedGenre: GenreTitle = .all
     override func viewDidLoad() {
         super.viewDidLoad()
         observeLoading(viewModel: viewModel)
@@ -57,7 +57,7 @@ extension DiscoverViewController: UICollectionViewDelegate, UICollectionViewData
 
     func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         genresCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        self.selectedGenre = viewModel.getGenresSource()[indexPath.row]
+        selectedGenre = viewModel.getGenresSource()[indexPath.row]
         viewModel.setupDataSource(genre: selectedGenre)?.subscribe { _ in
             self.tableView.reloadData()
         }.disposed(by: disposeBag)
@@ -76,7 +76,7 @@ extension DiscoverViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: MoviesSectionCell.classname, for: indexPath) as? MoviesSectionCell {
             cell.selectionStyle = .none
-            cell.setupCell(dataSource: viewModel.getSection(section: indexPath.section), index: indexPath.section,genre: self.selectedGenre)
+            cell.setupCell(dataSource: viewModel.getSection(section: indexPath.section), index: indexPath.section, genre: selectedGenre)
             cell.delegate = self
             return cell
         }
@@ -101,10 +101,9 @@ extension DiscoverViewController: DidSelectMovie {
             navigationController?.pushViewController(vc, animated: true)
         }
     }
-    
+
     func seeAll(genre: Int, section: Int) {
         let vc = SeeAllViewController(genre: GenreTitle(rawValue: genre) ?? .all, section: MovieSectionType(rawValue: section) ?? .nowPlaying)
         navigationController?.pushViewController(vc, animated: true)
     }
-    
 }
