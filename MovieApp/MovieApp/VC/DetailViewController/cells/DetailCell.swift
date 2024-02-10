@@ -54,16 +54,15 @@ class DetailCell: UITableViewCell {
                 attributedString.addAttribute(.foregroundColor, value: UIColor.red, range: range)
                 descriptionLbl.attributedText = attributedString
             } else {
-               if desp.count > 79 {
+                if desp.count > 79 {
                     let index = desp.index(desp.startIndex, offsetBy: 80)
                     let readMoreText = "Read More"
                     let fullText = "\(String(desp.prefix(upTo: index))).. \(readMoreText)"
                     let attributedString = NSMutableAttributedString(string: fullText)
                     let range = (fullText as NSString).range(of: readMoreText)
                     attributedString.addAttribute(.foregroundColor, value: UIColor.red, range: range)
-                    self.descriptionLbl.attributedText = attributedString
+                    descriptionLbl.attributedText = attributedString
                 }
-         
             }
         }
         descriptionLbl.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(changeStatus)))

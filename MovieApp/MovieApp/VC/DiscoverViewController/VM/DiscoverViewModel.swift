@@ -27,7 +27,6 @@ final class DiscoverViewModel: BaseViewModel {
     // Subject for updating UI
     private var updateUI: PublishSubject<Bool> = PublishSubject()
 
- 
     // Selected genre
     var selectedGenre: GenreTitle = .all
 
@@ -37,10 +36,9 @@ final class DiscoverViewModel: BaseViewModel {
     }
 
     // Setup data source by making API calls
-    func setupDataSource(genre : GenreTitle? = nil ) -> PublishSubject<Bool>? {
-        
+    func setupDataSource(genre: GenreTitle? = nil) -> PublishSubject<Bool>? {
         isLoading.onNext(true)
-        if  let genre , genre != .all  {
+        if let genre, genre != .all {
             filterByGenre(genre: genre).subscribe { list in
                 if let list = list.element {
                     self.dataSource.removeAll()
@@ -50,7 +48,7 @@ final class DiscoverViewModel: BaseViewModel {
                     self.isDone.onError(error)
                 }
             }.disposed(by: disposeBag)
-        }else{
+        } else {
             getMovieLists().subscribe { list in
                 if let list = list.element {
                     self.dataSource.removeAll()
@@ -61,20 +59,20 @@ final class DiscoverViewModel: BaseViewModel {
                 }
             }.disposed(by: disposeBag)
         }
-        
+
         return isDone
     }
 
-    func filterByGenre(genre : GenreTitle) -> PublishSubject<[MovieListModel]> {
+    func filterByGenre(genre: GenreTitle) -> PublishSubject<[MovieListModel]> {
         let genres = [genre]
         list = PublishSubject()
         // Make API requests to fetch different categories of movie lists
-        let nowPlaying = movieListProvider.rx.request(.getSortedMovies(genres: genres, sortyBy: .relase_date_desc,date: "2024-01-01")).map(MovieListModel.self).asObservable()
-        
+        let nowPlaying = movieListProvider.rx.request(.getSortedMovies(genres: genres, sortyBy: .relase_date_desc, date: "2024-01-01")).map(MovieListModel.self).asObservable()
+
         let popularRequest = movieListProvider.rx.request(.getSortedMovies(genres: genres, sortyBy: .popular_desc)).map(MovieListModel.self).asObservable()
         let topRatedRequest = movieListProvider.rx.request(.getSortedMovies(genres: genres, sortyBy: .vote_desc)).map(MovieListModel.self).asObservable()
-        let upcomingRequest = movieListProvider.rx.request(.getSortedMovies(genres: genres, sortyBy: .relase_date_desc,date: "2024-03-01")).map(MovieListModel.self).asObservable()
-        
+        let upcomingRequest = movieListProvider.rx.request(.getSortedMovies(genres: genres, sortyBy: .relase_date_desc, date: "2024-03-01")).map(MovieListModel.self).asObservable()
+
         // Combine the responses of all requests into a single observable
         Observable.zip(nowPlaying, popularRequest, topRatedRequest, upcomingRequest)
             .observe(on: MainScheduler.instance) // Ensure subscription and observation happen on the main thread
@@ -98,12 +96,11 @@ final class DiscoverViewModel: BaseViewModel {
                 }
             }
             .disposed(by: disposeBag) // Dispose subscriptions when the view model is deallocated
-        
+
         // Return the PublishSubject
         return list!
     }
-    
-    
+
     // Get the number of sections based on whether results are filtered
     func getNumberOfSections() -> Int {
         return dataSource.count
@@ -169,18 +166,17 @@ final class DiscoverViewModel: BaseViewModel {
         return genresDataSource
     }
 
-   
     // Filter results by genre
-   // func filterResultsByGenre(_ genreID: GenreTitle, completion: @escaping (_ isDone: Bool) -> Void) {
-   //     isFiltered = selectedGenre != genreID && genreID.id != 0 ? true : false
-   //     selectedGenre = genreID
-   //     filteredDataSource.removeAll()
-   //     for (index, movieListModel) in dataSource.enumerated() {
-   //         let filtered = movieListModel.results?.filter { $0.genreIDS != nil && //$0.genreIDS!.contains(genreID.id) }
-   //         filteredDataSource.append(MovieListModel(dates: dataSource[index].dates, page: //dataSource[index].page, results: filtered, totalPages: dataSource[index].totalPages, //totalResults: dataSource[index].totalResults))
-   //     }
-   //     completion(true)
-   // }
+    // func filterResultsByGenre(_ genreID: GenreTitle, completion: @escaping (_ isDone: Bool) -> Void) {
+    //     isFiltered = selectedGenre != genreID && genreID.id != 0 ? true : false
+    //     selectedGenre = genreID
+    //     filteredDataSource.removeAll()
+    //     for (index, movieListModel) in dataSource.enumerated() {
+    //         let filtered = movieListModel.results?.filter { $0.genreIDS != nil && //$0.genreIDS!.contains(genreID.id) }
+    //         filteredDataSource.append(MovieListModel(dates: dataSource[index].dates, page: //dataSource[index].page, results: filtered, totalPages: dataSource[index].totalPages, //totalResults: dataSource[index].totalResults))
+    //     }
+    //     completion(true)
+    // }
 }
 
 // Extension for initializing an array from a subject's child values

@@ -6,19 +6,17 @@
 //
 
 import RxSwift
-final class SeeAllViewModel : BaseViewModel{
-    
+final class SeeAllViewModel: BaseViewModel {
     private let disposeBag = DisposeBag()
-    private var list : PublishSubject<MovieListModel> = PublishSubject()
-    private var dataSource : [Result] = []
-    var currentPage : Int = 1
-    
+    private var list: PublishSubject<MovieListModel> = PublishSubject()
+    private var dataSource: [Result] = []
+    var currentPage: Int = 1
+
     override init() {
         super.init()
     }
-    
-    
-    private func getMovies(type : MovieSectionType , genre : GenreTitle) -> PublishSubject<MovieListModel>{
+
+    private func getMovies(type: MovieSectionType, genre _: GenreTitle) -> PublishSubject<MovieListModel> {
         var selectedType = MovieList.getPopular(page: currentPage)
         switch type {
         case .nowPlaying:
@@ -30,29 +28,27 @@ final class SeeAllViewModel : BaseViewModel{
         case .upcoming:
             selectedType = MovieList.upcoming(page: currentPage)
         }
-        
+
         movieListProvider.rx.request(selectedType).observe(on: MainScheduler.instance)
             .map(MovieListModel.self)
-            .subscribe { model in
-                
-            } onFailure: { error in
-                
-            }.disposed(by: self.disposeBag)
-        
-        
+            .subscribe { _ in
+
+            } onFailure: { _ in
+
+            }.disposed(by: disposeBag)
+
         return list
     }
-    
-   // private func filterMovieList(genre : GenreTitle , movies : MovieListModel ) {
-   //     if let filtered = movies.results?.filter({$0.genreIDS != nil && $0.genreIDS!.contains(genre.id)}){
-   //         self.dataSource.append(contentsOf: filtered)
-   //         list.onNext(<#T##element: MovieListModel##MovieListModel#>)
-   //     }
-  //  }
-    
+
+    // private func filterMovieList(genre : GenreTitle , movies : MovieListModel ) {
+    //     if let filtered = movies.results?.filter({$0.genreIDS != nil && $0.genreIDS!.contains(genre.id)}){
+    //         self.dataSource.append(contentsOf: filtered)
+    //         list.onNext(<#T##element: MovieListModel##MovieListModel#>)
+    //     }
+    //  }
 }
 
-enum MovieSectionType{
+enum MovieSectionType {
     case nowPlaying
     case popular
     case topRated

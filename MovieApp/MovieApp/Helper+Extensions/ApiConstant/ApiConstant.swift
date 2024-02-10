@@ -17,8 +17,8 @@ struct ApiConstant {
         static let topRated = "movie/top_rated"
         static let upcoming = "movie/upcoming"
     }
-    
-    enum SortMoviePath{
+
+    enum SortMoviePath {
         static let path = "discover/movie"
     }
 

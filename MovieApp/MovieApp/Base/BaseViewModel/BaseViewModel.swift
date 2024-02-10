@@ -61,7 +61,7 @@ enum GenreTitle: Int, CaseIterable, Codable {
     case thriller = 53
     case war = 10752
     case western = 37
-    
+
     var id: Int {
         switch self {
         case .all: return 0
@@ -79,14 +79,14 @@ enum GenreTitle: Int, CaseIterable, Codable {
         case .thriller: return 53
         case .war: return 10752
         case .documentary: return 99
-        case .horror:  return 27
+        case .horror: return 27
         case .music: return 10402
         case .mystery: return 9648
         case .tvMovie: return 10770
         case .western: return 37
         }
     }
-    
+
     var name: String {
         switch self {
         case .all: return "All"

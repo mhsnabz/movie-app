@@ -46,7 +46,7 @@ enum MovieList {
     case getPopular(page: Int)
     case getTopRated(page: Int)
     case upcoming(page: Int)
-    case getSortedMovies(genres : [GenreTitle]? , sortyBy :MoviesSortEnum = .popular_asc ,date : String? = nil)
+    case getSortedMovies(genres: [GenreTitle]?, sortyBy: MoviesSortEnum = .popular_asc, date: String? = nil)
 }
 
 extension MovieList: TargetType {
@@ -80,27 +80,27 @@ extension MovieList: TargetType {
             params[""] = "en-US"
             params["page"] = page
             return .requestParameters(parameters: params, encoding: URLEncoding.default)
-        case .getSortedMovies(let genres, let sortyBy,let date):
-            var params = [String : Any]()
-            var genre : String = ""
+        case let .getSortedMovies(genres, sortyBy, date):
+            var params = [String: Any]()
+            var genre: String = ""
             if let genres {
                 genres.forEach { element in
-                    genre = genre+","+String(element.id)
+                    genre = genre + "," + String(element.id)
                 }
                 let index = genre.index(genre.startIndex, offsetBy: 0)
                 genre.remove(at: index)
                 params["with_genres"] = genre
             }
-            
+
             if let date {
                 params["primary_release_date.gte"] = date
-            }else{
+            } else {
                 params["sort_by"] = sortyBy.rawValue
             }
             params["include_video"] = false
             params["include_adult"] = false
             params["language"] = "en-US"
-          
+
             return .requestParameters(parameters: params, encoding: URLEncoding.default)
         }
     }
@@ -109,7 +109,7 @@ extension MovieList: TargetType {
     var headers: [String: String]? { Auth.auth }
 }
 
-enum MoviesSortEnum : String{
+enum MoviesSortEnum: String {
     case popular_desc = "popularity.desc"
     case popular_asc = "popularity.asc"
     case vote_asc = "vote_average.asc"

@@ -8,16 +8,13 @@
 import UIKit
 
 class SeeAllViewController: BaseViewController {
+    @IBOutlet var collectionView: UICollectionView!
 
-    @IBOutlet weak var collectionView: UICollectionView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
-    @IBAction func popViewController(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+    @IBAction func popViewController(_: Any) {
+        navigationController?.popViewController(animated: true)
     }
-    
 }
