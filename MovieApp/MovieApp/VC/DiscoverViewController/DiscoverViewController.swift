@@ -16,9 +16,14 @@ class DiscoverViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         observeLoading(viewModel: viewModel)
-
         setupUI()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
 
     private func setupUI() {
         tableView.delegate = self
@@ -73,6 +78,7 @@ extension DiscoverViewController: UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: MoviesSectionCell.classname, for: indexPath) as? MoviesSectionCell {
             cell.selectionStyle = .none
             cell.setupCell(dataSource: viewModel.getSection(section: indexPath.section), index: indexPath.section)
+            cell.delegate = self
             return cell
         }
         return UITableViewCell()
@@ -87,4 +93,14 @@ func calculateLabelWidth(text: String, font: UIFont) -> CGFloat {
     let fontAttributes = [NSAttributedString.Key.font: font]
     let size = (text as NSString).size(withAttributes: fontAttributes)
     return size.width
+}
+
+
+extension DiscoverViewController : DidSelectMovie{
+    func didSelectMovie(movieId: Int) {
+        if movieId != 0 {
+            let vc = DetailViewController(movieId: movieId)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }

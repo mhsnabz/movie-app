@@ -39,4 +39,20 @@ class MoviesListCell: UICollectionViewCell {
             titleLbl.text = title
         }
     }
+    
+    func setupSimilarCell(result : SimilarResult ){
+        
+        if let stringUrl = result.posterPath {
+            poster.loadImage(url: stringUrl)
+        }
+
+        if let avarageRate = result.voteAverage, let voteCount = result.voteCount {
+            self.avarageRate.text = avarageRate.rounded()
+            votedCount.text = voteCount.formatAbbreviated()
+        }
+
+        if let title = result.title {
+            titleLbl.text = title
+        }
+    }
 }

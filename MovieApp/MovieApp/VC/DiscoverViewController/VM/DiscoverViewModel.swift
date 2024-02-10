@@ -107,6 +107,7 @@ final class DiscoverViewModel: BaseViewModel {
                     self?.isLoading.onNext(false)
 
                 default:
+                    self?.isLoading.onNext(false)
                     break
                 }
             }

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="MovieApp" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="VVy-DU-Ofq" id="PTz-Z8-Q6N"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VVy-DU-Ofq">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="806"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOi-vu-R24">
+                    <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPT-pN-BgE">
+                            <rect key="frame" x="12" y="10.666666666666671" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="RuP-bJ-bA0"/>
+                                <constraint firstAttribute="height" constant="35" id="bgp-0l-YmZ"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="arrowshape.backward.fill" catalog="system"/>
+                            <connections>
+                                <action selector="popViewController:" destination="-1" eventType="touchUpInside" id="3K1-qY-yQP"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="WSj-0B-eSs"/>
+                        <constraint firstItem="oPT-pN-BgE" firstAttribute="leading" secondItem="dOi-vu-R24" secondAttribute="leading" constant="12" id="gXu-dQ-Han"/>
+                        <constraint firstItem="oPT-pN-BgE" firstAttribute="centerY" secondItem="dOi-vu-R24" secondAttribute="centerY" id="o5X-87-sHO"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="dark_black"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dOi-vu-R24" secondAttribute="trailing" id="09g-ci-iHR"/>
+                <constraint firstItem="VVy-DU-Ofq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="AID-x0-s2f"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="VVy-DU-Ofq" secondAttribute="bottom" constant="12" id="PNb-zg-zB1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VVy-DU-Ofq" secondAttribute="trailing" id="WM1-sL-bej"/>
+                <constraint firstItem="VVy-DU-Ofq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hKP-Rs-wbK"/>
+                <constraint firstItem="dOi-vu-R24" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="otV-bN-Rc9"/>
+                <constraint firstItem="dOi-vu-R24" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pTu-ST-Gus"/>
+            </constraints>
+            <point key="canvasLocation" x="139.69465648854961" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrowshape.backward.fill" catalog="system" width="128" height="104"/>
+        <namedColor name="dark_black">
+            <color red="0.11372549019607843" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

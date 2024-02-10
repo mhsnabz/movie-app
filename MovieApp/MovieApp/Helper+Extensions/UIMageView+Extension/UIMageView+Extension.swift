@@ -11,8 +11,8 @@ extension UIImageView {
     func loadImage(url: String) {
         let stringUrl = "http://image.tmdb.org/t/p/w500" + url
         if let newUrl = URL(string: stringUrl) {
-            sd_imageIndicator = SDWebImageActivityIndicator.grayLarge
-            sd_setImage(with: newUrl) { _, _, _, _ in }
+            sd_imageIndicator = SDWebImageActivityIndicator.white
+            sd_setImage(with: newUrl, placeholderImage: UIImage(named: "placeholder"))
         }
     }
 }

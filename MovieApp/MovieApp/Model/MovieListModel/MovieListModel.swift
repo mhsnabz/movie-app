@@ -61,3 +61,5 @@ struct Result: Codable {
         case voteCount = "vote_count"
     }
 }
+
+//similar//videos//images//credits

@@ -17,6 +17,11 @@ struct ApiConstant {
         static let topRated = "movie/top_rated"
         static let upcoming = "movie/upcoming"
     }
+    
+    enum DetailPath{
+        static let detail = "movie"
+        static let images = "images"
+    }
 }
 
 enum Auth {
