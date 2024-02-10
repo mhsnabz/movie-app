@@ -34,6 +34,9 @@
                         <state key="normal" title="See All">
                             <color key="titleColor" name="dark_red"/>
                         </state>
+                        <connections>
+                            <action selector="seeAllAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="GAQ-G1-5Ap"/>
+                        </connections>
                     </button>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="SSW-1u-BoS">
                         <rect key="frame" x="0.0" y="54" width="377" height="146"/>

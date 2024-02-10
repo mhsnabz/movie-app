@@ -112,6 +112,11 @@ extension DetailViewController: DidSelectMovie {
             navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
+    func seeAllSimilar() {
+        let vc = SeeAllViewController(genre: nil, section: nil, similarMovies: movieId)
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension DetailViewController: DetailCellDelegate {

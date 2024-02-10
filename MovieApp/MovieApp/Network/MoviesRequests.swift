@@ -46,7 +46,8 @@ enum MovieList {
     case getPopular(page: Int)
     case getTopRated(page: Int)
     case upcoming(page: Int)
-    case getSortedMovies(genres: [GenreTitle]?, sortyBy: MoviesSortEnum = .popular_asc, date: String? = nil)
+    case getSortedMovies(genres: [GenreTitle]?, sortyBy: MoviesSortEnum = .popular_asc, date: String? = nil , page : Int = 1)
+    case getSimilarMovies(page : Int,movieId : Int)
 }
 
 extension MovieList: TargetType {
@@ -69,18 +70,20 @@ extension MovieList: TargetType {
             return ApiConstant.MovieListPath.upcoming
         case .getSortedMovies:
             return ApiConstant.SortMoviePath.path
+        case .getSimilarMovies(_, let movieId):
+            return String(format: ApiConstant.MovieListPath.similar, movieId)
         }
     }
 
     /// The task to be performed.
     var task: Moya.Task {
         switch self {
-        case let .getPopular(page), let .getTopRated(page), let .upcoming(page), let .nowPlaying(page):
+        case let .getPopular(page), let .getTopRated(page), let .upcoming(page), let .nowPlaying(page),.getSimilarMovies(let page,_):
             var params = [String: Any]()
             params[""] = "en-US"
             params["page"] = page
             return .requestParameters(parameters: params, encoding: URLEncoding.default)
-        case let .getSortedMovies(genres, sortyBy, date):
+        case let .getSortedMovies(genres, sortyBy, date,page):
             var params = [String: Any]()
             var genre: String = ""
             if let genres {
@@ -100,7 +103,7 @@ extension MovieList: TargetType {
             params["include_video"] = false
             params["include_adult"] = false
             params["language"] = "en-US"
-
+            params["page"] = page
             return .requestParameters(parameters: params, encoding: URLEncoding.default)
         }
     }

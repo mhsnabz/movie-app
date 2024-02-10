@@ -31,16 +31,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="428"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJc-xF-OCe">
-                                <rect key="frame" x="0.0" y="377.66666666666669" width="300" height="50.333333333333314"/>
+                                <rect key="frame" x="0.0" y="367" width="300" height="61"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mutant: Ghost War Girl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="esX-5N-Onp">
-                                        <rect key="frame" x="6" y="4" width="288" height="16.666666666666668"/>
-                                        <fontDescription key="fontDescription" name="Nunito-Medium" family="Nunito" pointSize="12"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mutant: Ghost War Girl" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="esX-5N-Onp">
+                                        <rect key="frame" x="6" y="3.9999999999999982" width="288" height="27.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Medium" family="Nunito" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="s6M-t7-w7H">
-                                        <rect key="frame" x="6" y="24.666666666666629" width="76.666666666666671" height="13.666666666666664"/>
+                                        <rect key="frame" x="6" y="35.333333333333314" width="76.666666666666671" height="13.666666666666664"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VNP-ck-gRN">
                                                 <rect key="frame" x="0.0" y="0.0" width="36.333333333333336" height="13.666666666666666"/>

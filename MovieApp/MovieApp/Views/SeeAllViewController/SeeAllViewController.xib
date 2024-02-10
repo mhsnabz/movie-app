@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,13 +19,13 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ffe-9R-pfp">
-                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ffe-9R-pfp">
+                    <rect key="frame" x="12" y="0.0" width="369" height="818"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vRH-4Z-Y4w">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="50" height="50"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
@@ -65,9 +64,9 @@
                 <constraint firstItem="a40-Sl-S2Q" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Jmv-4t-ltf"/>
                 <constraint firstItem="a40-Sl-S2Q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Kj8-IK-heF"/>
                 <constraint firstItem="ffe-9R-pfp" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="LQi-pC-Wy3"/>
-                <constraint firstItem="ffe-9R-pfp" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Po3-UZ-XYq"/>
-                <constraint firstItem="ffe-9R-pfp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gCo-aO-Ag7"/>
-                <constraint firstItem="ffe-9R-pfp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xsr-Fa-m0Y"/>
+                <constraint firstItem="ffe-9R-pfp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="OiE-eD-MhE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ffe-9R-pfp" secondAttribute="trailing" constant="12" id="vVx-d6-ugY"/>
+                <constraint firstItem="ffe-9R-pfp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="xsr-Fa-m0Y"/>
             </constraints>
             <point key="canvasLocation" x="139.69465648854961" y="20.422535211267608"/>
         </view>
@@ -77,8 +76,5 @@
         <namedColor name="dark_black">
             <color red="0.11372549019607843" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

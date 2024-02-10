@@ -10,6 +10,8 @@ import UIKit
 @objc protocol DidSelectMovie: AnyObject {
     @objc optional func didSelectMovie(movieId: Int)
     @objc optional func didSelecetSimilar(movieId: Int)
+    @objc optional func seeAll(genre : Int , section : Int)
+    @objc optional func seeAllSimilar()
 }
 
 class MoviesSectionCell: UITableViewCell {
@@ -20,12 +22,13 @@ class MoviesSectionCell: UITableViewCell {
     private var dataSource: MovieListModel?
     private var similarDataSource: [SimilarResult]?
     private var sectionIndex: Int = 0
+    private var selectedGenre : GenreTitle = .all
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    func setupCell(dataSource: MovieListModel, index: Int) {
+    func setupCell(dataSource: MovieListModel, index: Int, genre : GenreTitle = .all) {
         if index == 0 {
             titlLbl.text = "Now Playing"
         } else if index == 1 {
@@ -37,7 +40,7 @@ class MoviesSectionCell: UITableViewCell {
         }
         sectionIndex = index
         self.dataSource = dataSource
-
+        self.selectedGenre = genre
         collecitonView.delegate = self
         collecitonView.dataSource = self
         collecitonView.register(UINib(nibName: MoviesListCell.classname, bundle: nil), forCellWithReuseIdentifier: MoviesListCell.classname)
@@ -59,6 +62,15 @@ class MoviesSectionCell: UITableViewCell {
             collecitonView.reloadData()
         }
     }
+    
+    @IBAction func seeAllAction(_ sender: Any) {
+        if similarDataSource != nil {
+            delegate?.seeAllSimilar?()
+        }else{
+            delegate?.seeAll?(genre: selectedGenre.id , section: sectionIndex)
+        }
+    }
+    
 }
 
 extension MoviesSectionCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
