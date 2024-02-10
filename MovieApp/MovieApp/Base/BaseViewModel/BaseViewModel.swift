@@ -47,15 +47,21 @@ enum GenreTitle: Int, CaseIterable, Codable {
     case animation = 16
     case comedy = 35
     case crime = 80
+    case documentary = 99
     case drama = 18
     case family = 10751
     case fantasy = 14
     case history = 36
+    case horror = 27
+    case music = 10402
+    case mystery = 9648
     case romance = 10749
     case scienceFiction = 878
+    case tvMovie = 10770
     case thriller = 53
     case war = 10752
-
+    case western = 37
+    
     var id: Int {
         switch self {
         case .all: return 0
@@ -72,9 +78,15 @@ enum GenreTitle: Int, CaseIterable, Codable {
         case .scienceFiction: return 878
         case .thriller: return 53
         case .war: return 10752
+        case .documentary: return 99
+        case .horror:  return 27
+        case .music: return 10402
+        case .mystery: return 9648
+        case .tvMovie: return 10770
+        case .western: return 37
         }
     }
-
+    
     var name: String {
         switch self {
         case .all: return "All"
@@ -83,14 +95,20 @@ enum GenreTitle: Int, CaseIterable, Codable {
         case .animation: return "Animation"
         case .comedy: return "Comedy"
         case .crime: return "Crime"
+        case .documentary: return "Documentary"
         case .drama: return "Drama"
         case .family: return "Family"
         case .fantasy: return "Fantasy"
         case .history: return "History"
+        case .horror: return "Horror"
+        case .music: return "Music"
+        case .mystery: return "Mystery"
         case .romance: return "Romance"
         case .scienceFiction: return "Science Fiction"
+        case .tvMovie: return "TV Movie"
         case .thriller: return "Thriller"
         case .war: return "War"
+        case .western: return "Western"
         }
     }
 }

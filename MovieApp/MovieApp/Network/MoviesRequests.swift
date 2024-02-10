@@ -46,6 +46,7 @@ enum MovieList {
     case getPopular(page: Int)
     case getTopRated(page: Int)
     case upcoming(page: Int)
+    case getSortedMovies(genres : [GenreTitle]? , sortyBy :MoviesSortEnum = .popular_asc ,date : String? = nil)
 }
 
 extension MovieList: TargetType {
@@ -59,13 +60,15 @@ extension MovieList: TargetType {
     var path: String {
         switch self {
         case .nowPlaying:
-            return ApiConstant.MovieListPath.popular
+            return ApiConstant.MovieListPath.nowPlaying
         case .getPopular:
             return ApiConstant.MovieListPath.popular
         case .getTopRated:
             return ApiConstant.MovieListPath.topRated
         case .upcoming:
             return ApiConstant.MovieListPath.upcoming
+        case .getSortedMovies:
+            return ApiConstant.SortMoviePath.path
         }
     }
 
@@ -77,9 +80,41 @@ extension MovieList: TargetType {
             params[""] = "en-US"
             params["page"] = page
             return .requestParameters(parameters: params, encoding: URLEncoding.default)
+        case .getSortedMovies(let genres, let sortyBy,let date):
+            var params = [String : Any]()
+            var genre : String = ""
+            if let genres {
+                genres.forEach { element in
+                    genre = genre+","+String(element.id)
+                }
+                let index = genre.index(genre.startIndex, offsetBy: 0)
+                genre.remove(at: index)
+                params["with_genres"] = genre
+            }
+            
+            if let date {
+                params["primary_release_date.gte"] = date
+            }else{
+                params["sort_by"] = sortyBy.rawValue
+            }
+            params["include_video"] = false
+            params["include_adult"] = false
+            params["language"] = "en-US"
+          
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
         }
     }
 
     /// The headers to be included in the request.
     var headers: [String: String]? { Auth.auth }
+}
+
+enum MoviesSortEnum : String{
+    case popular_desc = "popularity.desc"
+    case popular_asc = "popularity.asc"
+    case vote_asc = "vote_average.asc"
+    case vote_desc = "vote_count.desc"
+    case relase_date_desc = "primary_release_date.desc"
+    case relase_date_asc = "primary_release_date.asc"
+    case primary_release_date_gte = "primary_release_date.gte"
 }

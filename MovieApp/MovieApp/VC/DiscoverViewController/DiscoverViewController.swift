@@ -57,10 +57,9 @@ extension DiscoverViewController: UICollectionViewDelegate, UICollectionViewData
 
     func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         genresCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        viewModel.filterResultsByGenre(viewModel.getGenresSource()[indexPath.row]) { _ in
-            self.tableView.scrollsToTop = true
+        viewModel.setupDataSource(genre: viewModel.getGenresSource()[indexPath.row])?.subscribe({ event in
             self.tableView.reloadData()
-        }
+        }).disposed(by: self .disposeBag)
     }
 }
 

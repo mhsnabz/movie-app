@@ -37,6 +37,9 @@
 		8D0782642B751B3E00AC2B4F /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0782632B751B3E00AC2B4F /* InitialViewController.swift */; };
 		8D0782692B751C0D00AC2B4F /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0782682B751C0D00AC2B4F /* LandingViewController.swift */; };
 		8D07826C2B751D5200AC2B4F /* UIView+Extenison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D07826B2B751D5200AC2B4F /* UIView+Extenison.swift */; };
+		8D12006C2B778DA7006ED1EF /* SeeAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12006A2B778DA6006ED1EF /* SeeAllViewController.swift */; };
+		8D12006D2B778DA7006ED1EF /* SeeAllViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D12006B2B778DA7006ED1EF /* SeeAllViewController.xib */; };
+		8D1200712B778F8D006ED1EF /* SeeAllViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1200702B778F8D006ED1EF /* SeeAllViewModel.swift */; };
 		8D3DB5F42B767C2D007D49F4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3DB5F22B767C2D007D49F4 /* DetailViewController.swift */; };
 		8D3DB5F52B767C2D007D49F4 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D3DB5F32B767C2D007D49F4 /* DetailViewController.xib */; };
 		8D3DB5F92B768EC1007D49F4 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3DB5F82B768EC1007D49F4 /* DetailModel.swift */; };
@@ -115,6 +118,9 @@
 		8D0782632B751B3E00AC2B4F /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		8D0782682B751C0D00AC2B4F /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		8D07826B2B751D5200AC2B4F /* UIView+Extenison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extenison.swift"; sourceTree = "<group>"; };
+		8D12006A2B778DA6006ED1EF /* SeeAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllViewController.swift; sourceTree = "<group>"; };
+		8D12006B2B778DA7006ED1EF /* SeeAllViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeeAllViewController.xib; sourceTree = "<group>"; };
+		8D1200702B778F8D006ED1EF /* SeeAllViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllViewModel.swift; sourceTree = "<group>"; };
 		8D3DB5F22B767C2D007D49F4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8D3DB5F32B767C2D007D49F4 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		8D3DB5F82B768EC1007D49F4 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
@@ -373,6 +379,31 @@
 			path = "UIView+Extenison";
 			sourceTree = "<group>";
 		};
+		8D1200692B778D5D006ED1EF /* SeeAllViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8D12006F2B778F7F006ED1EF /* VM */,
+				8D12006A2B778DA6006ED1EF /* SeeAllViewController.swift */,
+			);
+			path = SeeAllViewController;
+			sourceTree = "<group>";
+		};
+		8D12006E2B778DAF006ED1EF /* SeeAllViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8D12006B2B778DA7006ED1EF /* SeeAllViewController.xib */,
+			);
+			path = SeeAllViewController;
+			sourceTree = "<group>";
+		};
+		8D12006F2B778F7F006ED1EF /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				8D1200702B778F8D006ED1EF /* SeeAllViewModel.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
 		8D3DB5F12B767C16007D49F4 /* DetailViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -615,6 +646,7 @@
 		8D9E07AE2B75060600E0ADCD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8D12006E2B778DAF006ED1EF /* SeeAllViewController */,
 				8D3DB5F62B767C31007D49F4 /* DetailViewController */,
 				8D06AA692B759CBB006A0456 /* DiscoverViewController */,
 				8D6B4B342B753C3600A8CA85 /* CustomProgress */,
@@ -626,6 +658,7 @@
 		8D9E07AF2B75060D00E0ADCD /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				8D1200692B778D5D006ED1EF /* SeeAllViewController */,
 				8D3DB5F12B767C16007D49F4 /* DetailViewController */,
 				8D06AA4C2B755F1C006A0456 /* MainTabbarController */,
 				8D06AA492B755B8B006A0456 /* ListViewController */,
@@ -730,6 +763,7 @@
 			files = (
 				8DF2069D2B76D884008D6B24 /* ArtistCell.xib in Resources */,
 				8D3DB5F52B767C2D007D49F4 /* DetailViewController.xib in Resources */,
+				8D12006D2B778DA7006ED1EF /* SeeAllViewController.xib in Resources */,
 				8D06AA682B759CAE006A0456 /* MoviesSectionCell.xib in Resources */,
 				8D8A28352B750409009FD7A2 /* LaunchScreen.storyboard in Resources */,
 				8D0782602B750D3300AC2B4F /* Color.xcassets in Resources */,
@@ -817,6 +851,7 @@
 				8D06AA422B755862006A0456 /* Userdefaults+Extension.swift in Sources */,
 				8D6B4B272B7524A900A8CA85 /* LandingCell.swift in Sources */,
 				8D3DB6112B76A8DE007D49F4 /* DetailVideoCell.swift in Sources */,
+				8D1200712B778F8D006ED1EF /* SeeAllViewModel.swift in Sources */,
 				8D06AA672B759CAE006A0456 /* MoviesSectionCell.swift in Sources */,
 				8D06AA5A2B758D58006A0456 /* MoviesRequests.swift in Sources */,
 				8D06AA4E2B755F3C006A0456 /* MainTabbarController.swift in Sources */,
@@ -839,6 +874,7 @@
 				8DF206982B76D7AE008D6B24 /* CastCell.swift in Sources */,
 				8D06AA7F2B760EA6006A0456 /* GenreCell.swift in Sources */,
 				8D6B4B332B75294E00A8CA85 /* LandingModel.swift in Sources */,
+				8D12006C2B778DA7006ED1EF /* SeeAllViewController.swift in Sources */,
 				8D3DB6182B76C4B0007D49F4 /* DetailCell.swift in Sources */,
 				8D6B4B302B75292600A8CA85 /* LandingViewModel.swift in Sources */,
 				8D06AA872B761705006A0456 /* UILabel+Extension.swift in Sources */,

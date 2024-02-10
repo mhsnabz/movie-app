@@ -14,9 +14,9 @@
             filePath = "MovieApp/VC/DetailViewController/cells/DetailCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "setupUI(detail:isExpanded:indexPath:)"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "changeStatus()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -48,6 +48,21 @@
                   startingLineNumber = "57"
                   endingLineNumber = "57"
                   offsetFromSymbolStart = "3380">
+               </Location>
+               <Location
+                  uuid = "32BE29D2-20D5-4358-848D-6835E719B29F - fac1a6203b408970"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieApp.DetailCell.setupUI(detail: Swift.Optional&lt;MovieApp.DetailModel&gt;, isExpanded: Swift.Bool, indexPath: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/DetailViewController/cells/DetailCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "3376">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -82,6 +97,38 @@
             endingLineNumber = "80"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EA2DDA0D-6500-41BE-AEAB-67EEB316F15C - db6c47df8af3f65e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieApp.MoviesSectionCell.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/DiscoverViewController/cells/MoviesSectionCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "1384">
+               </Location>
+               <Location
+                  uuid = "EA2DDA0D-6500-41BE-AEAB-67EEB316F15C - db6c47df8af3f65e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieApp.MoviesSectionCell.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/DiscoverViewController/cells/MoviesSectionCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "1432">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -128,6 +175,21 @@
                   startingLineNumber = "81"
                   endingLineNumber = "81"
                   offsetFromSymbolStart = "1432">
+               </Location>
+               <Location
+                  uuid = "112DC3D4-E888-44D4-B31C-770C938254EC - db6c47df8af3f63d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieApp.MoviesSectionCell.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/DiscoverViewController/cells/MoviesSectionCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "1500">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -286,8 +348,8 @@
             filePath = "MovieApp/VC/DiscoverViewController/DiscoverViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "didSelectMovie(movieId:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -302,8 +364,8 @@
             filePath = "MovieApp/VC/DiscoverViewController/DiscoverViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "didSelectMovie(movieId:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -318,8 +380,8 @@
             filePath = "MovieApp/VC/DiscoverViewController/DiscoverViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "didSelectMovie(movieId:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -369,6 +431,102 @@
             startingLineNumber = "105"
             endingLineNumber = "105"
             landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C1D09DC-52D3-469A-A549-AE79FD17B904"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "filterByGenre(genre:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4C1D09DC-52D3-469A-A549-AE79FD17B904 - a1fa986dcbdbad35"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RxSwift.Event&lt;(MovieApp.MovieListModel, MovieApp.MovieListModel, MovieApp.MovieListModel, MovieApp.MovieListModel)&gt;) -&gt; () in MovieApp.DiscoverViewModel.filterByGenre(genre: MovieApp.GenreTitle) -&gt; RxSwift.PublishSubject&lt;Swift.Array&lt;MovieApp.MovieListModel&gt;&gt;"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "852">
+               </Location>
+               <Location
+                  uuid = "4C1D09DC-52D3-469A-A549-AE79FD17B904 - a1fa986dcbdbad35"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RxSwift.Event&lt;(MovieApp.MovieListModel, MovieApp.MovieListModel, MovieApp.MovieListModel, MovieApp.MovieListModel)&gt;) -&gt; () in MovieApp.DiscoverViewModel.filterByGenre(genre: MovieApp.GenreTitle) -&gt; RxSwift.PublishSubject&lt;Swift.Array&lt;MovieApp.MovieListModel&gt;&gt;"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "1736">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2C074F53-041A-4898-BB05-6122D2878FE8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "filterByGenre(genre:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F433DE21-D552-4C9E-B3EC-008DD66458F2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "filterByGenre(genre:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8E00CFE3-D613-482B-BC20-9F73F964A6FB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "filterByGenre(genre:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
