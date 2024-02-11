@@ -40,8 +40,6 @@
 		8D12006C2B778DA7006ED1EF /* SeeAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12006A2B778DA6006ED1EF /* SeeAllViewController.swift */; };
 		8D12006D2B778DA7006ED1EF /* SeeAllViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D12006B2B778DA7006ED1EF /* SeeAllViewController.xib */; };
 		8D1200712B778F8D006ED1EF /* SeeAllViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1200702B778F8D006ED1EF /* SeeAllViewModel.swift */; };
-		8D1200772B780696006ED1EF /* FooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1200752B780696006ED1EF /* FooterCell.swift */; };
-		8D1200782B780696006ED1EF /* FooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D1200762B780696006ED1EF /* FooterCell.xib */; };
 		8D12007D2B7832B8006ED1EF /* searching.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D12007C2B7832B8006ED1EF /* searching.json */; };
 		8D1200802B7838CC006ED1EF /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12007F2B7838CC006ED1EF /* SearchViewModel.swift */; };
 		8D1200872B78EEC9006ED1EF /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1200852B78EEC9006ED1EF /* AlertViewController.swift */; };
@@ -131,8 +129,6 @@
 		8D12006A2B778DA6006ED1EF /* SeeAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllViewController.swift; sourceTree = "<group>"; };
 		8D12006B2B778DA7006ED1EF /* SeeAllViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeeAllViewController.xib; sourceTree = "<group>"; };
 		8D1200702B778F8D006ED1EF /* SeeAllViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllViewModel.swift; sourceTree = "<group>"; };
-		8D1200752B780696006ED1EF /* FooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCell.swift; sourceTree = "<group>"; };
-		8D1200762B780696006ED1EF /* FooterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterCell.xib; sourceTree = "<group>"; };
 		8D12007C2B7832B8006ED1EF /* searching.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = searching.json; sourceTree = "<group>"; };
 		8D12007F2B7838CC006ED1EF /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		8D1200852B78EEC9006ED1EF /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
@@ -403,7 +399,6 @@
 		8D1200692B778D5D006ED1EF /* SeeAllViewController */ = {
 			isa = PBXGroup;
 			children = (
-				8D1200742B780665006ED1EF /* cell */,
 				8D12006F2B778F7F006ED1EF /* VM */,
 				8D12006A2B778DA6006ED1EF /* SeeAllViewController.swift */,
 			);
@@ -413,7 +408,6 @@
 		8D12006E2B778DAF006ED1EF /* SeeAllViewController */ = {
 			isa = PBXGroup;
 			children = (
-				8D1200792B78069A006ED1EF /* cell */,
 				8D12006B2B778DA7006ED1EF /* SeeAllViewController.xib */,
 			);
 			path = SeeAllViewController;
@@ -425,22 +419,6 @@
 				8D1200702B778F8D006ED1EF /* SeeAllViewModel.swift */,
 			);
 			path = VM;
-			sourceTree = "<group>";
-		};
-		8D1200742B780665006ED1EF /* cell */ = {
-			isa = PBXGroup;
-			children = (
-				8D1200752B780696006ED1EF /* FooterCell.swift */,
-			);
-			path = cell;
-			sourceTree = "<group>";
-		};
-		8D1200792B78069A006ED1EF /* cell */ = {
-			isa = PBXGroup;
-			children = (
-				8D1200762B780696006ED1EF /* FooterCell.xib */,
-			);
-			path = cell;
 			sourceTree = "<group>";
 		};
 		8D12007E2B7838AE006ED1EF /* VM */ = {
@@ -692,19 +670,12 @@
 		8D9E07AC2B7505D900E0ADCD /* Helper+Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8DE8CC022B78FA8500D15351 /* UITextField+Extension */,
-				8D06AA852B7616E5006A0456 /* UILabel+Extension */,
-				8D06AA722B75B2F7006A0456 /* Double+Extension */,
-				8D06AA6F2B75B16A006A0456 /* UIMageView+Extension */,
+				8DE8CC052B78FC7F00D15351 /* Extensions */,
 				8D06AA5B2B758DB1006A0456 /* ApiConstant */,
-				8D06AA522B756128006A0456 /* UIStoryboard+Extension */,
 				8D6B4B3B2B753D6E00A8CA85 /* Lottie */,
 				8D6B4B2B2B7525E900A8CA85 /* Protocols */,
 				8D6B4B1D2B75226800A8CA85 /* CustomLabels */,
 				8D6B4AFC2B75209B00A8CA85 /* Fonts */,
-				8D06AA402B75584B006A0456 /* Userdefaults+Extension */,
-				8D07826A2B751D4000AC2B4F /* UIView+Extenison */,
-				8D07825C2B750BD800AC2B4F /* UIColor+Extension */,
 			);
 			path = "Helper+Extensions";
 			sourceTree = "<group>";
@@ -777,6 +748,21 @@
 				8DE8CC032B78FA9900D15351 /* UITextField+Extension.swift */,
 			);
 			path = "UITextField+Extension";
+			sourceTree = "<group>";
+		};
+		8DE8CC052B78FC7F00D15351 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8D07825C2B750BD800AC2B4F /* UIColor+Extension */,
+				8D07826A2B751D4000AC2B4F /* UIView+Extenison */,
+				8D06AA402B75584B006A0456 /* Userdefaults+Extension */,
+				8D06AA522B756128006A0456 /* UIStoryboard+Extension */,
+				8D06AA6F2B75B16A006A0456 /* UIMageView+Extension */,
+				8D06AA722B75B2F7006A0456 /* Double+Extension */,
+				8D06AA852B7616E5006A0456 /* UILabel+Extension */,
+				8DE8CC022B78FA8500D15351 /* UITextField+Extension */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F66A7F55A89298BB74FCADC7 /* Frameworks */ = {
@@ -853,7 +839,6 @@
 				8D12006D2B778DA7006ED1EF /* SeeAllViewController.xib in Resources */,
 				8D06AA682B759CAE006A0456 /* MoviesSectionCell.xib in Resources */,
 				8D8A28352B750409009FD7A2 /* LaunchScreen.storyboard in Resources */,
-				8D1200782B780696006ED1EF /* FooterCell.xib in Resources */,
 				8D0782602B750D3300AC2B4F /* Color.xcassets in Resources */,
 				8D06AA792B75FF77006A0456 /* genre.json in Resources */,
 				8D6B4B1C2B7520B000A8CA85 /* Nunito-SemiBold.ttf in Resources */,
@@ -976,7 +961,6 @@
 				8D3DB60D2B76A8CF007D49F4 /* DetailImageCell.swift in Sources */,
 				8D06AA6D2B75AD22006A0456 /* MoviesListCell.swift in Sources */,
 				8D6B4B432B75400300A8CA85 /* BaseViewController.swift in Sources */,
-				8D1200772B780696006ED1EF /* FooterCell.swift in Sources */,
 				8D06AA602B759179006A0456 /* DiscoverViewModel.swift in Sources */,
 				8D6B4B212B7522B600A8CA85 /* RegularLabel.swift in Sources */,
 				8D6B4B3A2B753C6000A8CA85 /* CustomProgress.swift in Sources */,

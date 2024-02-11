@@ -51,9 +51,8 @@ class SeeAllViewController: BaseViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: MoviesListCell.classname, bundle: nil), forCellWithReuseIdentifier: MoviesListCell.classname)
-        collectionView.register(FooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "FooterView")
-
         collectionView.contentInset = UIEdgeInsets(top: view.safeAreaInsets.top, left: 0, bottom: 0, right: 0)
+        
         viewModel.setupDataSource(genre: genre, section: section, page: 1, similarMovies: similarMovies)?.subscribe { _ in
             self.collectionView.reloadData()
         }.disposed(by: disposeBag)
@@ -81,17 +80,7 @@ extension SeeAllViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return CGSize(width: w, height: h)
     }
 
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionView.elementKindSectionFooter:
-            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FooterView", for: indexPath)
-            footerView.backgroundColor = .red
-            return footerView
-        default:
-            fatalError("Unexpected element kind")
-        }
-    }
-
+  
     func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, minimumLineSpacingForSectionAt _: Int) -> CGFloat {
         return 12
     }

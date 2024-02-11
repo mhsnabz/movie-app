@@ -84,11 +84,6 @@ extension DiscoverViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-func calculateLabelWidth(text: String, font: UIFont) -> CGFloat {
-    let fontAttributes = [NSAttributedString.Key.font: font]
-    let size = (text as NSString).size(withAttributes: fontAttributes)
-    return size.width
-}
 
 extension DiscoverViewController: DidSelectMovie {
     func didSelectMovie(movieId: Int) {
