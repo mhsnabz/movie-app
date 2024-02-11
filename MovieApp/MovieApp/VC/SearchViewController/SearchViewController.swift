@@ -25,6 +25,11 @@ class SearchViewController: BaseViewController {
         setupUI()
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel.cancelRequest()
+    }
+
     private func setupUI() {
         searchBar.becomeFirstResponder()
         loader.loopMode = .loop
@@ -117,10 +122,7 @@ extension SearchViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentText = (textField.text ?? "") as NSString
         let newText = currentText.replacingCharacters(in: range, with: string)
-
         clearButton.isHidden = newText.count > 0 ? false : true
-
-        print("query \(newText.count)")
         return true
     }
 }

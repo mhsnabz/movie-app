@@ -51,6 +51,7 @@ extension DetailHeaderCell: UICollectionViewDelegate, UICollectionViewDataSource
             return cell
         case .video:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailVideoCell.classname, for: indexPath) as! DetailVideoCell
+            cell.setupCell(videoPath: dataSource[indexPath.row].sourcePath)
             return cell
         case .none:
             return UICollectionViewCell()
@@ -59,5 +60,10 @@ extension DetailHeaderCell: UICollectionViewDelegate, UICollectionViewDataSource
 
     func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {
         return collectionView.frame.size
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying _: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? DetailVideoCell else { return }
+        cell.stopVideo()
     }
 }
