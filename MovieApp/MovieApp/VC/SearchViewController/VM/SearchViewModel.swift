@@ -6,7 +6,7 @@
 //
 
 import RxSwift
-final class SearchViewModel : BaseViewModel{
+final class SearchViewModel: BaseViewModel {
     private let disposeBag = DisposeBag()
     private var list: PublishSubject<MovieListModel> = PublishSubject()
     private var isDone: PublishSubject<Bool> = PublishSubject()
@@ -15,34 +15,32 @@ final class SearchViewModel : BaseViewModel{
     override init() {
         super.init()
     }
-    
+
     func cancelRequest() {
         listDisposable?.dispose()
     }
 
-    
     func getDataSource() -> [Result] {
         dataSource
     }
-    
-    func clearDataSource(){
+
+    func clearDataSource() {
         dataSource.removeAll()
     }
-    
-    func setupDataSource(query : String) -> PublishSubject<Bool>{
-        listDisposable = getSearchResult(query: query).subscribe({ [weak self] event in
+
+    func setupDataSource(query: String) -> PublishSubject<Bool> {
+        listDisposable = getSearchResult(query: query).subscribe { [weak self] event in
             if let element = event.element, let result = element.results {
                 self?.dataSource = result
                 self?.isDone.onNext(true)
             } else if let error = event.error {
                 self?.isDone.onError(error)
             }
-        })
+        }
         return isDone
     }
-    
-    private func getSearchResult(query : String) -> PublishSubject<MovieListModel> {
-        
+
+    private func getSearchResult(query: String) -> PublishSubject<MovieListModel> {
         let disposable = movieListProvider.rx.request(.search(query: query))
             .observe(on: MainScheduler.instance)
             .map(MovieListModel.self)
@@ -53,8 +51,7 @@ final class SearchViewModel : BaseViewModel{
             })
 
         disposable.disposed(by: disposeBag)
-        
+
         return list
     }
-    
 }

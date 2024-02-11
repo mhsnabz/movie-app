@@ -13,13 +13,12 @@ class DiscoverViewController: BaseViewController {
 
     private let viewModel = DiscoverViewModel()
     private var selectedGenre: GenreTitle = .all
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         observeLoading(viewModel: viewModel)
         setupUI()
     }
-
 
     private func setupUI() {
         tableView.delegate = self

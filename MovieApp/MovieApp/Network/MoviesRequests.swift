@@ -48,7 +48,7 @@ enum MovieList {
     case upcoming(page: Int)
     case getSortedMovies(genres: [GenreTitle]?, sortyBy: MoviesSortEnum = .popular_asc, date: String? = nil, page: Int = 1)
     case getSimilarMovies(page: Int, movieId: Int)
-    case search(query : String)
+    case search(query: String)
 }
 
 extension MovieList: TargetType {
@@ -108,7 +108,7 @@ extension MovieList: TargetType {
             params["language"] = "en-US"
             params["page"] = page
             return .requestParameters(parameters: params, encoding: URLEncoding.default)
-        case .search(query: let query):
+        case let .search(query: query):
             var params = [String: Any]()
             params[""] = "en-US"
             params["query"] = query
