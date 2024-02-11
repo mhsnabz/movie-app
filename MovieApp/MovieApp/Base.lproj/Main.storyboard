@@ -13,6 +13,9 @@
         <array key="Nunito-Bold.ttf">
             <string>Nunito-Bold</string>
         </array>
+        <array key="Nunito-Medium.ttf">
+            <string>Nunito-Medium</string>
+        </array>
         <array key="Nunito-Regular.ttf">
             <string>Nunito-Regular</string>
         </array>
@@ -51,23 +54,121 @@
             </objects>
             <point key="canvasLocation" x="341" y="-258"/>
         </scene>
-        <!--Search-->
+        <!--Search View Controller-->
         <scene sceneID="Ptz-Ng-fqR">
             <objects>
                 <viewController id="5DV-OB-psc" customClass="SearchViewController" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oM0-ji-dX6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="alS-Eo-8VG">
+                                <rect key="frame" x="12" y="56" width="390" height="56"/>
+                                <subviews>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3YU-hD-mLw">
+                                        <rect key="frame" x="20" y="17" width="24" height="22.666666666666671"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" name="dark_red"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="Dqz-YJ-0yO"/>
+                                            <constraint firstAttribute="height" constant="24" id="s5e-oc-4Zj"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hRa-dE-1PM" customClass="LottieAnimationView" customModule="Lottie">
+                                        <rect key="frame" x="12" y="8" width="40" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="cow-51-1OB"/>
+                                            <constraint firstAttribute="width" constant="40" id="j5y-Ur-Ihw"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="searching"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfS-mc-ce5">
+                                        <rect key="frame" x="328.33333333333331" y="16" width="49.666666666666686" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="8i1-s5-qId"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="xmark.circle.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="clearAction:" destination="5DV-OB-psc" eventType="touchUpInside" id="BzC-gr-RVU"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search By Keyword" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MEV-SE-27r">
+                                        <rect key="frame" x="64" y="16" width="260.33333333333331" height="24"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Medium" family="Nunito" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1764705926" green="0.1764705926" blue="0.1725490093" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="3YU-hD-mLw" firstAttribute="centerY" secondItem="hRa-dE-1PM" secondAttribute="centerY" id="5Nz-a8-GlE"/>
+                                    <constraint firstItem="MEV-SE-27r" firstAttribute="leading" secondItem="hRa-dE-1PM" secondAttribute="trailing" constant="12" id="8Ob-NM-CcE"/>
+                                    <constraint firstItem="MfS-mc-ce5" firstAttribute="leading" secondItem="MEV-SE-27r" secondAttribute="trailing" constant="4" id="Rid-kQ-Bb9"/>
+                                    <constraint firstItem="3YU-hD-mLw" firstAttribute="centerX" secondItem="hRa-dE-1PM" secondAttribute="centerX" id="YTb-hl-WHw"/>
+                                    <constraint firstItem="hRa-dE-1PM" firstAttribute="centerY" secondItem="alS-Eo-8VG" secondAttribute="centerY" id="ceg-B5-ix1"/>
+                                    <constraint firstAttribute="height" constant="56" id="kTb-Q0-Y11"/>
+                                    <constraint firstItem="MfS-mc-ce5" firstAttribute="centerY" secondItem="alS-Eo-8VG" secondAttribute="centerY" id="mwN-oz-mBg"/>
+                                    <constraint firstAttribute="trailing" secondItem="MfS-mc-ce5" secondAttribute="trailing" constant="12" id="pYz-7u-QqA"/>
+                                    <constraint firstItem="hRa-dE-1PM" firstAttribute="leading" secondItem="alS-Eo-8VG" secondAttribute="leading" constant="12" id="yXO-u1-Cqt"/>
+                                    <constraint firstItem="MEV-SE-27r" firstAttribute="centerY" secondItem="alS-Eo-8VG" secondAttribute="centerY" id="zhq-Uw-9EW"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rIV-6S-fyx">
+                                <rect key="frame" x="12" y="124" width="390" height="551"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ko3-Zb-GZl">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Pqt-1L-5FA">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fgg-Xh-kTJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="AYA-Dy-YM0"/>
                         <color key="backgroundColor" name="main_black"/>
+                        <constraints>
+                            <constraint firstItem="AYA-Dy-YM0" firstAttribute="trailing" secondItem="rIV-6S-fyx" secondAttribute="trailing" constant="12" id="825-yh-lsr"/>
+                            <constraint firstItem="AYA-Dy-YM0" firstAttribute="bottom" secondItem="rIV-6S-fyx" secondAttribute="bottom" constant="12" id="9au-tO-6pu"/>
+                            <constraint firstItem="AYA-Dy-YM0" firstAttribute="trailing" secondItem="alS-Eo-8VG" secondAttribute="trailing" constant="12" id="FbN-nZ-dGx"/>
+                            <constraint firstItem="rIV-6S-fyx" firstAttribute="leading" secondItem="AYA-Dy-YM0" secondAttribute="leading" constant="12" id="dQx-aQ-uVD"/>
+                            <constraint firstItem="rIV-6S-fyx" firstAttribute="top" secondItem="alS-Eo-8VG" secondAttribute="bottom" constant="12" id="g7r-kO-mcb"/>
+                            <constraint firstItem="alS-Eo-8VG" firstAttribute="top" secondItem="AYA-Dy-YM0" secondAttribute="top" constant="12" id="m7b-CH-lzQ"/>
+                            <constraint firstItem="alS-Eo-8VG" firstAttribute="leading" secondItem="AYA-Dy-YM0" secondAttribute="leading" constant="12" id="s0s-hO-fTi"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="search_selected" id="VNK-7W-8TM">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="A5D-na-o2s"/>
+                    <connections>
+                        <outlet property="clearButton" destination="MfS-mc-ce5" id="UUP-kB-r3A"/>
+                        <outlet property="collectionView" destination="rIV-6S-fyx" id="eHi-ZF-7gb"/>
+                        <outlet property="loader" destination="hRa-dE-1PM" id="2eq-JC-ibm"/>
+                        <outlet property="searchBar" destination="MEV-SE-27r" id="gAp-DT-XUc"/>
+                        <outlet property="searchImage" destination="3YU-hD-mLw" id="kKM-GY-VBF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rte-MD-OF7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2118.840579710145" y="1488.5869565217392"/>
+            <point key="canvasLocation" x="1537.68115942029" y="2262.2282608695655"/>
         </scene>
         <!--Bookmark-->
         <scene sceneID="pPm-D5-DzJ">
@@ -85,7 +186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="thH-VQ-YoC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2978.2608695652175" y="1488.5869565217392"/>
+            <point key="canvasLocation" x="3885.507246376812" y="1488.5869565217392"/>
         </scene>
         <!--Discover View Controller-->
         <scene sceneID="jyq-bF-62L">
@@ -157,7 +258,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="bjJ-74-aiU" kind="relationship" relationship="viewControllers" id="PJg-Pb-UfR"/>
-                        <segue destination="5DV-OB-psc" kind="relationship" relationship="viewControllers" id="4x7-MO-GbY"/>
+                        <segue destination="ME9-4i-8JK" kind="relationship" relationship="viewControllers" id="4x7-MO-GbY"/>
                         <segue destination="hb8-SM-ggM" kind="relationship" relationship="viewControllers" id="JV0-Q4-I7d"/>
                     </connections>
                 </tabBarController>
@@ -323,7 +424,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="k4P-b9-ofe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -335,6 +436,27 @@
             </objects>
             <point key="canvasLocation" x="371.01449275362324" y="1488.5869565217392"/>
         </scene>
+        <!--Search-->
+        <scene sceneID="BcL-Yx-gkJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ME9-4i-8JK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="search_selected" id="VNK-7W-8TM">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wXE-SS-Ihe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5DV-OB-psc" kind="relationship" relationship="rootViewController" id="6O3-eJ-4sP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="buG-AP-jTD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1538" y="1513"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="tJc-Od-xf3"/>
@@ -342,8 +464,10 @@
     <resources>
         <image name="bookmark_selected" width="24" height="24"/>
         <image name="discover_selected" width="24" height="24"/>
+        <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="123"/>
         <image name="search_selected" width="24" height="24"/>
         <image name="splash" width="1000" height="1333"/>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="dark_red">
             <color red="0.85882352941176465" green="0.13333333333333333" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

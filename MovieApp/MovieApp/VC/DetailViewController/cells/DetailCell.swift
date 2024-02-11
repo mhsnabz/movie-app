@@ -41,7 +41,9 @@ class DetailCell: UITableViewCell {
                 genre = genre + "," + (GenreTitle(rawValue: id.id ?? -1)?.name ?? "")
             }
             let index = genre.index(genre.startIndex, offsetBy: 0)
-            genre.remove(at: index)
+            if genre.count > 0 {
+                genre.remove(at: index)
+            }
             detailLbl.getBullet(genre: genre, date: date, vote: "2h 30m")
         }
 

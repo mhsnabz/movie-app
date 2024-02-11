@@ -22,6 +22,10 @@ struct ApiConstant {
     enum SortMoviePath {
         static let path = "discover/movie"
     }
+    
+    enum SearchMoviewPath{
+        static let search =  "search/multi"
+    }
 
     enum DetailPath {
         static let detail = "movie"

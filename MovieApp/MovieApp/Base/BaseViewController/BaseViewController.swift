@@ -16,6 +16,11 @@ class BaseViewController: UIViewController, LoadingView {
             animator = CustomProgress(frame: topWindow.frame)
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
 
     func observeLoading(viewModel: BaseViewModel) {
         viewModel.isLoading.observe(on: MainScheduler.instance).subscribe { [weak self] event in

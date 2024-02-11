@@ -42,6 +42,8 @@
 		8D1200712B778F8D006ED1EF /* SeeAllViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1200702B778F8D006ED1EF /* SeeAllViewModel.swift */; };
 		8D1200772B780696006ED1EF /* FooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1200752B780696006ED1EF /* FooterCell.swift */; };
 		8D1200782B780696006ED1EF /* FooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D1200762B780696006ED1EF /* FooterCell.xib */; };
+		8D12007D2B7832B8006ED1EF /* searching.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D12007C2B7832B8006ED1EF /* searching.json */; };
+		8D1200802B7838CC006ED1EF /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12007F2B7838CC006ED1EF /* SearchViewModel.swift */; };
 		8D3DB5F42B767C2D007D49F4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3DB5F22B767C2D007D49F4 /* DetailViewController.swift */; };
 		8D3DB5F52B767C2D007D49F4 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D3DB5F32B767C2D007D49F4 /* DetailViewController.xib */; };
 		8D3DB5F92B768EC1007D49F4 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3DB5F82B768EC1007D49F4 /* DetailModel.swift */; };
@@ -125,6 +127,8 @@
 		8D1200702B778F8D006ED1EF /* SeeAllViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllViewModel.swift; sourceTree = "<group>"; };
 		8D1200752B780696006ED1EF /* FooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCell.swift; sourceTree = "<group>"; };
 		8D1200762B780696006ED1EF /* FooterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterCell.xib; sourceTree = "<group>"; };
+		8D12007C2B7832B8006ED1EF /* searching.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = searching.json; sourceTree = "<group>"; };
+		8D12007F2B7838CC006ED1EF /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		8D3DB5F22B767C2D007D49F4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8D3DB5F32B767C2D007D49F4 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		8D3DB5F82B768EC1007D49F4 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
@@ -216,6 +220,7 @@
 		8D06AA462B755B75006A0456 /* SearchViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8D12007E2B7838AE006ED1EF /* VM */,
 				8D06AA472B755B88006A0456 /* SearchViewController.swift */,
 			);
 			path = SearchViewController;
@@ -426,6 +431,14 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
+		8D12007E2B7838AE006ED1EF /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				8D12007F2B7838CC006ED1EF /* SearchViewModel.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
 		8D3DB5F12B767C16007D49F4 /* DetailViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -587,6 +600,7 @@
 		8D6B4B3B2B753D6E00A8CA85 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				8D12007C2B7832B8006ED1EF /* searching.json */,
 				8D6B4B3C2B753D7C00A8CA85 /* infinity.json */,
 			);
 			path = Lottie;
@@ -807,6 +821,7 @@
 				8D3DB6122B76A8DE007D49F4 /* DetailVideoCell.xib in Resources */,
 				8D06AA802B760EA6006A0456 /* GenreCell.xib in Resources */,
 				8D8A28302B750407009FD7A2 /* Main.storyboard in Resources */,
+				8D12007D2B7832B8006ED1EF /* searching.json in Resources */,
 				8D06AA6E2B75AD22006A0456 /* MoviesListCell.xib in Resources */,
 				8D6B4B172B7520B000A8CA85 /* Nunito-Light.ttf in Resources */,
 				8D6B4B102B7520B000A8CA85 /* Nunito-ExtraLight.ttf in Resources */,
@@ -880,6 +895,7 @@
 				8D06AA4E2B755F3C006A0456 /* MainTabbarController.swift in Sources */,
 				8D6B4B232B7522D800A8CA85 /* MediumLabel.swift in Sources */,
 				8D8A28292B750407009FD7A2 /* AppDelegate.swift in Sources */,
+				8D1200802B7838CC006ED1EF /* SearchViewModel.swift in Sources */,
 				8D06AA452B755B71006A0456 /* DiscoverViewController.swift in Sources */,
 				8D8A282B2B750407009FD7A2 /* SceneDelegate.swift in Sources */,
 				8D06AA772B75C015006A0456 /* Genres.swift in Sources */,

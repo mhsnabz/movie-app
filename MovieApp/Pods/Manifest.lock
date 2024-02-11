@@ -7,6 +7,11 @@ PODS:
   - Moya/RxSwift (15.0.0):
     - Moya/Core
     - RxSwift (~> 6.0)
+  - RxCocoa (6.6.0):
+    - RxRelay (= 6.6.0)
+    - RxSwift (= 6.6.0)
+  - RxRelay (6.6.0):
+    - RxSwift (= 6.6.0)
   - RxSwift (6.6.0)
   - SDWebImage (5.18.3):
     - SDWebImage/Core (= 5.18.3)
@@ -16,6 +21,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - lottie-ios
   - Moya/RxSwift
+  - RxCocoa
   - SDWebImage (~> 5.0)
 
 SPEC REPOS:
@@ -24,6 +30,8 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - lottie-ios
     - Moya
+    - RxCocoa
+    - RxRelay
     - RxSwift
     - SDWebImage
 
@@ -32,9 +40,11 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 12d89768845bb77b55cc092ecc2b1f9370f06b76
   lottie-ios: 25e7b2675dad5c3ddad369ac9baab03560c5bfdd
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
+  RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
   SDWebImage: 96e0c18ef14010b7485210e92fac888587ebb958
 
-PODFILE CHECKSUM: ccb30185a2db44aa613ff270fdc02c37f3ac3571
+PODFILE CHECKSUM: 86421e04b252cf3a166164a1704d70dc4a295b21
 
 COCOAPODS: 1.13.0
