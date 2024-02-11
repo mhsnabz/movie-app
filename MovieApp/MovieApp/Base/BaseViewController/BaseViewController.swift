@@ -23,13 +23,24 @@ class BaseViewController: UIViewController, LoadingView {
     }
 
     func observeLoading(viewModel: BaseViewModel) {
-        viewModel.isLoading.observe(on: MainScheduler.instance).subscribe { [weak self] event in
-            guard let self else { return }
-            if event.element ?? false {
-                self.startLoading()
-            } else {
-                self.stopLoading()
+        // Subscribe to the isLoading PublishSubject of the provided viewModel
+        viewModel.isLoading
+            // Observe on the MainScheduler to ensure UI updates are performed on the main thread
+            .observe(on: MainScheduler.instance)
+            // Subscribe to events emitted by the isLoading subject
+            .subscribe { [weak self] event in
+                // Ensure self is not nil to prevent retain cycles
+                guard let self else { return }
+                // Check if the event contains a value (isLoading state)
+                if event.element ?? false {
+                    // If isLoading is true, call the startLoading method of the current object (in a view controller)
+                    self.startLoading()
+                } else {
+                    // If isLoading is false, call the stopLoading method of the current object (in a view controller)
+                    self.stopLoading()
+                }
             }
-        }.disposed(by: disposeBag)
+            // Dispose of the subscription when it's no longer needed to avoid memory leaks
+            .disposed(by: disposeBag)
     }
 }

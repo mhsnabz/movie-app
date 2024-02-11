@@ -41,27 +41,46 @@ class SearchViewController: BaseViewController {
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: MoviesListCell.classname, bundle: nil), forCellWithReuseIdentifier: MoviesListCell.classname)
 
+        // Observing text changes in search bar
         searchBar.rx.text.orEmpty
+            // Debouncing: Waits for 400 milliseconds after the user stops typing before emitting the current value.
             .debounce(.milliseconds(400), scheduler: MainScheduler.instance)
+            // DistinctUntilChanged: Ensures that only distinct consecutive elements are emitted, ignoring consecutive duplicates.
             .distinctUntilChanged()
+            // Subscribing to the observable sequence of text changes.
             .subscribe(onNext: { [weak self] query in
+                // Cancelling any ongoing network requests to avoid unnecessary data fetches.
                 self?.viewModel.cancelRequest()
+                // Checking if the search query is not empty.
                 if query.count > 0 {
+                    // Updating search results based on the current query.
                     self?.updateSearchResults(query: query)
+                    // Showing loader animation while searching.
                     self?.showLoader(isSearching: true)
                 }
-
             })
+            // Disposing the subscription when the view controller is deallocated to avoid memory leaks.
             .disposed(by: disposeBag)
     }
 
     private func updateSearchResults(query: String) {
-        viewModel.setupDataSource(query: query).subscribe { event in
-            if let event = event.element, event {
-                self.showLoader(isSearching: false)
-                self.collectionView.reloadData()
+        // Setting up data source based on the provided search query.
+        viewModel.setupDataSource(query: query)
+            // Subscribing to the observable sequence returned by `setupDataSource`.
+            .subscribe { event in
+                // Extracting the element from the event, which represents the result of the data source setup.
+                if let event = event.element, event {
+                    // If the event element is true, indicating that the setup was successful:
+
+                    // Hiding the loader animation since the search operation is complete.
+                    self.showLoader(isSearching: false)
+
+                    // Reloading the collection view to reflect the updated search results.
+                    self.collectionView.reloadData()
+                }
             }
-        }.disposed(by: disposeBag)
+            // Disposing the subscription when the view controller is deallocated to avoid memory leaks.
+            .disposed(by: disposeBag)
     }
 
     private func showLoader(isSearching: Bool) {

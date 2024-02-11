@@ -29,14 +29,22 @@ final class SearchViewModel: BaseViewModel {
     }
 
     func setupDataSource(query: String) -> PublishSubject<Bool> {
+        // Subscribing to the observable sequence returned by `getSearchResult` and setting up the data source.
         listDisposable = getSearchResult(query: query).subscribe { [weak self] event in
+            // Checking if the event element exists and contains search results.
             if let element = event.element, let result = element.results {
+                // If search results are obtained:
+                // Updating the data source with the fetched results.
                 self?.dataSource = result
+                // Signaling that the data source setup is complete by emitting a value through the `isDone` subject.
                 self?.isDone.onNext(true)
             } else if let error = event.error {
+                // If an error occurs during the data source setup:
+                // Signaling the error by emitting it through the `isDone` subject.
                 self?.isDone.onError(error)
             }
         }
+        // Returning the `isDone` subject to signal the completion or error of the data source setup.
         return isDone
     }
 

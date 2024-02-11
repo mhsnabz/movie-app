@@ -165,18 +165,6 @@ final class DiscoverViewModel: BaseViewModel {
     func getGenresSource() -> [GenreTitle] {
         return genresDataSource
     }
-
-    // Filter results by genre
-    // func filterResultsByGenre(_ genreID: GenreTitle, completion: @escaping (_ isDone: Bool) -> Void) {
-    //     isFiltered = selectedGenre != genreID && genreID.id != 0 ? true : false
-    //     selectedGenre = genreID
-    //     filteredDataSource.removeAll()
-    //     for (index, movieListModel) in dataSource.enumerated() {
-    //         let filtered = movieListModel.results?.filter { $0.genreIDS != nil && //$0.genreIDS!.contains(genreID.id) }
-    //         filteredDataSource.append(MovieListModel(dates: dataSource[index].dates, page: //dataSource[index].page, results: filtered, totalPages: dataSource[index].totalPages, //totalResults: dataSource[index].totalResults))
-    //     }
-    //     completion(true)
-    // }
 }
 
 // Extension for initializing an array from a subject's child values

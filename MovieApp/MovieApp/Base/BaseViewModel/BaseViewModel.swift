@@ -6,7 +6,9 @@
 //
 
 import RxSwift
+
 class BaseViewModel {
+    // PublishSubject to emit loading state updates
     var isLoading: PublishSubject<Bool> = PublishSubject()
 
     init() {}
