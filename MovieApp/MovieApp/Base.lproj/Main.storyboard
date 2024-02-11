@@ -98,23 +98,38 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search By Keyword" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MEV-SE-27r">
-                                        <rect key="frame" x="64" y="16" width="260.33333333333331" height="24"/>
+                                        <rect key="frame" x="64" y="16.333333333333329" width="260.33333333333331" height="23.666666666666671"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Nunito-Medium" family="Nunito" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R45-Io-0pT">
+                                        <rect key="frame" x="64" y="42" width="260.33333333333331" height="1"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="aNl-zt-tSc"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.1764705926" green="0.1764705926" blue="0.1725490093" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="3YU-hD-mLw" firstAttribute="centerY" secondItem="hRa-dE-1PM" secondAttribute="centerY" id="5Nz-a8-GlE"/>
                                     <constraint firstItem="MEV-SE-27r" firstAttribute="leading" secondItem="hRa-dE-1PM" secondAttribute="trailing" constant="12" id="8Ob-NM-CcE"/>
+                                    <constraint firstItem="R45-Io-0pT" firstAttribute="bottom" secondItem="MEV-SE-27r" secondAttribute="bottom" constant="3" id="Cd4-ow-VFW"/>
                                     <constraint firstItem="MfS-mc-ce5" firstAttribute="leading" secondItem="MEV-SE-27r" secondAttribute="trailing" constant="4" id="Rid-kQ-Bb9"/>
                                     <constraint firstItem="3YU-hD-mLw" firstAttribute="centerX" secondItem="hRa-dE-1PM" secondAttribute="centerX" id="YTb-hl-WHw"/>
                                     <constraint firstItem="hRa-dE-1PM" firstAttribute="centerY" secondItem="alS-Eo-8VG" secondAttribute="centerY" id="ceg-B5-ix1"/>
+                                    <constraint firstItem="R45-Io-0pT" firstAttribute="leading" secondItem="MEV-SE-27r" secondAttribute="leading" id="k4T-TV-BLO"/>
                                     <constraint firstAttribute="height" constant="56" id="kTb-Q0-Y11"/>
                                     <constraint firstItem="MfS-mc-ce5" firstAttribute="centerY" secondItem="alS-Eo-8VG" secondAttribute="centerY" id="mwN-oz-mBg"/>
                                     <constraint firstAttribute="trailing" secondItem="MfS-mc-ce5" secondAttribute="trailing" constant="12" id="pYz-7u-QqA"/>
+                                    <constraint firstItem="R45-Io-0pT" firstAttribute="trailing" secondItem="MEV-SE-27r" secondAttribute="trailing" id="uAk-rn-Uku"/>
                                     <constraint firstItem="hRa-dE-1PM" firstAttribute="leading" secondItem="alS-Eo-8VG" secondAttribute="leading" constant="12" id="yXO-u1-Cqt"/>
                                     <constraint firstItem="MEV-SE-27r" firstAttribute="centerY" secondItem="alS-Eo-8VG" secondAttribute="centerY" id="zhq-Uw-9EW"/>
                                 </constraints>
@@ -424,7 +439,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="k4P-b9-ofe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -445,7 +460,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wXE-SS-Ihe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -458,6 +473,9 @@
             <point key="canvasLocation" x="1538" y="1513"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="hRa-dE-1PM"/>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="tJc-Od-xf3"/>
     </inferredMetricsTieBreakers>

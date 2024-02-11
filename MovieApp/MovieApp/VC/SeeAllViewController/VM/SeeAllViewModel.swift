@@ -87,6 +87,7 @@ final class SeeAllViewModel: BaseViewModel {
                 } else if let error = event.error {
                     // Notifies observers if there's an error during the operation.
                     self?.isDone.onError(error)
+                    self?.alertSubject.onNext(error.localizedDescription)
                 }
             }
             /// Filters movies by genre and section if provided.
@@ -102,6 +103,7 @@ final class SeeAllViewModel: BaseViewModel {
                 } else if let error = event.error {
                     // Notifies observers if there's an error during the operation.
                     self?.isDone.onError(error)
+                    self?.alertSubject.onNext(error.localizedDescription)
                 }
             }
             /// Fetches all movies based on the specified section.
@@ -117,6 +119,7 @@ final class SeeAllViewModel: BaseViewModel {
                 } else if let error = event.error {
                     // Notifies observers if there's an error during the operation.
                     self?.isDone.onError(error)
+                    self?.alertSubject.onNext(error.localizedDescription)
                 }
             }
         }

@@ -77,10 +77,42 @@
             filePath = "MovieApp/VC/SearchViewController/SearchViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "SearchViewController"
-            landmarkType = "21">
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "textField(_:shouldChangeCharactersIn:replacementString:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7B910448-2179-49BC-8DBB-8C89E23D6B80 - 4fff4dfdd4d3541e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieApp.SearchViewController.textField(_: __C.UITextField, shouldChangeCharactersIn: __C._NSRange, replacementString: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/SearchViewController/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "7B910448-2179-49BC-8DBB-8C89E23D6B80 - 4fff4dfdd4d35691"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieApp.SearchViewController.textField(_: __C.UITextField, shouldChangeCharactersIn: __C._NSRange, replacementString: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/SearchViewController/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "140">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -93,8 +125,8 @@
             filePath = "MovieApp/VC/SearchViewController/SearchViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "textField(_:shouldChangeCharactersIn:replacementString:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -109,10 +141,42 @@
             filePath = "MovieApp/VC/SearchViewController/SearchViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "textField(_:shouldChangeCharactersIn:replacementString:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D8BCCBF3-6A26-4788-8D53-34805EE520F5 - 4fff4dfdd4d3541e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieApp.SearchViewController.textField(_: __C.UITextField, shouldChangeCharactersIn: __C._NSRange, replacementString: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/SearchViewController/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "D8BCCBF3-6A26-4788-8D53-34805EE520F5 - 4fff4dfdd4d356b2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieApp.SearchViewController.textField(_: __C.UITextField, shouldChangeCharactersIn: __C._NSRange, replacementString: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/SearchViewController/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143"
+                  offsetFromSymbolStart = "424">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -125,10 +189,342 @@
             filePath = "MovieApp/VC/SearchViewController/SearchViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "textField(_:shouldChangeCharactersIn:replacementString:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C2589E00-AF72-4095-9492-2A37C8B65214 - 4fff4dfdd4d3541e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieApp.SearchViewController.textField(_: __C.UITextField, shouldChangeCharactersIn: __C._NSRange, replacementString: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/SearchViewController/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "C2589E00-AF72-4095-9492-2A37C8B65214 - 4fff4dfdd4d35774"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieApp.SearchViewController.textField(_: __C.UITextField, shouldChangeCharactersIn: __C._NSRange, replacementString: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/SearchViewController/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
+                  offsetFromSymbolStart = "804">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "60C68AE2-33D6-42F7-9686-18168513B5BC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "setupDataSource(genre:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "60C68AE2-33D6-42F7-9686-18168513B5BC - bd17c1cd7761960"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RxSwift.Event&lt;Swift.Array&lt;MovieApp.MovieListModel&gt;&gt;) -&gt; () in MovieApp.DiscoverViewModel.setupDataSource(genre: Swift.Optional&lt;MovieApp.GenreTitle&gt;) -&gt; Swift.Optional&lt;RxSwift.PublishSubject&lt;Swift.Bool&gt;&gt;"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "764">
+               </Location>
+               <Location
+                  uuid = "60C68AE2-33D6-42F7-9686-18168513B5BC - bd17c1cd7761960"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RxSwift.Event&lt;Swift.Array&lt;MovieApp.MovieListModel&gt;&gt;) -&gt; () in MovieApp.DiscoverViewModel.setupDataSource(genre: Swift.Optional&lt;MovieApp.GenreTitle&gt;) -&gt; Swift.Optional&lt;RxSwift.PublishSubject&lt;Swift.Bool&gt;&gt;"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "748">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "13E2182C-11F0-4E9D-9D52-06B43FCF7A88"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "setupDataSource(genre:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "13E2182C-11F0-4E9D-9D52-06B43FCF7A88 - bd17c1cd7761941"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RxSwift.Event&lt;Swift.Array&lt;MovieApp.MovieListModel&gt;&gt;) -&gt; () in MovieApp.DiscoverViewModel.setupDataSource(genre: Swift.Optional&lt;MovieApp.GenreTitle&gt;) -&gt; Swift.Optional&lt;RxSwift.PublishSubject&lt;Swift.Bool&gt;&gt;"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "240">
+               </Location>
+               <Location
+                  uuid = "13E2182C-11F0-4E9D-9D52-06B43FCF7A88 - bd17c1cd7761941"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RxSwift.Event&lt;Swift.Array&lt;MovieApp.MovieListModel&gt;&gt;) -&gt; () in MovieApp.DiscoverViewModel.setupDataSource(genre: Swift.Optional&lt;MovieApp.GenreTitle&gt;) -&gt; Swift.Optional&lt;RxSwift.PublishSubject&lt;Swift.Bool&gt;&gt;"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "644">
+               </Location>
+               <Location
+                  uuid = "13E2182C-11F0-4E9D-9D52-06B43FCF7A88 - bd17c1cd7761941"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RxSwift.Event&lt;Swift.Array&lt;MovieApp.MovieListModel&gt;&gt;) -&gt; () in MovieApp.DiscoverViewModel.setupDataSource(genre: Swift.Optional&lt;MovieApp.GenreTitle&gt;) -&gt; Swift.Optional&lt;RxSwift.PublishSubject&lt;Swift.Bool&gt;&gt;"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "224">
+               </Location>
+               <Location
+                  uuid = "13E2182C-11F0-4E9D-9D52-06B43FCF7A88 - bd17c1cd7761941"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RxSwift.Event&lt;Swift.Array&lt;MovieApp.MovieListModel&gt;&gt;) -&gt; () in MovieApp.DiscoverViewModel.setupDataSource(genre: Swift.Optional&lt;MovieApp.GenreTitle&gt;) -&gt; Swift.Optional&lt;RxSwift.PublishSubject&lt;Swift.Bool&gt;&gt;"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "628">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FD846E00-D6AF-4F7A-A348-CD5CD4DA8D8A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "setupDataSource(genre:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FD846E00-D6AF-4F7A-A348-CD5CD4DA8D8A - bde0fbab858ec43b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (RxSwift.Event&lt;Swift.Array&lt;MovieApp.MovieListModel&gt;&gt;) -&gt; () in MovieApp.DiscoverViewModel.setupDataSource(genre: Swift.Optional&lt;MovieApp.GenreTitle&gt;) -&gt; Swift.Optional&lt;RxSwift.PublishSubject&lt;Swift.Bool&gt;&gt;"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "FD846E00-D6AF-4F7A-A348-CD5CD4DA8D8A - bde0fbab858ec43b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (RxSwift.Event&lt;Swift.Array&lt;MovieApp.MovieListModel&gt;&gt;) -&gt; () in MovieApp.DiscoverViewModel.setupDataSource(genre: Swift.Optional&lt;MovieApp.GenreTitle&gt;) -&gt; Swift.Optional&lt;RxSwift.PublishSubject&lt;Swift.Bool&gt;&gt;"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "620">
+               </Location>
+               <Location
+                  uuid = "FD846E00-D6AF-4F7A-A348-CD5CD4DA8D8A - bde0fbab858ec43b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (RxSwift.Event&lt;Swift.Array&lt;MovieApp.MovieListModel&gt;&gt;) -&gt; () in MovieApp.DiscoverViewModel.setupDataSource(genre: Swift.Optional&lt;MovieApp.GenreTitle&gt;) -&gt; Swift.Optional&lt;RxSwift.PublishSubject&lt;Swift.Bool&gt;&gt;"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "224">
+               </Location>
+               <Location
+                  uuid = "FD846E00-D6AF-4F7A-A348-CD5CD4DA8D8A - bde0fbab858ec43b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (RxSwift.Event&lt;Swift.Array&lt;MovieApp.MovieListModel&gt;&gt;) -&gt; () in MovieApp.DiscoverViewModel.setupDataSource(genre: Swift.Optional&lt;MovieApp.GenreTitle&gt;) -&gt; Swift.Optional&lt;RxSwift.PublishSubject&lt;Swift.Bool&gt;&gt;"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "628">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2235E626-24FC-476B-AB5C-FBFE201A39D7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "setupDataSource(genre:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2235E626-24FC-476B-AB5C-FBFE201A39D7 - bde0fbab858ec4d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (RxSwift.Event&lt;Swift.Array&lt;MovieApp.MovieListModel&gt;&gt;) -&gt; () in MovieApp.DiscoverViewModel.setupDataSource(genre: Swift.Optional&lt;MovieApp.GenreTitle&gt;) -&gt; Swift.Optional&lt;RxSwift.PublishSubject&lt;Swift.Bool&gt;&gt;"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "732">
+               </Location>
+               <Location
+                  uuid = "2235E626-24FC-476B-AB5C-FBFE201A39D7 - bde0fbab858ec4d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (RxSwift.Event&lt;Swift.Array&lt;MovieApp.MovieListModel&gt;&gt;) -&gt; () in MovieApp.DiscoverViewModel.setupDataSource(genre: Swift.Optional&lt;MovieApp.GenreTitle&gt;) -&gt; Swift.Optional&lt;RxSwift.PublishSubject&lt;Swift.Bool&gt;&gt;"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "748">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5522F6CF-E91D-4F71-A2DB-19EC2E1A47A7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "filterByGenre(genre:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5522F6CF-E91D-4F71-A2DB-19EC2E1A47A7 - a1fa986dcbdbb3b9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RxSwift.Event&lt;(MovieApp.MovieListModel, MovieApp.MovieListModel, MovieApp.MovieListModel, MovieApp.MovieListModel)&gt;) -&gt; () in MovieApp.DiscoverViewModel.filterByGenre(genre: MovieApp.GenreTitle) -&gt; RxSwift.PublishSubject&lt;Swift.Array&lt;MovieApp.MovieListModel&gt;&gt;"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "4796">
+               </Location>
+               <Location
+                  uuid = "5522F6CF-E91D-4F71-A2DB-19EC2E1A47A7 - a1fa986dcbdbb3ff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RxSwift.Event&lt;(MovieApp.MovieListModel, MovieApp.MovieListModel, MovieApp.MovieListModel, MovieApp.MovieListModel)&gt;) -&gt; () in MovieApp.DiscoverViewModel.filterByGenre(genre: MovieApp.GenreTitle) -&gt; RxSwift.PublishSubject&lt;Swift.Array&lt;MovieApp.MovieListModel&gt;&gt;"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srbrt/movie-app/MovieApp/MovieApp/VC/DiscoverViewController/VM/DiscoverViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "4572">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

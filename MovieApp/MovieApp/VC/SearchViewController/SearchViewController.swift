@@ -17,6 +17,7 @@ class SearchViewController: BaseViewController {
     @IBOutlet var clearButton: UIButton!
 
     private let viewModel = SearchViewModel()
+    private var empty: EmptyState?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,7 @@ class SearchViewController: BaseViewController {
         clearButton.isHidden = true
         searchBar.delegate = self
         showLoader(isSearching: false)
-
+        searchBar.setPlaceholderColor(UIColor(white: 1, alpha: 0.5))
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: MoviesListCell.classname, bundle: nil), forCellWithReuseIdentifier: MoviesListCell.classname)
@@ -74,9 +75,11 @@ class SearchViewController: BaseViewController {
 
                     // Hiding the loader animation since the search operation is complete.
                     self.showLoader(isSearching: false)
-
+                    self.showEmptyState(showEmpty: self.viewModel.getDataSource().isEmpty)
                     // Reloading the collection view to reflect the updated search results.
                     self.collectionView.reloadData()
+                } else if event.error != nil {
+                    self.showLoader(isSearching: false)
                 }
             }
             // Disposing the subscription when the view controller is deallocated to avoid memory leaks.
@@ -133,6 +136,15 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         if let movieId = viewModel.getDataSource()[indexPath.row].id {
             let vc = DetailViewController(movieId: movieId)
             navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+
+    func showEmptyState(showEmpty: Bool) {
+        if showEmpty {
+            empty = EmptyState(frame: collectionView.bounds)
+            collectionView.backgroundView = empty
+        } else {
+            collectionView.backgroundView = nil
         }
     }
 }

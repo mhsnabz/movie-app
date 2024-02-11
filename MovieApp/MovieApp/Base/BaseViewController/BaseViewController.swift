@@ -42,5 +42,14 @@ class BaseViewController: UIViewController, LoadingView {
             }
             // Dispose of the subscription when it's no longer needed to avoid memory leaks
             .disposed(by: disposeBag)
+
+        viewModel.alertSubject.observe(on: MainScheduler.instance)
+            .subscribe { event in
+                if let element = event.element, let titleLbl = element {
+                    let vc = AlertViewController(alertTitle: titleLbl)
+                    vc.modalPresentationStyle = .overCurrentContext
+                    self.present(vc, animated: false)
+                }
+            }.disposed(by: disposeBag)
     }
 }

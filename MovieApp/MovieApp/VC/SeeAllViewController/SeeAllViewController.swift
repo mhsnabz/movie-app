@@ -114,18 +114,18 @@ extension SeeAllViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_: UICollectionView, willDisplay _: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         print(indexPath.item, "\(viewModel.getDataSource().count)")
         if indexPath.item == viewModel.getDataSource().count - 1 && !viewModel.isLoadingMoreItem() {
-            viewModel.setIsLoadingMore(isLoadig: true)
+            viewModel.setIsLoadingMore(isLoading: true)
             showFooterView = viewModel.isLoadingMoreItem()
             viewModel.cancelRequest()
 
             viewModel.setupDataSource(genre: genre, section: section, page: viewModel.currentPage + 1, isLoadingMore: true, similarMovies: similarMovies)?.subscribe { [weak self] event in
                 if let event = event.element {
                     if event {
-                        self?.viewModel.setIsLoadingMore(isLoadig: false)
+                        self?.viewModel.setIsLoadingMore(isLoading: false)
                         self?.showFooterView = false
                     }
                 } else if let _ = event.error {
-                    self?.viewModel.setIsLoadingMore(isLoadig: false)
+                    self?.viewModel.setIsLoadingMore(isLoading: false)
                     self?.showFooterView = false
                 }
             }.disposed(by: disposeBag)

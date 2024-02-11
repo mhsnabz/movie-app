@@ -91,6 +91,7 @@ final class DetailViewModel: BaseViewModel {
         }, onError: { error in
             // Handling error
             self.isDone.onError(error)
+            self.alertSubject.onNext(error.localizedDescription)
         }).disposed(by: disposeBag)
         return isDone
     }

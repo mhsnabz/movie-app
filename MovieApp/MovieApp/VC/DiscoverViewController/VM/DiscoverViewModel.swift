@@ -46,6 +46,7 @@ final class DiscoverViewModel: BaseViewModel {
                     self.isDone.onNext(true)
                 } else if let error = list.error {
                     self.isDone.onError(error)
+                    self.alertSubject.onNext(error.localizedDescription)
                 }
             }.disposed(by: disposeBag)
         } else {
@@ -56,6 +57,7 @@ final class DiscoverViewModel: BaseViewModel {
                     self.isDone.onNext(true)
                 } else if let error = list.error {
                     self.isDone.onError(error)
+                    self.alertSubject.onNext(error.localizedDescription)
                 }
             }.disposed(by: disposeBag)
         }

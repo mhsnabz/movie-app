@@ -42,6 +42,7 @@ final class SearchViewModel: BaseViewModel {
                 // If an error occurs during the data source setup:
                 // Signaling the error by emitting it through the `isDone` subject.
                 self?.isDone.onError(error)
+                self?.alertSubject.onNext(error.localizedDescription)
             }
         }
         // Returning the `isDone` subject to signal the completion or error of the data source setup.
